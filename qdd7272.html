@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <title>Chấm điểm theo QĐ7272</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="Style/common.css">
+  <link rel="stylesheet" href="Style/list-pages.css">
+</head>
+<body>
+  <div class="header">
+    <h1 class="page-title">Chấm điểm theo QĐ7272</h1>
+    <a href="trangchu.html" class="btn btn-secondary">← Về trang chủ</a>
+  </div>
+
+  <div class="container">
+    <div class="coming-soon-card">
+      <div class="coming-soon-icon">🚧</div>
+      <h1 class="coming-soon-title">Tính năng đang phát triển</h1>
+      <p class="coming-soon-subtitle">Hệ thống chấm điểm theo Quyết định 7272</p>
+      <p class="coming-soon-description">
+        Chúng tôi đang nỗ lực phát triển hệ thống chấm điểm theo QĐ7272 với các tính năng 
+        tiên tiến và giao diện hiện đại. Tính năng này sẽ sớm được ra mắt để phục vụ 
+        nhu cầu chấm điểm của bạn.
+      </p>
+      
+      <div class="progress-bar">
+        <div class="progress-fill"></div>
+      </div>
+      <p class="progress-text">Tiến độ phát triển: 65%</p>
+      
+      <div class="features-list">
+        <h3>Các tính năng đang được phát triển:</h3>
+        <ul>
+          <li>Giao diện chấm điểm thân thiện</li>
+          <li>Hệ thống tính điểm tự động</li>
+          <li>Xuất báo cáo PDF chuyên nghiệp</li>
+          <li>Lưu trữ và quản lý dữ liệu</li>
+          <li>Tích hợp với hệ thống hiện có</li>
+        </ul>
+      </div>
+      
+      <a href="trangchu.html" class="back-home-btn">Về trang chủ</a>
+    </div>
+
+    <div class="footer">
+      <p>&copy; 2024 Hệ thống chấm điểm HSNV. Phát triển bởi đội ngũ chuyên môn.</p>
+    </div>
+  </div>
+
+  <script>
+    // Check if user is logged in
+    function checkAuth() {
+      const isLoggedIn = sessionStorage.getItem('isLoggedIn');
+      if (!isLoggedIn) {
+        window.location.href = 'login.html';
+        return;
+      }
+    }
+
+    // Check authentication when page loads
+    document.addEventListener('DOMContentLoaded', checkAuth);
+  </script>
+</body>
+</html>

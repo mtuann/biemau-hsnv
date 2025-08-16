@@ -1,0 +1,119 @@
+body{background: #ccc; font-family: Times New Roman;width: 21cm; margin:0cm auto}
+.wrapper{background: #fff; width: 21cm; margin:0 auto; -webkit-box-shadow: 0 0 6px 4px #68696b; -moz-box-shadow: 0 0 6px 4px #68696b; box-shadow: 00 6px 4px #68696b;}
+I
+.header {margin:0 auto; padding-left:1cm}
+.content {width: 16cm; min-height: 10cm; margin-left: 3cm; margin-right:2cm; clear: both; } 
+.content_b17c{width: 19cm; min-height: 10cm; margin-left: 2cm; clear: both;}
+.content_page_2{width: 16cm; min-height: 10cm; margin-left: 3cm; margin-right:2cm; clear: both; } 
+.content_page_2{width: 16cm; min-height: 10cm; margin-left: 3cm;margin-right:2cm; clear: both; } 
+.content_page_2_BL6{width: 16cm; min-height: 10cm; margin-left: 3cm; margin-right:2cm; clear: both; } 
+.content_page_2_BQ1a{width: 16cm; min-height: 10cm; margin-left: 3cm; margin-right: 2cm; clear: both;} 
+.content_mau_pa{width: 17.5cm; min-height: 10cm; margin-left: 2.5cm; margin-right:2cm; clear: both;}
+ .content2_mau_pa{width: 17.5cm; min-height: 10cm; margin-left: 2.5cm; margin-right:2cm; clear: both;}
+  .content3_mau_pa{width: 17.5cm; min-height: 10cm; margin-left: 2.5cm; margin-right:2cm; clear: both;}
+   .content_mau_pcd{width: 18cm; min-height: 10cm; margin-left: 2cm; margin-right:2cm; clear: both;}
+    .content2_mau_pcd{width: 18cm; min-height: 10cm; margin-left: 2cm; margin-right:2cm; clear: both;}
+     /*.cq_banhanh{width:6.3cm;}*/
+.cq_banhanh{width:50mm;}
+
+.cq_banhanh_mau_pa{width:38mm;}
+table tr td .table_mau_pa {font-size:15.96px}
+/*.quochieu{width: 9.6cm; margin: 0 auto}*/
+.quochieu{margin: 0 auto; font-size: 13pt; margin-left:0.2cm}
+/*.td_bieumau{width:5cm;}*/
+.td_bieumau{}
+.fontUpper{text-transform: uppercase;}
+.fontLow{text-transform: none;}
+.fontBold{font-weight: bold;}
+.fontNorm{font-weight: normal;}
+.ta_center{text-align: center;} 
+.ta_left{text-align: left;} 
+.ta_right{text-align: right;} 
+.ta_jus{text-align: justify;} 
+.bortaer{border: 0.5px solid #ccc;} 
+.font8{font-size: 8pt;}
+.font9{font-size: 9pt;}
+.font10{font-size: 13,3px;}
+.font11{font-size: 14,63px;}
+.font12{font-size: 15.96px;}
+.font13{font-size: 17.29px;}
+.font14{font-size: 18.67px;} 
+.font15{font-size: 15pt;}
+
+.font16{font-size: 16pt;}
+.font18{font-size: 18pt;}
+.font_I{font-style: italic;}
+.so_cong_tac{font-size:38pt; width: 100%; text-align: center;}
+.co_quan{min-width: 3cm; display: inline-block; }
+.dia_danh{min-width: 50px; text-align: right; display: inline-block; }
+.o_nhap_ngay{min-width:20px;display: inline-block;}
+.o_nhap_thang{min-width: 20px; display: inline-block;} 
+.o_nhap_nam{min-width: 40px; display: inline-block;}
+.o_nhap_n_dong{width:100%; text-align: justify; display: inline-block; word-wrap: break-word;} 
+.o_nhap_0_5cm{min-width: 0.5cm;display: inline-block;}
+.o_nhap_1cm {min-width: 1cm;display: inline-block;} 
+.o_nhap_2cm{min-width: 2cm; display: inline-block;} 
+.o_nhap_3cm{min-width: 3cm; display: inline-block;} 
+.f_left{float: left;}
+.time_header {float: right;margin-top: 10px; margin-right:1cm }
+.f_right{float:right;} 
+.lh_06{line-height: 0.5em} 
+.lh_08{line-height: 0.8em}
+.lh_1{line-height: 1em} 
+.lh_13{line-height: 1.3em} 
+.lh_15{line-height: 1.5em} 
+.lh_18{line-height: 1.8em} 
+.lh_20{line-height: 2em} 
+.clear{clear: both;}
+.div_in_td:focus, 
+.co_quan:focus,
+.dia_danh:focus,
+.o_nhap_ngay:focus, .o_nhap_0_5cm:focus, .o_nhap_1cm:focus, .o_nhap_3cm:focus,.o_nhap_0_5cm:focus,.o_nhap_0_5cm:focus {background:#d8eaf9}
+.luachon_ghichu_do :first-child{color:red}
+.o_nhap_thang:focus,.o_nhap_nam, focus{background:#d3eaf9}
+.divtext:focus{background: #d8eaf9}
+.trang:focus{background: #d8eaf9}
+.div2:focus{background:#d8eaf9 }table.khung_chu_ky
+
+
+.ta_center:focus{background: #d8eaf9} .ta_left:focus{background: #d8eaf9}
+.TAB{width: 1cm; display: inline-block;}
+.ghichu{font-size: 10pt; font-style: italic; color: red; display: unset; font-weight: normal; text-transform: unset} select{font-family: Times New Roman; font-size: 18.67px}
+.select_tieude{font-family: Times New Roman; font-size: 16pt; font-weight:bold; text-transform: uppercase}
+.button_print{position: fixed; top: 50px;right: 10px; cursor: pointer;width:45px; height: 45px; text-align: center;background: transparent} .button_save{position: fixed; top:120px; right: 13px; cursor: pointer;width: 40px; height: 40px; background: transparent}
+.button_reload{position: fixed; top:180px;right:7px; cursor: pointer;width:50px; height: 50px; background: transparent} table.khung_chu_ky{width:100%; margin-top: 5px;} I
+table.khung_chu_ky_1ben{width:100%}
+table.khung_chu_ky tr td {font-weight:bold;width: 33%; vertical-align: top}
+table.khung_chu_ky_1ben tr td {font-weight:bold; vertical-align:top; float: right;}
+table tr td {padding-left:5px;padding-right:5px; padding-top: 1px; padding-bottom:1px} .o_nhap_n_dong:focus{background: #d8eaf9}
+.dotted{font-size:9pt}
+.v_align_top{vertical-align:top}
+.hr1{height:1px; background-color: black; border:none;} -ghichu_font15{font-size:16pt; color:red}
+.khung_them_dong{height:2.5cm}
+.lh_5mm {line-height:5mm}
+table tr td .class='tb_tr_td_BA' {padding-left:0px; padding-right:0px}
+.table_mau_pa tr td{padding-top:6px; padding-bottom: 6px; line-height:1.25em} 
+table.table_mau_pa_b tr td{}
+.content_ngang{width:27cm; margin:0 auto}
+*{
+     margin:0; padding:0
+     -webkit-print-color-adjust exact !important;
+}
+.khung_do {
+     font-size: 14px;
+     border: 2px solid red;
+     padding: 8px 12px;
+     display: inline-block;
+     color: black;
+     font-family: Arial, sans-serif;
+   }
+
+/*@page
+{
+size:A4;
+margin:0;
+}
+*/
+
+
+

@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="en" id="bieumau">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>MẪU CĐ5</title>
+<link rel="stylesheet" href="./../styles/style.css">
+<link rel="stylesheet" href="./../styles/cross-platform.css">
+<link rel="stylesheet" href="./../Style/print.css" media="print">
+<script language="javascript" src="./../js/chamdiem.js"></script>
+<script language="javascript" src="./../js/xuongdong.js"></script>
+<script type='text/javascript'>
+function save() {
+  var htmlContent = ['<!DOCTYPE html>', '<html lang="en" id="bieumau">',
+                     document.getElementById('bieumau').innerHTML, '</html>',
+                     '<img src="./../Image/print.png" class="button_print" width="50px" height="50px" onclick="In_bieu_mau();">',
+                     '<img src="./../Image/save.png" class="button_save" width="45px" height="45px" onclick="save()">',
+                     '<img src="./../Image/reload.png" class="button_reload" width="45px" height="45px" onclick="window.location.reload(true);">'].join('\n');
+  var bl = new Blob(htmlContent, {type: "text/html"});
+  var a = document.createElement("a");
+  a.href = URL.createObjectURL(bl);
+  a.download = document.title + ".html";
+  a.hidden = true;
+  document.body.appendChild(a);
+  a.click();
+}
+function In_bieu_mau() {
+  window.print();
+}
+</script>
+</head>
+<body class="font14 ta_jus" onkeyup='cong_diem()'>
+  <div class="wrapper border" >
+    <div class="content_mau_pa">
+      <div class="cq_banhanh_mau_pa f_left ta_center font12">
+        <!--Số: <span class="o_nhap_1cm ta_left border" contenteditable=""></span>/QD <span class="o_nhap_1cm ta_left border" contenteditable=""></span>-->
+      </div>
+      <div class="td_bieumau ta_center f_right lh_08">
+        <span class=" fontBold" style='font-size: 13.3px'>MẪU CĐ5</span><br>
+        <div class='lh_06' style='margin-top:5px'>
+          <span class=" " style='font-size:12px'> Ban hành kèm theo </span> <br>
+          <span class=" " style='font-size:12px'> Thông tư số </span> <br>
+          <span class=" " style='font-size:12px'> 17/2025/TT-BCA </span> <br>
+          <span class=" " style='font-size:12px'> ngày 28/02/2025 </span> <br>
+        </div>
+      </div>
+      <br> <br>
+      <div style="text-align: center;" class="font14 clean">
+        <b>PHIẾU CHẤM ĐIỂM, XẾP LOẠI</b><br>
+        <div style="display: inline-block; text-align: center;">
+          <div class="font13 clean"><b>Công tác cộng tác viên bí mật của lực lượng Cảnh sát nhân dân</b></div>
+          <div style="min-height: 1px; border-top: 1px solid black; width: 2cm; margin: 4px auto 0 auto;"></div>
+        </div>
+      </div>
+      <br>
+      <span class='TAB'></span>Họ và tên: <span class='o_nhap_1cm border' contenteditable style='min-width:500px'></span><br>
+      <span class='TAB'></span>Cấp bậc: <span class='o_nhap_1cm border' contenteditable style='min-width: 200px'></span>
+      <span class='TAB'></span>Chức vụ: <span class='o_nhap_1cm border' contenteditable style='min-width: 200px'></span> <br>
+      <span class= 'TAB'></span>Đơn vị: <span class='o_nhap_thang border' contenteditable style='min-width:400px'></span><br>
+      <span class='TAB'></span>Tên bí danh cộng tác viên bí mật (CTVBM): <span class='o_nhap_1cm border' contenteditable style='min-width:250px'></span><br>
+      <span class='TAB'></span>Loại CTVBM <i>(đặc tình, cộng tác viên danh dự, cơ sở bí mật):</i> <span class='o_nhap_1cm border' contenteditable style='min-width:100px'></span><br>
+      <span class='TAB'></span>Số hồ sơ: <span class='o_nhap_1cm border' contenteditable style='min-width:500px'></span><br>
+      <i><span class='TAB'></span>(Thời gian: Từ ngày <span class="o_nhap_ngay border" contenteditable="">...</span>
+      tháng<span class="o_nhap_thang border" contenteditable="">...</span>
+      năm 20<span class="o_nhap_nam border" contenteditable="">....</span>
+      đến ngày<span class="o_nhap_ngay border" contenteditable="">...</span>
+      tháng<span class="o_nhap_thang border" contenteditable="">...</span>
+      năm 20<span class="o_nhap_nam border" contenteditable="">....)</span></i>
+      <table class='table_mau_pa' style="width: 100%;border: 1px; border-collapse: collapse; border-color: black; border-style:solid; font-size:16px; margin-top:10px";
+      border="1px" cellpadding="0" cellspacing="0" id="Table3" >
+      <tr class=''>
+        <td class="Table_TH font12" style="width: 1.2cm; text-align:center"><b>STT</b></td>
+      <td class="Table TH font12" style="min-width:11.5cm; text-align:center"><b>Nội dung tiêu chí chấm điểm</b></td>
+      <td class="Table_TH font12" style="width: 1.5cm; text-align:center"><b>Mức<br>điểm</b></td>
+      <td class="Table TH font12" style="width: 1.3cm; text-align:center"><b>Cán bộ<br>tự<br>chấm</b></td>
+      <td class="Table_TH font12" style="width: 1.5cm; text-align:center"><b>LĐ, CH <br>phụ trách<br>chấm</b></td>
+      </tr>
+      <tr>
+      <td style="vertical-align:middle; text-align: center" class="font12"><div class="div_in_td" ></div>1</td>
+      <td style="text-align:justify"><div class="div in_td" >Xây dựng CTVBM</div></td>
+      <td style="vertical-align: middle;" class="ta_center font12"><div class="div_in_td" >15</div></td>
+      <td style="vertical-align:middle;"><div class="ta_center font12 diem_cb" id='tong_diem_cb_muc_1' ></div></td>
+      <td style="vertical-align:middle;"><div class="ta_center font12 diem_ch" id='tong_diem_ch_muc_1'></div></td>
+      </tr>
+      <tr>
+        <td style="vertical-align:middle; text-align: center" class="font12"><div class="div_in_td"></div><i>1.1</i></td>
+        <td style="vertical-align: middle;" class="font12" style="text-align:justify"><div class="div_in_td" > <i>CTVBM được xây dựng theo quy hoạch, bảo đảm nguyên tắc, yêu cầu quy định và đúng phân công, phân cấp</i></div></td>
+          <td style="vertical-align: middle;" class="ta_center font12 "><div class="div_in_td" ><i>05</i></div></td>
+          <td style="vertical-align:middle;"><div class="ta_center font12 diem_cb_muc_1" contentEditable ></div></td>
+          <td style="vertical-align:middle;" ><div class="ta_center font12 diem_ch_muc_1" contentEditable ></div></td>
+        </tr>
+        <tr>
+        <td style="vertical-align:middle; text-align: center" class="font12"><div class="div_in_td"></div><i>1.2</i></td>
+        <td style="vertical-align: middle;" class="font12" style="text-align:justify"><div class="div_in_td" > <i>CTVBM bảo đảm điều kiện tuyển chọn theo quy định</i></div></td>
+          <td style="vertical-align: middle;" class="ta_center font12 "><div class="div_in_td" ><i>05</i></div></td>
+          <td style="vertical-align:middle;"><div class="ta_center font12 diem_cb_muc_1" contentEditable ></div></td>
+          <td style="vertical-align:middle;" ><div class="ta_center font12 diem_ch_muc_1" contentEditable ></div></td>
+        </tr>
+        <tr>
+        <td style="vertical-align:middle; text-align: center" class="font12"><div class="div_in_td"></div><i>1.3</i></td>
+        <td style="vertical-align: middle;" class="font12" style="text-align:justify"><div class="div_in_td" > <i>Phương pháp, cách thức xây dựng CTVBM thực hiện đúng quy định</i></div></td>
+          <td style="vertical-align: middle;" class="ta_center font12 "><div class="div_in_td" ><i>05</i></div></td>
+          <td style="vertical-align:middle;"><div class="ta_center font12 diem_cb_muc_1" contentEditable ></div></td>
+          <td style="vertical-align:middle;" ><div class="ta_center font12 diem_ch_muc_1" contentEditable ></div></td>
+        </tr>
+        <tr>
+          <td style="vertical-align:middle; text-align: center" class="font12"><div class="div_in_td" ></div>2</td>
+          <td style="text-align:justify"><div class="div in_td" >Kế hoạch quản lý, sử dụng CTVBM: Bảo đảm đầy đủ, chi tiết các nội dung về xác định tình hình, đặc điểm địa bàn, đối tượng cần trinh sát, điều tra hoặc cần tư vấn; dự kiến các nhiệm vụ giao cho CTVBM hoặc những vấn đề cần CTVBM tư vấn (trường hợp là cộng tác viên danh dự); nội dung hướng dẫn về phương pháp, thời gian thực hiện và cách thức báo cáo, chuyển giao tin tức, tài liệu; các biện pháp quản lý, bảo vệ CTVBM; dự kiến phương án xử lý các trường hợp đột xuất có thể xảy ra trong quá trình quản lý, sử dụng CTVBM; được lãnh đạo có thẩm quyền phê duyệt</div></td>
+          <td style="vertical-align: middle;" class="ta_center font12"><div class="div_in_td" >05</div></td>
+          <td style="vertical-align:middle;"><div class="ta_center font12 diem_cb_muc_2" contentEditable ></div></td>
+          <td style="vertical-align:middle;" ><div class="ta_center font12 diem_ch_muc_2" contentEditable ></div></td>
+          </tr>
+          <td style="vertical-align:middle; text-align: center" class="font12"><div class="div_in_td" ></div>3</td>
+          <td style="text-align:justify"><div class="div in_td" >Sinh hoạt, sử dụng CTVBM</div></td>
+          <td style="vertical-align: middle;" class="ta_center font12"><div class="div_in_td" >30</div></td>
+          <td style="vertical-align:middle;"><div class="ta_center font12 diem cb" id='tong_diem_cb_muc_3' ></div></td>
+          <td style="vertical-align:middle;"><div class="ta_center font12 diem_ch" id='tong_diem_ch_muc_3'></div></td>
+          </tr>
+          <tr>
+            <td style="vertical-align:middle; text-align: center" class="font12"><div class="div_in_td"></div><i>3.1</i></td>
+            <td style="vertical-align: middle;" class="font12" style="text-align:justify"><div class="div_in_td" > <i>Bảo đảm hình thức, địa điểm, thời gian sinh hoạt CTVBM theo quy định (định kỳ hằng tháng đối với đặc tình, cơ sở bí mật; không quá 03 tháng giữa hai lần sinh hoạt đối  với cộng tác viên danh dự)</i></div></td>
+              <td style="vertical-align: middle;" class="ta_center font12 "><div class="div_in_td" ><i>05</i></div></td>
+              <td style="vertical-align:middle;"><div class="ta_center font12 diem_cb_muc_3" contentEditable ></div></td>
+              <td style="vertical-align:middle;" ><div class="ta_center font12 diem_ch_muc_3" contentEditable ></div></td>
+            </tr>
+            <tr>
+              <td style="vertical-align:middle; text-align: center" class="font12"><div class="div_in_td"></div><i>3.2</i></td>
+              <td style="vertical-align: middle;" class="font12" style="text-align:justify"><div class="div_in_td" > <i>Báo cáo kết quả sinh hoạt CTVBM sau mỗi lần sinh hoạt, trong đó báo cáo cụ thể về địa điểm sinh hoạt, nội dung sinh hoạt, nhiệm vụ mới giao cho CTVBM (phù hợp với khả năng, năng lực, sở trường của CTVBM) và số mật phí đã chi phục vụ sinh hoạt; được lãnh đạo có thẩm quyền phê duyệt</i></div></td>
+                <td style="vertical-align: middle;" class="ta_center font12 "><div class="div_in_td" ><i>10</i></div></td>
+                <td style="vertical-align:middle;"><div class="ta_center font12 diem_cb_muc_3" contentEditable ></div></td>
+                <td style="vertical-align:middle;" ><div class="ta_center font12 diem_ch_muc_3" contentEditable ></div></td>
+              </tr>
+              <tr>
+                <td style="vertical-align:middle; text-align: center" class="font12"><div class="div_in_td"></div><i>3.3</i></td>
+                <td style="vertical-align: middle;" class="font12" style="text-align:justify"><div class="div_in_td" > <i>Có hoạt động xác minh, xử lý tin, tài liệu do CTVBM cung cấp theo chỉ đạo và báo cáo kết quả, được lãnh đạo có thẩm quyền phê duyệt</i></div></td>
+                  <td style="vertical-align: middle;" class="ta_center font12 "><div class="div_in_td" ><i>05</i></div></td>
+                  <td style="vertical-align:middle;"><div class="ta_center font12 diem_cb_muc_3" contentEditable ></div></td>
+                  <td style="vertical-align:middle;" ><div class="ta_center font12 diem_ch_muc_3" contentEditable ></div></td>
+                </tr>
+                <tr>
+                  <td style="vertical-align:middle; text-align: center" class="font12"><div class="div_in_td"></div><i>3.4</i></td>
+                  <td style="vertical-align: middle;" class="font12" style="text-align:justify"><div class="div_in_td" > <i>Có hoạt động giáo dục, bồi dưỡng ý thức cảnh giác, giữ bí mật và những kiến thức nghiệp vụ cần thiết, cách thức thực hiện nhiệm vụ cho CTVBM</i></div></td>
+                    <td style="vertical-align: middle;" class="ta_center font12 "><div class="div_in_td" ><i>05</i></div></td>
+                    <td style="vertical-align:middle;"><div class="ta_center font12 diem_cb_muc_3" contentEditable ></div></td>
+                    <td style="vertical-align:middle;" ><div class="ta_center font12 diem_ch_muc_3" contentEditable ></div></td>
+                  </tr>
+                  <tr>
+                    <td style="vertical-align:middle; text-align: center" class="font12"><div class="div_in_td"></div><i>3.5</i></td>
+                    <td style="vertical-align: middle;" class="font12" style="text-align:justify"><div class="div_in_td" > <i>Thực hiện chế độ, chính sách đối với CTVBM theo quy định</i></div></td>
+                      <td style="vertical-align: middle;" class="ta_center font12 "><div class="div_in_td" ><i>05</i></div></td>
+                      <td style="vertical-align:middle;"><div class="ta_center font12 diem_cb_muc_3" contentEditable ></div></td>
+                      <td style="vertical-align:middle;" ><div class="ta_center font12 diem_ch_muc_3" contentEditable ></div></td>
+                    </tr>
+                    <tr>
+    <td style="vertical-align:middle; text-align: center" class="font12"><div class="div_in_td" ></div>4</td>
+    <td style="text-align:justify"><div class="div in_td" >Báo cáo đánh giá, phân loại chất lượng CTVBM theo quy định (bảo đảm thời gian định kỳ 06 tháng một lần), được lãnh đạo có thẩm quyền phê duyệt</div></td>
+    <td style="vertical-align: middle;" class="ta_center font12"><div class="div_in_td" >05</div></td>
+    <td style="vertical-align:middle;"><div class="ta_center font12 diem_cb_muc_4" contentEditable ></div></td>
+    <td style="vertical-align:middle;" ><div class="ta_center font12 diem_ch_muc_4" contentEditable ></div></td>
+  </tr>
+  <tr>
+    <td style="vertical-align:middle; text-align: center" class="font12"><div class="div_in_td" ></div>5</td>
+    <td style="text-align:justify"><div class="div in_td" >Chất lượng, hiệu quả CTVBM</div></td>
+    <td style="vertical-align: middle;" class="ta_center font12"><div class="div_in_td" >35</div></td>
+    <td style="vertical-align:middle;"><div class="ta_center font12 diem cb" id='tong_diem_cb_muc_5' ></div></td>
+    <td style="vertical-align:middle;"><div class="ta_center font12 diem_ch" id='tong_diem_ch_muc_5'></div></td>
+  </tr>
+  <tr>
+    <td style="vertical-align:middle; text-align: center" class="font12"><div class="div_in_td"></div><i>5.1</i></td>
+    <td style="vertical-align: middle;" class="font12" style="text-align:justify"><div class="div_in_td" > <i>Đối với CTVBM là đặc tình, cơ sở bí mật được quản lý, sử dụng từ 6 tháng trở lên thì chất lượng, hiệu quả CTVBM chính là kết quả phân loại chất lượng CTVBM theo định kỳ 06 tháng (kỳ liền kề với thời điểm chẩm điểm, xếp loại) và được tính tương ứng với số điểm như sau: Loại xuất sắc: 35 điểm; loại khá: 20 điểm; loại trung bình: 10 điểm; loại kém: 0 điểm</i></div></td>
+      <td style="vertical-align: middle;" class="ta_center font12 "><div class="div_in_td" ><i>35 <br>hoặc <br>20 <br>hoặc <br>10 <br>hoặc <br>0</i></div></td>
+      <td style="vertical-align:middle;"><div class="ta_center font12 diem_cb_muc_5" contentEditable ></div></td>
+      <td style="vertical-align:middle;" ><div class="ta_center font12 diem_ch_muc_5" contentEditable ></div></td>
+    </tr>
+    <tr>
+      <td style="vertical-align:middle; text-align: center" class="font12"><div class="div_in_td"></div><i>5.2</i></td>
+      <td style="vertical-align: middle;" class="font12" style="text-align:justify"><div class="div_in_td" > <i>Đối với CTVBM là đặc tình, cơ sở bí mật được quản lý, sử dụng dưới 06 tháng đã kết thúc vì lý do không còn yêu cầu sử dụng hoặc hết tác dụng, không còn điều kiện, khả năng hoạt động thì tổ chức phân loại chất lượng CTVBM trong quá trình cộng tác được vận dụng như phân loại chất lượng CTVBM theo định kỳ 06 tháng. Sau đó, lấy kết quả phân loại chất lượng CTVBM tính tương ứng với số điểm như sau: Loại xuất sắc: 35 điểm; loại khá: 20 điểm; loại trung bình: 10 điểm; loại kém: 0 điểm</i></div></td>
+        <td style="vertical-align: middle;" class="ta_center font12 "><div class="div_in_td" ><i>35 <br>hoặc <br>20 <br>hoặc <br>10 <br>hoặc <br>0</i></div></td>
+        <td style="vertical-align:middle;"><div class="ta_center font12 diem_cb_muc_5" contentEditable ></div></td>
+        <td style="vertical-align:middle;" ><div class="ta_center font12 diem_ch_muc_5" contentEditable ></div></td>
+      </tr>
+      <tr>
+        <td style="vertical-align:middle; text-align: center" class="font12"><div class="div_in_td"></div><i>5.3</i></td>
+        <td style="vertical-align: middle;" class="font12" style="text-align:justify"><div class="div_in_td" > <i>Đối với CTVBM là cộng tác viên danh dự: Cháp hành tốt các nguyên tắc, quy định; kịp thời, thường xuyên tư vấn, hoặc hỗ trợ, giúp đỡ lực lượng Cảnh sát nhân dân theo yêu cầu đề nghị: 35 điểm; chấp hành tốt các nguyên tắc, quy định; tư vấn hoặc hỗ trợ, giúp đỡ lực lượng Cảnh sát nhân dân theo yêu cầu đề nghị: 20 điểm; Có ý thức chấp hành các nguyên tắc, quy định; tư vấn hoặc hỗ trợ, giúp đỡ lực lượng Cảnh sát nhân dân theo yêu cầu đề nghị nhưng chất lượng hiệu quả không cao: 10 điểm; 03 tháng không tư vấn hoặc hỗ trợ, giúp đỡ lực lượng Cảnh sát nhân dân theo yêu cầu đề nghị: 0 điểm</i></div></td>
+          <td style="vertical-align: middle;" class="ta_center font12 "><div class="div_in_td" ><i>35 <br>hoặc <br>20 <br>hoặc <br>10 <br>hoặc <br>0</i></div></td>
+          <td style="vertical-align:middle;"><div class="ta_center font12 diem_cb_muc_5" contentEditable ></div></td>
+          <td style="vertical-align:middle;" ><div class="ta_center font12 diem_ch_muc_5" contentEditable ></div></td>
+        </tr>
+        <tr>
+          <td style="vertical-align:middle; text-align: center" class="font12"><div class="div_in_td"></div><i>5.4</i></td>
+          <td style="vertical-align: middle;" class="font12" style="text-align:justify"><div class="div_in_td" > <i>CTVBM có xây dựng, sử dụng vai ảo CTVBM</i></div></td>
+            <td style="vertical-align: middle;" class="ta_center font12 "><div class="div_in_td" ><i>10</i></div></td>
+            <td style="vertical-align:middle;"><div class="ta_center font12 diem_cb_muc_5" contentEditable ></div></td>
+            <td style="vertical-align:middle;" ><div class="ta_center font12 diem_ch_muc_5" contentEditable ></div></td>
+          </tr>
+
+            <tr>
+              <td style="vertical-align:middle; text-align: center" class="font12"><div class="div_in_td" ></div>6</td>
+              <td style="text-align:justify"><div class="div in_td" >Thực hiện công tác hồ sơ</div></td>
+              <td style="vertical-align: middle;" class="ta_center font12"><div class="div_in_td" >10</div></td>
+              <td style="vertical-align:middle;"><div class="ta_center font12 diem_cb_muc_6" contentEditable ></div></td>
+    <td style="vertical-align:middle;" ><div class="ta_center font12 diem_ch_muc_6" contentEditable ></div></td>
+              </tr>
+              <tr>
+                <td style="vertical-align:middle; text-align: center" class="font12"><div class="div_in_td" ></div>7</td>
+                <td style="text-align:justify"><div class="div in_td" >Điểm trừ (-)</div></td>
+                <td style="vertical-align: middle;" class="ta_center font12"><div class="div_in_td" >-100</div></td>
+                <td style="vertical-align:middle;"><div class="ta_center font12 diem cb" id='tong_diem_cb_muc_7' ></div></td>
+                <td style="vertical-align:middle;"><div class="ta_center font12 diem_ch" id='tong_diem_ch_muc_7'></div></td>
+                </tr>
+                <tr>
+
+                  <tr>
+                    <td style="vertical-align:middle; text-align: center" class="font12"><div class="div_in_td"></div><i>7.1</i></td>
+                    <td style="vertical-align: middle;" class="font12" style="text-align:justify"><div class="div_in_td" > <i>CTVBM được xây dựng không theo đúng phân công, phân cấp</i></div></td>
+                      <td style="vertical-align: middle;" class="ta_center font12 "><div class="div_in_td" ><i>-100</i></div></td>
+                      <td style="vertical-align:middle;"><div class="ta_center font12 diem_cb_muc_7" contentEditable ></div></td>
+                      <td style="vertical-align:middle;" ><div class="ta_center font12 diem_ch_muc_7" contentEditable ></div></td>
+                    </tr>
+                    <tr>
+                      <td style="vertical-align:middle; text-align: center" class="font12"><div class="div_in_td"></div><i>7.2</i></td>
+                      <td style="vertical-align: middle;" class="font12" style="text-align:justify"><div class="div_in_td" > <i>CTVBM được xây dựng, sử dụng không đảm bảo nguyên tắc, yêu cầu, phương pháp theo quy định</i></div></td>
+                        <td style="vertical-align: middle;" class="ta_center font12 "><div class="div_in_td" ><i>-100</i></div></td>
+                        <td style="vertical-align:middle;"><div class="ta_center font12 diem_cb_muc_7" contentEditable ></div></td>
+                        <td style="vertical-align:middle;" ><div class="ta_center font12 diem_ch_muc_7" contentEditable ></div></td>
+                      </tr>
+                      <tr>
+                        <td style="vertical-align:middle; text-align: center" class="font12"><div class="div_in_td"></div><i>7.3</i></td>
+                        <td style="vertical-align: middle;" class="font12" style="text-align:justify"><div class="div_in_td" > <i>CTVBM không bảo đảm điều kiện tuyển chọn theo quy định</i></div></td>
+                          <td style="vertical-align: middle;" class="ta_center font12 "><div class="div_in_td" ><i>-100</i></div></td>
+                          <td style="vertical-align:middle;"><div class="ta_center font12 diem_cb_muc_7" contentEditable ></div></td>
+                          <td style="vertical-align:middle;" ><div class="ta_center font12 diem_ch_muc_7" contentEditable ></div></td>
+                        </tr>
+                        <tr>
+                          <td style="vertical-align:middle; text-align: center" class="font12"><div class="div_in_td"></div><i>7.4</i></td>
+                          <td style="vertical-align: middle;" class="font12" style="text-align:justify"><div class="div_in_td" > <i>Nội dung, trình tự kết nạp CTVBM không đúng theo quy định: Trừ 50 điểm. Riêng đối với trường hợp tổ chức kết nạp đặc tình loại 2 hoặc đặc tình loại 3 tại hộp thư bí mật là nơi ở của công dân</i></div></td>
+                            <td style="vertical-align: middle;" class="ta_center font12 "><div class="div_in_td" ><i>-100</i></div></td>
+                            <td style="vertical-align:middle;"><div class="ta_center font12 diem_cb_muc_7" contentEditable ></div></td>
+                            <td style="vertical-align:middle;" ><div class="ta_center font12 diem_ch_muc_7" contentEditable ></div></td>
+                          </tr>
+                          <tr>
+                            <td style="vertical-align:middle; text-align: center" class="font12"><div class="div_in_td"></div><i>7.5</i></td>
+                            <td style="vertical-align: middle;" class="font12" style="text-align:justify"><div class="div_in_td" > <i>Sinh hoạt, liên lạc CTVBM không bảo đảm bí mật, an toàn</i></div></td>
+                              <td style="vertical-align: middle;" class="ta_center font12 "><div class="div_in_td" ><i>-30 <br>điểm/01 <br>lần</i></div></td>
+                              <td style="vertical-align:middle;"><div class="ta_center font12 diem_cb_muc_7" contentEditable ></div></td>
+                              <td style="vertical-align:middle;" ><div class="ta_center font12 diem_ch_muc_7" contentEditable ></div></td>
+                            </tr>
+                            <tr>
+                              <td style="vertical-align:middle; text-align: center" class="font12"><div class="div_in_td"></div><i>7.6</i></td>
+                              <td style="vertical-align: middle;" class="font12" style="text-align:justify"><div class="div_in_td" > <i>Sinh hoạt đặc tình loại 2 mới kết nạp, chưa qua thử thách hoặc đặc tình loại 3 tại hộp thư bí mật là nhà ở của công dân</i></div></td>
+                                <td style="vertical-align: middle;" class="ta_center font12 "><div class="div_in_td" ><i>-30 <br>điểm/01 <br>lần</i></div></td>
+                                <td style="vertical-align:middle;"><div class="ta_center font12 diem_cb_muc_7" contentEditable ></div></td>
+                                <td style="vertical-align:middle;" ><div class="ta_center font12 diem_ch_muc_7" contentEditable ></div></td>
+                              </tr>
+                              <tr>
+                                <td style="vertical-align:middle; text-align: center" class="font12"><div class="div_in_td"></div><i>7.7</i></td>
+                                <td style="vertical-align: middle;" class="font12" style="text-align:justify"><div class="div_in_td" > <i>Sinh hoạt đặc tình là người nước ngoài hoặc đặc tình thường xuyên đi lại qua biên giới, cửa khẩu hoặc đặc tình hoạt động ở khu vực biên giới, cửa khẩu, khu kinh tế mở mà không có lãnh đạo đơn vị trực tiếp cùng tham gia (trừ trường hợp cần thiết để kịp thời giải quyết yêu cầu công tác mà đã được sự đồng ý của lãnh đạo đơn vị trực tiếp)</i></div></td>
+                                  <td style="vertical-align: middle;" class="ta_center font12 "><div class="div_in_td" ><i>-30 <br>điểm/01 <br>lần</i></div></td>
+                                  <td style="vertical-align:middle;"><div class="ta_center font12 diem_cb_muc_7" contentEditable ></div></td>
+                                  <td style="vertical-align:middle;" ><div class="ta_center font12 diem_ch_muc_7" contentEditable ></div></td>
+                                </tr>
+                                <tr>
+                                  <td style="vertical-align:middle; text-align: center" class="font12"><div class="div_in_td"></div><i>7.8</i></td>
+                                  <td style="vertical-align: middle;" class="font12" style="text-align:justify"><div class="div_in_td" > <i>Sinh hoạt CTVBM quá thời hạn tối thiểu theo quy định giữa hai lần sinh hoạt</i></div></td>
+                                    <td style="vertical-align: middle;" class="ta_center font12 "><div class="div_in_td" ><i>-05 <br>điểm/01 <br>lần</i></div></td>
+                                    <td style="vertical-align:middle;"><div class="ta_center font12 diem_cb_muc_7" contentEditable ></div></td>
+                                    <td style="vertical-align:middle;" ><div class="ta_center font12 diem_ch_muc_7" contentEditable ></div></td>
+                                  </tr>
+                                  <tr>
+                                  <td style="vertical-align:middle; text-align: center" class="font12"><div class="div_in_td"></div><i>7.9</i></td>
+                                  <td style="vertical-align: middle;" class="font12" style="text-align:justify"><div class="div_in_td" > <i>Không có hoạt động giáo dục, bồi dưỡng ý thức cảnh giác, giữ bí mật và những kiến thức nghiệp vụ cần thiết, cách thức thực hiện nhiệm vụ cho CTVBM</i></div></td>
+                                    <td style="vertical-align: middle;" class="ta_center font12 "><div class="div_in_td" ><i>-35</i></div></td>
+                                    <td style="vertical-align:middle;"><div class="ta_center font12 diem_cb_muc_7" contentEditable ></div></td>
+                                    <td style="vertical-align:middle;" ><div class="ta_center font12 diem_ch_muc_7" contentEditable ></div></td>
+                                  </tr>
+                              <tr>
+                                  <td style="vertical-align:middle; text-align: center" class="font12"><div class="div_in_td"></div><i>7.10</i></td>
+                                  <td style="vertical-align: middle;" class="font12" style="text-align:justify"><div class="div_in_td" > <i>Không có hoạt động xác minh, xử lý tin, tài liệu do CTVBM cung cấp theo chỉ đạo của lãnh đạo có thẩm quyền</i></div></td>
+                                    <td style="vertical-align: middle;" class="ta_center font12 "><div class="div_in_td" ><i>-05 <br>điểm/01 <br>lần</i></div></td>
+                                    <td style="vertical-align:middle;"><div class="ta_center font12 diem_cb_muc_7" contentEditable ></div></td>
+                                    <td style="vertical-align:middle;" ><div class="ta_center font12 diem_ch_muc_7" contentEditable ></div></td>
+                                  </tr>
+                              <tr>
+                                  <td style="vertical-align:middle; text-align: center" class="font12"><div class="div_in_td"></div><i>7.11</i></td>
+                                  <td style="vertical-align: middle;" class="font12" style="text-align:justify"><div class="div_in_td" > <i>Thực hiện chế độ, chính sách đối với CTVBM trong các lần sinh hoạt không đúng quy định</i></div></td>
+                                    <td style="vertical-align: middle;" class="ta_center font12 "><div class="div_in_td" ><i>-10 <br>điểm/01 <br>lần</i></div></td>
+                                    <td style="vertical-align:middle;"><div class="ta_center font12 diem_cb_muc_7" contentEditable ></div></td>
+                                    <td style="vertical-align:middle;" ><div class="ta_center font12 diem_ch_muc_7" contentEditable ></div></td>
+                                  </tr>
+                              <tr>
+                                  <td style="vertical-align:middle; text-align: center" class="font12"><div class="div_in_td"></div><i>7.12</i></td>
+                                  <td style="vertical-align: middle;" class="font12" style="text-align:justify"><div class="div_in_td" > <i>Báo cáo đánh giá, phân loại chất lượng CTVBM quá thời hạn quy định</i></div></td>
+                                    <td style="vertical-align: middle;" class="ta_center font12 "><div class="div_in_td" ><i>-05 <br>điểm/01 <br>lần</i></div></td>
+                                    <td style="vertical-align:middle;"><div class="ta_center font12 diem_cb_muc_7" contentEditable ></div></td>
+                                    <td style="vertical-align:middle;" ><div class="ta_center font12 diem_ch_muc_7" contentEditable ></div></td>
+                                  </tr>
+                              <tr>
+                                  <td style="vertical-align:middle; text-align: center" class="font12"><div class="div_in_td"></div><i>7.13</i></td>
+                                  <td style="vertical-align: middle;" class="font12" style="text-align:justify"><div class="div_in_td" > <i>Phân loại CTVBM không đúng với chất lượng, hiệu quả thực chất CTVBM</i></div></td>
+                                    <td style="vertical-align: middle;" class="ta_center font12 "><div class="div_in_td" ><i>-35</i></div></td>
+                                    <td style="vertical-align:middle;"><div class="ta_center font12 diem_cb_muc_7" contentEditable ></div></td>
+                                    <td style="vertical-align:middle;" ><div class="ta_center font12 diem_ch_muc_7" contentEditable ></div></td>
+                                  </tr>
+                                 <tr>
+                                  <td style="vertical-align:middle; text-align: center" class="font12"><div class="div_in_td"></div><i>7.14</i></td>
+                                  <td style="vertical-align: middle;" class="font12" style="text-align:justify"><div class="div_in_td" > <i>CTVBM phản bội hoặc trốn ra nước ngoài hoặc lợi dụng hoạt động cộng tác với lực lượng Cảnh sát nhân dân để vi phạm pháp luật</i></div></td>
+                                    <td style="vertical-align: middle;" class="ta_center font12 "><div class="div_in_td" ><i>-100</i></div></td>
+                                    <td style="vertical-align:middle;"><div class="ta_center font12 diem_cb_muc_7" contentEditable ></div></td>
+                                    <td style="vertical-align:middle;" ><div class="ta_center font12 diem_ch_muc_7" contentEditable ></div></td>
+                                  </tr>
+                              <tr>
+                                  <td style="vertical-align:middle; text-align: center" class="font12"><div class="div_in_td"></div><i>7.15</i></td>
+                                  <td style="vertical-align: middle;" class="font12" style="text-align:justify"><div class="div_in_td" > <i>Đặc tình vi phạm pháp luật phải xử lý hình sự (trừ trường hợp đặc tình loại 3): Trừ 50 điểm. Riêng đối với trường hợp rút đặc tình ra khỏi chuyên án vì yêu cầu bảo đảm an toàn, bí mật mà không còn cách nào khác phải xử lý hình sự đặc tình: Trừ 30 điểm</i></div></td>
+                                    <td style="vertical-align: middle;" class="ta_center font12 "><div class="div_in_td" ><i>-50 <br>hoặc <br>-30</i></div></td>
+                                    <td style="vertical-align:middle;"><div class="ta_center font12 diem_cb_muc_7" contentEditable ></div></td>
+                                    <td style="vertical-align:middle;" ><div class="ta_center font12 diem_ch_muc_7" contentEditable ></div></td>
+                                  </tr>
+                              <tr>
+                                  <td style="vertical-align:middle; text-align: center" class="font12"><div class="div_in_td"></div><i>7.16</i></td>
+                                  <td style="vertical-align: middle;" class="font12" style="text-align:justify"><div class="div_in_td" > <i>Cộng tác viên danh dự vi phạm pháp luật đến mức phải xử lý hình sự, đưa đi cơ sở giáo dục, đi cơ sở chữa bệnh bắt buộc</i></div></td>
+                                    <td style="vertical-align: middle;" class="ta_center font12 "><div class="div_in_td" ><i>-50</i></div></td>
+                                    <td style="vertical-align:middle;"><div class="ta_center font12 diem_cb_muc_7" contentEditable ></div></td>
+                                    <td style="vertical-align:middle;" ><div class="ta_center font12 diem_ch_muc_7" contentEditable ></div></td>
+                                  </tr>
+                              <tr>
+                                  <td style="vertical-align:middle; text-align: center" class="font12"><div class="div_in_td"></div><i>7.17</i></td>
+                                  <td style="vertical-align: middle;" class="font12" style="text-align:justify"><div class="div_in_td" > <i>Cơ sở bí mật vi phạm pháp luật đến mức phải xử lý hình sự, đưa đi cơ sở giáo dục, trường giáo dưỡng, cơ sở chữa bệnh bắt buộc</i></div></td>
+                                    <td style="vertical-align: middle;" class="ta_center font12 "><div class="div_in_td" ><i>-50</i></div></td>
+                                    <td style="vertical-align:middle;"><div class="ta_center font12 diem_cb_muc_7" contentEditable ></div></td>
+                                    <td style="vertical-align:middle;" ><div class="ta_center font12 diem_ch_muc_7" contentEditable ></div></td>
+                                  </tr>
+                              <tr>
+                                  <td style="vertical-align:middle; text-align: center" class="font12"><div class="div_in_td"></div><i>7.18</i></td>
+                                  <td style="vertical-align: middle;" class="font12" style="text-align:justify"><div class="div_in_td" > <i>Kết thúc CTVBM không đúng quy định hoặc không kết thúc CTVBM theo quy định</i></div></td>
+                                    <td style="vertical-align: middle;" class="ta_center font12 "><div class="div_in_td" ><i>-100</i></div></td>
+                                    <td style="vertical-align:middle;"><div class="ta_center font12 diem_cb_muc_7" contentEditable ></div></td>
+                                    <td style="vertical-align:middle;" ><div class="ta_center font12 diem_ch_muc_7" contentEditable ></div></td>
+                                  </tr>
+                               
+                                  <tr>
+                                  <td colspan="3" style="vertical-align: middle;text-align: center;" class="font12" ><div class="div_in_td" > <b>Cộng</b></div></td>
+                                  <td style="vertical-align:middle;"><div class="ta_center font12 " id="sum_all_cb" contentEditable ></div></td>
+                                    <td style="vertical-align:middle;" ><div class="ta_center font12 " id="sum_all_ch" contentEditable ></div></td>
+                                </tr>
+          
+                              </table>
+                              <br>
+
+
+                              <div style="margin-left: 1cm;" class="font14 clean"><br>
+                                <b>1. Kết quả chấm điểm, xếp loại do cán bộ tự thực hiện:</b>
+                              
+                                <!-- Khối chứa ngày tháng và "CÁN BỘ" căn phải, nhưng "CÁN BỘ" nằm chính giữa so với nội dung ngày tháng -->
+                                <div style="width: 100%; margin-top: 10px; text-align: right;">
+                                  <div id="ngayThang" style="display: inline-block; text-align: left;">
+                                    <div>
+                                      <i><span class="dia_danh border" contenteditable="">..................</span>,
+                                      ngày <span class="o_nhap_ngay border" contenteditable="">...</span>
+                                      tháng <span class="o_nhap_thang border" contenteditable="">...</span>
+                                      năm 20<span class="o_nhap_nam border" contenteditable="">....</span></i>
+                                    </div>
+                                    <div style="text-align: center; margin-top: 20px;">
+                                      <b>CÁN BỘ</b><br>
+                                      <i class="font12">(Ký, cấp bậc, họ tên)</i>
+                                    </div>
+                                  </div>
+                                </div>
+                              
+                                <!-- Phần nội dung chấm điểm -->
+                                <div style="margin-top: 20px;">
+                                  <div id="tongDiemCb">- Tổng số điểm đạt được: ..................</div>
+                                  <div id="mucXepLoaiCb" style="margin-top: 10px;">- Mức xếp loại: ......................</div>
+                                </div>
+                              </div>
+    <br>
+    <br><br><br><br>
+
+    <div style="margin-left: 1cm;" class="font14 clean"><br>
+      <b>2. Kết quả chấm điểm, xếp loại do lãnh đạo, chỉ huy phụ trách thực hiện:</b>
+    
+      <div style="width: 100%; margin-top: 10px; text-align: right;">
+        <div id="ngayThang" style="display: inline-block; text-align: left;">
+          <div>
+            <i><span class="dia_danh border" contenteditable="">..................</span>,
+            ngày <span class="o_nhap_ngay border" contenteditable="">...</span>
+            tháng <span class="o_nhap_thang border" contenteditable="">...</span>
+            năm 20<span class="o_nhap_nam border" contenteditable="">....</span></i>
+          </div>
+          <div style="text-align: center; margin-top: 20px;">
+           <b>LÃNH ĐẠO, CHỈ HUY PHỤ TRÁCH</b><br>
+            <i class="font12">(Ký, cấp bậc, họ tên, chức vụ)</i>
+          </div>
+        </div>
+      </div>
+    
+      <!-- Phần nội dung chấm điểm -->
+      <div style="margin-top: 20px;">
+        <div id="tongDiemCh">- Tổng số điểm đạt được: ..................</div>
+        <div id="mucXepLoaiCh" style="margin-top: 10px;">- Mức xếp loại: ......................</div>
+      </div>
+    </div>
+    <img src="./../Image/print.png" class="button_print" width="50px" height="50px" onclick="In_bieu_mau();"><br>
+    <img src="./../Image/save.png" class="button_save" width="45px" height="45px" onclick="save()";><br>
+    <img src="./../Image/reload.png" class="button_reload" width="45px" height="45px" onclick="window.location.reload(true);">
+    </body>
+    </html>
+
+
+
+
+
+
+    
+  
+
+
+
+
+  
+  
+
+  
+  
+
+
+
+

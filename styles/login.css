@@ -1,0 +1,47 @@
+/* ===== LOGIN PAGE SPECIFIC STYLES ===== */
+
+body {
+  font-family: Arial, sans-serif;
+  background: url("../images/anh-nen.jpg") no-repeat center center fixed;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+}
+
+.login-form {
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-radius: 15px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+  padding: 40px 30px;
+  width: 360px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  color: white;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.login-form h2 {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.message {
+  margin-top: 15px;
+  text-align: center;
+  font-weight: bold;
+  min-height: 24px;
+}
+
+/* Responsive adjustments for login */
+@media (max-width: 480px) {
+  .login-form {
+    width: 90%;
+    padding: 30px 20px;
+  }
+}

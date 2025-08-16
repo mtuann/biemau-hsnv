@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en" id="bieumau">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>MẪU CĐ3</title>
+<link rel="stylesheet" href="./../styles/style.css">
+<link rel="stylesheet" href="./../styles/cross-platform.css">
+<link rel="stylesheet" href="./../Style/print.css" media="print">
+<script language="javascript" src="./../js/chamdiem.js"></script>
+<script language="javascript" src="./../js/xuongdong.js"></script>
+<script type='text/javascript'>
+function save() {
+  var htmlContent = ['<!DOCTYPE html>', '<html lang="en" id="bieumau">',
+                     document.getElementById('bieumau').innerHTML, '</html>',
+                     '<img src="./../Image/print.png" class="button_print" width="50px" height="50px" onclick="In_bieu_mau();">',
+                     '<img src="./../Image/save.png" class="button_save" width="45px" height="45px" onclick="save()">',
+                     '<img src="./../Image/reload.png" class="button_reload" width="45px" height="45px" onclick="window.location.reload(true);">'].join('\n');
+  var bl = new Blob(htmlContent, {type: "text/html"});
+  var a = document.createElement("a");
+  a.href = URL.createObjectURL(bl);
+  a.download = document.title + ".html";
+  a.hidden = true;
+  document.body.appendChild(a);
+  a.click();
+}
+function In_bieu_mau() {
+  window.print();
+}
+</script>
+</head>
+<body class="font14 ta_jus" onkeyup='cong_diem()'>
+  <div class="wrapper border" >
+    <div class="content_mau_pa">
+      <div class="cq_banhanh_mau_pa f_left ta_center font12">
+        <!--Số: <span class="o_nhap_1cm ta_left border" contenteditable=""></span>/QD <span class="o_nhap_1cm ta_left border" contenteditable=""></span>-->
+      </div>
+      <div class="td_bieumau ta_center f_right lh_08">
+        <span class=" fontBold" style='font-size: 13.3px'>MẪU CĐ3</span><br>
+        <div class='lh_06' style='margin-top:5px'>
+          <span class=" " style='font-size:12px'> Ban hành kèm theo </span> <br>
+          <span class=" " style='font-size:12px'> Thông tư số </span> <br>
+          <span class=" " style='font-size:12px'> 17/2025/TT-BCA </span> <br>
+          <span class=" " style='font-size:12px'> ngày 28/02/2025 </span> <br>
+        </div>
+      </div>
+      <br> <br>
+      <div style="text-align: center;" class="font14 clean">
+        <b>PHIẾU CHẤM ĐIỂM, XẾP LOẠI</b><br>
+        <div style="display: inline-block; text-align: center;">
+          <div class="font13 clean"><b>Công tác hiềm nghi của lực lượng Cảnh sát nhân dân</b></div>
+          <div style="min-height: 1px; border-top: 1px solid black; width: 2cm; margin: 4px auto 0 auto;"></div>
+        </div>
+      </div>
+      <br>
+      <span class='TAB'></span>Họ và tên: <span class='o_nhap_1cm border' contenteditable style='min-width:500px'></span><br>
+      <span class='TAB'></span>Cấp bậc: <span class='o_nhap_1cm border' contenteditable style='min-width: 200px'></span>
+      <span class='TAB'></span>Chức vụ: <span class='o_nhap_1cm border' contenteditable style='min-width: 200px'></span> <br>
+      <span class= 'TAB'></span>Đơn vị: <span class='o_nhap_thang border' contenteditable style='min-width:400px'></span><br>
+      <span class='TAB'></span>Tên đối tượng hiềm nghi (HN) chủ trì: <span class='o_nhap_1cm border' contenteditable style='min-width:300px'></span><br>
+      <span class='TAB'></span>Loại đối tượng HN <i>(cá nhân; tổ chức; việc, hiện tượng):</i><span class='o_nhap_1cm border' contenteditable style='min-width:180px'></span><br>
+      <span class='TAB'></span>Số hồ sơ: <span class='o_nhap_1cm border' contenteditable style='min-width:500px'></span><br>
+      <i><span class='TAB'></span>(Thời gian: Từ ngày <span class="o_nhap_ngay border" contenteditable="">...</span>
+      tháng<span class="o_nhap_thang border" contenteditable="">...</span>
+      năm 20<span class="o_nhap_nam border" contenteditable="">....</span>
+      đến ngày<span class="o_nhap_ngay border" contenteditable="">...</span>
+      tháng<span class="o_nhap_thang border" contenteditable="">...</span>
+      năm 20<span class="o_nhap_nam border" contenteditable="">....)</span></i>
+      <table class='table_mau_pa' style="width: 100%;border: 1px; border-collapse: collapse; border-color: black; border-style:solid; font-size:16px; margin-top:10px";
+      border="1px" cellpadding="0" cellspacing="0" id="Table3" >
+      <tr class=''>
+        <td class="Table_TH font12" style="width: 1.2cm; text-align:center"><b>STT</b></td>
+      <td class="Table TH font12" style="min-width:6cm; text-align:center"><b>Nội dung tiêu chí chấm điểm</b></td>
+      <td class="Table_TH font12" style="width: 1.5cm; text-align:center"><b>Mức<br>điểm</b></td>
+      <td class="Table TH font12" style="width: 1.9cm; text-align:center"><b>Cán bộ<br>tự<br>chấm</b></td>
+      <td class="Table_TH font12" style="width: 2cm; text-align:center"><b>LĐ, CH <br>phụ trách<br>chấm</b></td>
+      </tr>
+      <tr>
+      <td style="vertical-align:middle; text-align: center" class="font12"><div class="div_in_td" ></div>1</td>
+      <td style="text-align:justify"><div class="div in_td" >Xác lập HN</div></td>
+      <td style="vertical-align: middle;" class="ta_center font12"><div class="div_in_td" >10</div></td>
+      <td style="vertical-align:middle;"><div class="ta_center font12 diem_cb" id='tong_diem_cb_muc_1' ></div></td>
+      <td style="vertical-align:middle;"><div class="ta_center font12 diem_ch" id='tong_diem_ch_muc_1'></div></td>
+      </tr>
+      <tr>
+        <td style="vertical-align:middle; text-align: center" class="font12"><div class="div_in_td"></div><i>1.1</i></td>
+        <td style="vertical-align: middle;" class="font12" style="text-align:justify"><div class="div_in_td" > <i>Thu thập đủ thông tin, tài liệu làm căn cứ để xác lập HN đúng quy định, đúng phân công, phân cấp</i></div></td>
+          <td style="vertical-align: middle;" class="ta_center font12 "><div class="div_in_td" ><i>05</i></div></td>
+          <td style="vertical-align:middle;"><div class="ta_center font12 diem_cb_muc_1" contentEditable ></div></td>
+          <td style="vertical-align:middle;" ><div class="ta_center font12 diem_ch_muc_1" contentEditable ></div></td>
+        </tr>
+        <tr>
+        <td style="vertical-align:middle; text-align: center" class="font12"><div class="div_in_td"></div><i>1.2</i></td>
+        <td style="vertical-align: middle;" class="font12" style="text-align:justify"><div class="div_in_td" > <i>Báo cáo đề xuất xác lập HN, quyết định xác lập HN, được lãnh đạo có thẩm quyền phê duyệt</i></div></td>
+          <td style="vertical-align: middle;" class="ta_center font12 "><div class="div_in_td" ><i>05</i></div></td>
+          <td style="vertical-align:middle;"><div class="ta_center font12 diem_cb_muc_1" contentEditable ></div></td>
+          <td style="vertical-align:middle;" ><div class="ta_center font12 diem_ch_muc_1" contentEditable ></div></td>
+        </tr>
+        <tr>
+          <td style="vertical-align:middle; text-align: center" class="font12"><div class="div_in_td" ></div>2</td>
+          <td style="text-align:justify"><div class="div in_td" >Kế hoạch xác minh HN: Bảo đảm đầy đủ, cụ thể hóa các nội dung về mục đích, yêu cầu, nội dung, phương pháp (biện pháp), thời gian thực hiện, tổ chức thực hiện sát hợp với đối tượng HN (cá nhân, tổ chức hoặc việc, hiện tượng); được lãnh đạo có thẩm quyền phê duyệt</div></td>
+          <td style="vertical-align: middle;" class="ta_center font12"><div class="div_in_td" >10</div></td>
+          <td style="vertical-align:middle;"><div class="ta_center font12 diem_cb_muc_2" contentEditable ></div></td>
+          <td style="vertical-align:middle;" ><div class="ta_center font12 diem_ch_muc_2" contentEditable ></div></td>
+          </tr>
+          <tr>
+          <td style="vertical-align:middle; text-align: center" class="font12"><div class="div_in_td" ></div>3</td>
+          <td style="text-align:justify"><div class="div in_td" >Triển khai kế hoạch xác minh HN đối tượng</div></td>
+          <td style="vertical-align: middle;" class="ta_center font12"><div class="div_in_td" >30</div></td>
+          <td style="vertical-align:middle;"><div class="ta_center font12 diem cb" id='tong_diem_cb_muc_3' ></div></td>
+          <td style="vertical-align:middle;"><div class="ta_center font12 diem_ch" id='tong_diem_ch_muc_3'></div></td>
+          </tr>
+          <tr>
+            <td style="vertical-align:middle; text-align: center" class="font12"><div class="div_in_td"></div><i>3.1</i></td>
+            <td style="vertical-align: middle;" class="font12" style="text-align:justify"><div class="div_in_td" > <i>Tổ chức triển khai thực hiện đầy đủ các nội dung, biện pháp xác minh HN theo kế hoạch và quy định</i></div></td>
+              <td style="vertical-align: middle;" class="ta_center font12 "><div class="div_in_td" ><i>10</i></div></td>
+              <td style="vertical-align:middle;"><div class="ta_center font12 diem_cb_muc_3" contentEditable ></div></td>
+              <td style="vertical-align:middle;" ><div class="ta_center font12 diem_ch_muc_3" contentEditable ></div></td>
+            </tr>
+            <tr>
+              <td style="vertical-align:middle; text-align: center" class="font12"><div class="div_in_td"></div><i>3.2</i></td>
+              <td style="vertical-align: middle;" class="font12" style="text-align:justify"><div class="div_in_td" > <i>Xây dựng, sử dụng được cộng tác viên bí mật phục vụ xác minh HN có hiệu quả hoặc có áp dụng một trong các biện pháp trinh sát nội tuyến, ngoại tuyến, kỹ thuật nghiệp vụ phục vụ xác minh HN</i></div></td>
+                <td style="vertical-align: middle;" class="ta_center font12 "><div class="div_in_td" ><i>10</i></div></td>
+                <td style="vertical-align:middle;"><div class="ta_center font12 diem_cb_muc_3" contentEditable ></div></td>
+                <td style="vertical-align:middle;" ><div class="ta_center font12 diem_ch_muc_3" contentEditable ></div></td>
+              </tr>
+              <tr>
+                <td style="vertical-align:middle; text-align: center" class="font12"><div class="div_in_td"></div><i>3.3</i></td>
+                <td style="vertical-align: middle;" class="font12" style="text-align:justify"><div class="div_in_td" > <i>Thời gian xác minh HN đúng quy định</i></div></td>
+                  <td style="vertical-align: middle;" class="ta_center font12 "><div class="div_in_td" ><i>10</i></div></td>
+                  <td style="vertical-align:middle;"><div class="ta_center font12 diem_cb_muc_3" contentEditable ></div></td>
+                  <td style="vertical-align:middle;" ><div class="ta_center font12 diem_ch_muc_3" contentEditable ></div></td>
+                </tr>
+      <tr>
+      <td style="vertical-align:middle; text-align: center" class="font12"><div class="div_in_td" ></div>4</td>
+      <td style="text-align:justify"><div class="div in_td" >Kết quả xác minh HN</div></td>
+      <td style="vertical-align: middle;" class="ta_center font12"><div class="div_in_td" >40</div></td>
+      <td style="vertical-align:middle;"><div class="ta_center font12 diem_cb_muc_4" contentEditable ></div></td>
+      <td style="vertical-align:middle;" ><div class="ta_center font12 diem_ch_muc_4" contentEditable ></div></td>
+      </tr>
+      <tr>
+      <td style="vertical-align:middle; text-align: center" class="font12"><div class="div_in_td" ></div>4.1</td>
+      <td style="text-align:justify"><div class="div in_td" ><i>Xác lập được chuyên án để đấu tranh hoặc đề nghị xác lập chuyên án hoặc nhập vào chuyên án đang đấu tranh</i></div></td>
+      <td style="vertical-align: middle;" class="ta_center font12"><div class="div_in_td" ><i>40</i></div></td>
+      <td style="vertical-align:middle;"><div class="ta_center font12 diem_cb_muc_4" contentEditable ></div></td>
+      <td style="vertical-align:middle;" ><div class="ta_center font12 diem_ch_muc_4" contentEditable ></div></td>
+      </tr>
+      <tr>
+      <td style="vertical-align:middle; text-align: center" class="font12"><div class="div_in_td" ></div>4.2</td>
+      <td style="text-align:justify"><div class="div in_td" ><i>Đủ tài liệu, chứng cứ để chứng minh tội phạm và chuyển khởi tố vụ án/bị can hoặc trực tiếp khởi tố vụ án/bị can</i></div></td>
+      <td style="vertical-align: middle;" class="ta_center font12"><div class="div_in_td" ><i>40</i></div></td>
+      <td style="vertical-align:middle;"><div class="ta_center font12 diem_cb_muc_4" contentEditable ></div></td>
+      <td style="vertical-align:middle;" ><div class="ta_center font12 diem_ch_muc_4" contentEditable ></div></td>
+      </tr>
+      <tr>
+      <td style="vertical-align:middle; text-align: center" class="font12"><div class="div_in_td" ></div>4.3</td>
+      <td style="text-align:justify"><div class="div in_td" ><i>Đủ tài liệu, chứng cứ về hành vi vi phạm pháp luật của đối tượng nhưng chưa đến mức truy cứu trách nhiệm hình sự, chuyển xử lý vi phạm hành chính</i></div></td>
+      <td style="vertical-align: middle;" class="ta_center font12"><div class="div_in_td" ><i>20</i></div></td>
+      <td style="vertical-align:middle;"><div class="ta_center font12 diem_cb_muc_4" contentEditable ></div></td>
+      <td style="vertical-align:middle;" ><div class="ta_center font12 diem_ch_muc_4" contentEditable ></div></td>
+      </tr>
+      <tr>
+      <td style="vertical-align:middle; text-align: center" class="font12"><div class="div_in_td" ></div>4.4</td>
+      <td style="text-align:justify"><div class="div in_td" ><i>Loại khỏi HN do không có hoạt động phạm tội nhưng có thông tin, tài liệu làm rõ được đối tượng có những hành vi vi phạm pháp luật khác với căn cứ xác lập hiềm nghi và chuyển giao cho cơ quan, đơn vị có thẩm quyền xử lý</i></div></td>
+      <td style="vertical-align: middle;" class="ta_center font12"><div class="div_in_td" ><i>10</i></div></td>
+      <td style="vertical-align:middle;"><div class="ta_center font12 diem_cb_muc_4" contentEditable ></div></td>
+      <td style="vertical-align:middle;" ><div class="ta_center font12 diem_ch_muc_4" contentEditable ></div></td>
+      </tr>
+      <tr>
+      <td style="vertical-align:middle; text-align: center" class="font12"><div class="div_in_td" ></div>4.5</td>
+      <td style="text-align:justify"><div class="div in_td" ><i>Loại khỏi HN việc, hiện tượng do xác minh đối tượng không còn dấu hiệu hiềm nghi nhưng đã phát hiện, thu thập đủ thông tin, tài liệu làm căn cứ đưa được một hoặc một số đối tượng có liên quan trong hiềm nghi vào sưu tra</i></div></td>
+      <td style="vertical-align: middle;" class="ta_center font12"><div class="div_in_td" ><i>10</i></div></td>
+      <td style="vertical-align:middle;"><div class="ta_center font12 diem_cb_muc_4" contentEditable ></div></td>
+      <td style="vertical-align:middle;" ><div class="ta_center font12 diem_ch_muc_4" contentEditable ></div></td>
+      </tr>
+      <tr>
+      <td style="vertical-align:middle; text-align: center" class="font12"><div class="div_in_td" ></div>4.6</td>
+      <td style="text-align:justify"><div class="div in_td" ><i>Kết thúc HN về người (cá nhân) trong trường hợp đang xác minh HN thì đối tượng HN chết</i></div></td>
+      <td style="vertical-align: middle;" class="ta_center font12"><div class="div_in_td" ><i>10</i></div></td>
+      <td style="vertical-align:middle;"><div class="ta_center font12 diem_cb_muc_4" contentEditable ></div></td>
+      <td style="vertical-align:middle;" ><div class="ta_center font12 diem_ch_muc_4" contentEditable ></div></td>
+      </tr>
+      <tr>
+      <td style="vertical-align:middle; text-align: center" class="font12"><div class="div_in_td" ></div>5</td>
+      <td style="text-align:justify"><div class="div in_td" >Thực hiện công tác hồ sơ</div></td>
+      <td style="vertical-align: middle;" class="ta_center font12"><div class="div_in_td" >10</div></td>
+      <td style="vertical-align:middle;"><div class="ta_center font12 diem_cb_muc_5" contentEditable ></div></td>
+      <td style="vertical-align:middle;" ><div class="ta_center font12 diem_ch_muc_5" contentEditable ></div></td>
+      </tr>
+      <tr>
+      <td style="vertical-align:middle; text-align: center" class="font12"><div class="div_in_td" ></div>6</td>
+      <td style="text-align:justify"><div class="div in_td" >Điểm trừ (-)</div></td>
+      <td style="vertical-align: middle;" class="ta_center font12"><div class="div_in_td" >-100</div></td>
+      <td style="vertical-align:middle;"><div class="ta_center font12 diem cb" id='tong_diem_cb_muc_6' ></div></td>
+      <td style="vertical-align:middle;"><div class="ta_center font12 diem_ch" id='tong_diem_ch_muc_6'></div></td>
+      </tr>
+      <tr>
+               
+      <tr>
+      <td style="vertical-align:middle; text-align: center" class="font12"><div class="div_in_td"></div><i>6.1</i></td>
+      <td style="vertical-align: middle;" class="font12" style="text-align:justify"><div class="div_in_td" > <i>Xác lập HN không đúng quy định (không đúng đối tượng; chưa đủ thông tin, tài liệu làm căn cứ)</i></div></td>
+      <td style="vertical-align: middle;" class="ta_center font12 "><div class="div_in_td" ><i>-100</i></div></td>
+      <td style="vertical-align:middle;"><div class="ta_center font12 diem_cb_muc_6" contentEditable ></div></td>
+      <td style="vertical-align:middle;" ><div class="ta_center font12 diem_ch_muc_6" contentEditable ></div></td>
+      </tr>
+      <tr>
+      <td style="vertical-align:middle; text-align: center" class="font12"><div class="div_in_td"></div><i>6.2</i></td>
+      <td style="vertical-align: middle;" class="font12" style="text-align:justify"><div class="div_in_td" > <i>Xác lập HN không đúng phân công, phân cấp</i></div></td>
+      <td style="vertical-align: middle;" class="ta_center font12 "><div class="div_in_td" ><i>-50</i></div></td>
+      <td style="vertical-align:middle;"><div class="ta_center font12 diem_cb_muc_6" contentEditable ></div></td>
+      <td style="vertical-align:middle;" ><div class="ta_center font12 diem_ch_muc_6" contentEditable ></div></td>
+      </tr>
+      <tr>
+      <td style="vertical-align:middle; text-align: center" class="font12"><div class="div_in_td"></div><i>6.3</i></td>
+      <td style="vertical-align: middle;" class="font12" style="text-align:justify"><div class="div_in_td" > <i>Đối tượng HN về người (cá nhân) bị đơn vị khác trong ngành Công an bắt, xử lý hình sự về hành vi phạm tội thuộc chức năng, nhiệm vụ của đơn vị (trừ trường hợp đã có sự phối hợp giữa hai đơn vị trước khi bắt, xử lý hoặc đối tượng bị bắt ở ngoài địa bàn quản lý của đơn vị lập hồ sơ xác minh HN) thì căn cứ vào tính chất và mức độ hành vi phạm tội của đối tượng để trừ điểm: Phạm tội ít nghiêm trọng: Trừ 25 điểm; phạm tội nghiêm trọng: Trừ 50 điểm; Phạm tội rất nghiêm trọng: Trừ 75 điểm; Phạm tội đặc biệt nghiêm trọng: Trừ 100 điểm</i></div></td>
+      <td style="vertical-align: middle;" class="ta_center font12 "><div class="div_in_td" ><i>-25 <br> hoặc <br>  -50 <br> hoặc <br>-75 <br> hoặc <br>-100</i></div></td>
+      <td style="vertical-align:middle;"><div class="ta_center font12 diem_cb_muc_6" contentEditable ></div></td>
+      <td style="vertical-align:middle;" ><div class="ta_center font12 diem_ch_muc_6" contentEditable ></div></td>
+      </tr>
+      <tr>
+      <td style="vertical-align:middle; text-align: center" class="font12"><div class="div_in_td"></div><i>6.4</i></td>
+      <td style="vertical-align: middle;" class="font12" style="text-align:justify"><div class="div_in_td" > <i>Thời hạn xác minh HN không đúng quy định</i></div></td>
+      <td style="vertical-align: middle;" class="ta_center font12 "><div class="div_in_td" ><i>-30</i></div></td>
+      <td style="vertical-align:middle;"><div class="ta_center font12 diem_cb_muc_6" contentEditable ></div></td>
+      <td style="vertical-align:middle;" ><div class="ta_center font12 diem_ch_muc_6" contentEditable ></div></td>
+      </tr>
+      <tr>
+      <td style="vertical-align:middle; text-align: center" class="font12"><div class="div_in_td"></div><i>6.5</i></td>
+      <td style="vertical-align: middle;" class="font12" style="text-align:justify"><div class="div_in_td" > <i>Kết thúc HN không đúng quy định hoặc không kết thúc HN theo quy định</i></div></td>
+      <td style="vertical-align: middle;" class="ta_center font12 "><div class="div_in_td" ><i>-100</i></div></td>
+      <td style="vertical-align:middle;"><div class="ta_center font12 diem_cb_muc_6" contentEditable ></div></td>
+      <td style="vertical-align:middle;" ><div class="ta_center font12 diem_ch_muc_6" contentEditable ></div></td>
+      </tr>
+      <tr>
+      <td colspan="3" style="vertical-align: middle;text-align: center;" class="font12" ><div class="div_in_td" > <b>Cộng</b></div></td>
+      <td style="vertical-align:middle;"><div class="ta_center font12 " id="sum_all_cb" contentEditable ></div></td>
+      <td style="vertical-align:middle;" ><div class="ta_center font12 " id="sum_all_ch" contentEditable ></div></td>
+      </tr>
+          
+      </table>
+      <br>
+      <div style="margin-left: 1cm;" class="font14 clean"><br>
+        <b>1. Kết quả chấm điểm, xếp loại do cán bộ tự thực hiện:</b>
+        <div style="width: 100%; margin-top: 10px; text-align: right;">
+          <div id="ngayThang" style="display: inline-block; text-align: left;">
+            <div>
+              <i><span class="dia_danh border" contenteditable="">..................</span>,
+              ngày <span class="o_nhap_ngay border" contenteditable="">...</span>
+              tháng <span class="o_nhap_thang border" contenteditable="">...</span>
+              năm 20<span class="o_nhap_nam border" contenteditable="">....</span></i>
+            </div>
+            <div style="text-align: center; margin-top: 20px;">
+              <b>CÁN BỘ</b><br>
+              <i class="font12">(Ký, cấp bậc, họ tên)</i>
+            </div>
+          </div>
+        </div>
+        <div style="margin-top: 20px;">
+          <div id="tongDiemCb">- Tổng số điểm đạt được: ..................</div>
+          <div id="mucXepLoaiCb" style="margin-top: 10px;">- Mức xếp loại: ......................</div>
+        </div>
+      </div>
+      <br><br><br><br>
+      <div style="margin-left: 1cm;" class="font14 clean"><br>
+        <b>2. Kết quả chấm điểm, xếp loại do lãnh đạo, chỉ huy phụ trách thực hiện:</b>
+        <div style="width: 100%; margin-top: 10px; text-align: right;">
+          <div id="ngayThang" style="display: inline-block; text-align: left;">
+            <div>
+              <i><span class="dia_danh border" contenteditable="">..................</span>,
+              ngày <span class="o_nhap_ngay border" contenteditable="">...</span>
+              tháng <span class="o_nhap_thang border" contenteditable="">...</span>
+              năm 20<span class="o_nhap_nam border" contenteditable="">....</span></i>
+            </div>
+            <div style="text-align: center; margin-top: 20px;">
+              <b>LÃNH ĐẠO, CHỈ HUY PHỤ TRÁCH</b><br>
+              <i class="font12">(Ký, cấp bậc, họ tên, chức vụ)</i>
+            </div>
+          </div>
+        </div>
+        <div style="margin-top: 20px;">
+          <div id="tongDiemCh">- Tổng số điểm đạt được: ..................</div>
+          <div id="mucXepLoaiCh" style="margin-top: 10px;">- Mức xếp loại: ......................</div>
+        </div>
+      </div>
+      <img src="./../Image/print.png" class="button_print" width="50px" height="50px" onclick="In_bieu_mau();"><br>
+      <img src="./../Image/save.png" class="button_save" width="45px" height="45px" onclick="save()";><br>
+      <img src="./../Image/reload.png" class="button_reload" width="45px" height="45px" onclick="window.location.reload(true);">
+    </div>
+  </div>
+</body>
+</html>
+
+
+
+
+
+
+    
+  
+
+
+
+
+  
+  
+
+  
+  
+
+
+
+

@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en" id="bieumau">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>MẪU CĐ7</title>
+<link rel="stylesheet" href="./../styles/style.css">
+<link rel="stylesheet" href="./../styles/cross-platform.css">
+<link rel="stylesheet" href="./../styles/print.css" media="print">
+<script language="javascript" src="./../js/chamdiem.js"></script>
+<script language="javascript" src="./../js/xuong-dong.js"></script>
+<script type='text/javascript'>
+function save() {
+  var htmlContent = ['<!DOCTYPE html>', '<html lang="en" id="bieumau">',
+                     document.getElementById('bieumau').innerHTML, '</html>',
+                     '<img src="./../images/print.png" class="button_print" width="50px" height="50px" onclick="In_bieu_mau();">',
+                     '<img src="./../images/save.png" class="button_save" width="45px" height="45px" onclick="save()">',
+                     '<img src="./../images/reload.png" class="button_reload" width="45px" height="45px" onclick="window.location.reload(true);">'].join('\n');
+  var bl = new Blob(htmlContent, {type: "text/html"});
+  var a = document.createElement("a");
+  a.href = URL.createObjectURL(bl);
+  a.download = document.title + ".html";
+  a.hidden = true;
+  document.body.appendChild(a);
+  a.click();
+}
+function In_bieu_mau() {
+  window.print();
+}
+</script>
+</head>
+<body class="font14 ta_jus" onkeyup='cong_diem()'>
+  <div class="wrapper border" >
+    <div class="content_mau_pa">
+      <div class="cq_banhanh_mau_pa f_left ta_center font12">
+        <!--Số: <span class="o_nhap_1cm ta_left border" contenteditable=""></span>/QD <span class="o_nhap_1cm ta_left border" contenteditable=""></span>-->
+      </div>
+      <div class="td_bieumau ta_center f_right lh_08">
+        <span class=" fontBold" style='font-size: 13.3px'>MẪU CĐ7</span><br>
+        <div class='lh_06' style='margin-top:5px'>
+          <span class=" " style='font-size:12px'> Ban hành kèm theo </span> <br>
+          <span class=" " style='font-size:12px'> Thông tư số </span> <br>
+          <span class=" " style='font-size:12px'> 17/2025/TT-BCA </span> <br>
+          <span class=" " style='font-size:12px'> ngày 28/02/2025 </span> <br>
+        </div>
+      </div>
+      <br> <br>
+      <div style="text-align: center;" class="font14 clean">
+        <b>PHIẾU CHẤM ĐIỂM, XẾP LOẠI</b><br>
+        <div style="display: inline-block; text-align: center;">
+          <div class="font13 clean"><b>Công tác hộp thư bí mật của lực lượng Cảnh sát nhân dân</b></div>
+          <div style="min-height: 1px; border-top: 1px solid black; width: 2cm; margin: 4px auto 0 auto;"></div>
+        </div>
+      </div>
+      <br>
+      <span class='TAB'></span>Họ và tên: <span class='o_nhap_1cm border' contenteditable style='min-width:500px'></span><br>
+      <span class='TAB'></span>Cấp bậc: <span class='o_nhap_1cm border' contenteditable style='min-width: 200px'></span>
+      <span class='TAB'></span>Chức vụ: <span class='o_nhap_1cm border' contenteditable style='min-width: 200px'></span> <br>
+      <span class= 'TAB'></span>Đơn vị: <span class='o_nhap_thang border' contenteditable style='min-width:400px'></span><br>
+      <span class='TAB'></span>Tên hộp thư bí mật (HTBM): <span class='o_nhap_1cm border' contenteditable style='min-width:250px'></span><br>
+      <span class='TAB'></span>Số hồ sơ: <span class='o_nhap_1cm border' contenteditable style='min-width:500px'></span><br>
+      <i><span class='TAB'></span>(Thời gian: Từ ngày <span class="o_nhap_ngay border" contenteditable="">...</span>
+      tháng<span class="o_nhap_thang border" contenteditable="">...</span>
+      năm 20<span class="o_nhap_nam border" contenteditable="">....</span>
+      đến ngày<span class="o_nhap_ngay border" contenteditable="">...</span>
+      tháng<span class="o_nhap_thang border" contenteditable="">...</span>
+      năm 20<span class="o_nhap_nam border" contenteditable="">....)</span></i>
+      <table class='table_mau_pa' style="width: 100%;border: 1px; border-collapse: collapse; border-color: black; border-style:solid; font-size:16px; margin-top:10px";
+      border="1px" cellpadding="0" cellspacing="0" id="Table3" >
+      <tr class=''>
+  <td class="Table_TH font12" style="width: 1.2cm; text-align:center"><b>STT</b></td>
+<td class="Table TH font12" style="min-width:11.5cm; text-align:center"><b>Nội dung tiêu chí chấm điểm</b></td> 
+<td class="Table_TH font12" style="width: 1.5cm; text-align:center"><b>Mức<br>điểm</b></td> 
+<td class="Table TH font12" style="width: 1.3cm; text-align:center"><b>Cán bộ<br>tự<br>chấm</b></td>
+<td class="Table_TH font12" style="width: 1.5cm; text-align:center"><b>LĐ, CH <br>phụ trách<br>chấm</b></td> 
+</tr>
+<tr>
+<td style="vertical-align:middle; text-align: center" class="font12"><div class="div_in_td" ></div>1</td> 
+<td style="text-align:justify"><div class="div in_td" >Xây dựng HTBM</div></td>
+<td style="vertical-align: middle;" class="ta_center font12"><div class="div_in_td" >35</div></td>
+<td style="vertical-align:middle;"><div class="ta_center font12 diem_cb" id='tong_diem_cb_muc_1' ></div></td> 
+<td style="vertical-align:middle;"><div class="ta_center font12 diem_ch" id='tong_diem_ch_muc_1'></div></td>
+</tr>
+<tr>
+  <td style="vertical-align:middle; text-align: center" class="font12"><div class="div_in_td"></div><i>1.1</i></td> 
+  <td style="vertical-align: middle;" class="font12" style="text-align:justify"><div class="div_in_td" > <i>HTBM được xây dựng theo quy định, xuất phát từ yêu cầu phục vụ công tác xây dựng, sử dụng cộng tác viên bí mật và theo đúng phân công, phân cấp</i></div></td> 
+    <td style="vertical-align: middle;" class="ta_center font12 "><div class="div_in_td" ><i>05</i></div></td> 
+    <td style="vertical-align:middle;"><div class="ta_center font12 diem_cb_muc_1" contentEditable ></div></td> 
+    <td style="vertical-align:middle;" ><div class="ta_center font12 diem_ch_muc_1" contentEditable ></div></td> 
+  </tr>
+  <tr>
+  <td style="vertical-align:middle; text-align: center" class="font12"><div class="div_in_td"></div><i>1.2</i></td> 
+  <td style="vertical-align: middle;" class="font12" style="text-align:justify"><div class="div_in_td" > <i>HTBM bảo đảm điều kiện theo quy định</i></div></td> 
+    <td style="vertical-align: middle;" class="ta_center font12 "><div class="div_in_td" ><i>15</i></div></td> 
+    <td style="vertical-align:middle;"><div class="ta_center font12 diem_cb_muc_1" contentEditable ></div></td> 
+    <td style="vertical-align:middle;" ><div class="ta_center font12 diem_ch_muc_1" contentEditable ></div></td> 
+  </tr>
+  <tr>
+  <td style="vertical-align:middle; text-align: center" class="font12"><div class="div_in_td"></div><i>1.3</i></td> 
+  <td style="vertical-align: middle;" class="font12" style="text-align:justify"><div class="div_in_td" > <i>Người quản lý HTBM bảo đảm yêu cầu theo quy định</i></div></td> 
+    <td style="vertical-align: middle;" class="ta_center font12 "><div class="div_in_td" ><i>05</i></div></td> 
+    <td style="vertical-align:middle;"><div class="ta_center font12 diem_cb_muc_1" contentEditable ></div></td> 
+    <td style="vertical-align:middle;" ><div class="ta_center font12 diem_ch_muc_1" contentEditable ></div></td> 
+  </tr>
+  <tr>
+  <td style="vertical-align:middle; text-align: center" class="font12"><div class="div_in_td"></div><i>1.4</i></td> 
+  <td style="vertical-align: middle;" class="font12" style="text-align:justify"><div class="div_in_td" > <i>Phương pháp, cách thức xây dựng HTBM thực hiện theo quy định</i></div></td> 
+    <td style="vertical-align: middle;" class="ta_center font12 "><div class="div_in_td" ><i>10</i></div></td> 
+    <td style="vertical-align:middle;"><div class="ta_center font12 diem_cb_muc_1" contentEditable ></div></td> 
+    <td style="vertical-align:middle;" ><div class="ta_center font12 diem_ch_muc_1" contentEditable ></div></td> 
+  </tr>
+  <tr>
+    <td style="vertical-align:middle; text-align: center" class="font12"><div class="div_in_td" ></div>2</td> 
+    <td style="text-align:justify"><div class="div in_td" >Kế hoạch quản lý, phương án ngụy trang HTBM: Bảo đảm bí mật, an toàn HTBM để phục vụ công tác xây dựng, sử dụng cộng tác viên bí mật, được lãnh đạo có thẩm quyền phê duyệt</div></td>
+    <td style="vertical-align: middle;" class="ta_center font12"><div class="div_in_td" >10</div></td>
+    <td style="vertical-align:middle;"><div class="ta_center font12 diem_cb_muc_2" contentEditable ></div></td> 
+    <td style="vertical-align:middle;" ><div class="ta_center font12 diem_ch_muc_2" contentEditable ></div></td>
+    </tr>
+    <td style="vertical-align:middle; text-align: center" class="font12"><div class="div_in_td" ></div>3</td> 
+    <td style="text-align:justify"><div class="div in_td" >Quản lý, sử dụng HTBM</div></td>
+    <td style="vertical-align: middle;" class="ta_center font12"><div class="div_in_td" >35</div></td>
+    <td style="vertical-align:middle;"><div class="ta_center font12 diem cb" id='tong_diem_cb_muc_3' ></div></td> 
+    <td style="vertical-align:middle;"><div class="ta_center font12 diem_ch" id='tong_diem_ch_muc_3'></div></td>
+    </tr>
+    <tr>
+      <td style="vertical-align:middle; text-align: center" class="font12"><div class="div_in_td"></div><i>3.1</i></td> 
+      <td style="vertical-align: middle;" class="font12" style="text-align:justify"><div class="div_in_td" > <i>Lập sơ đồ vị trí ngôi nhà và căn phòng hoặc địa điểm cụ thể được sử dụng làm HTBM</i></div></td> 
+        <td style="vertical-align: middle;" class="ta_center font12 "><div class="div_in_td" ><i>05</i></div></td> 
+        <td style="vertical-align:middle;"><div class="ta_center font12 diem_cb_muc_3" contentEditable ></div></td> 
+        <td style="vertical-align:middle;" ><div class="ta_center font12 diem_ch_muc_3" contentEditable ></div></td> 
+      </tr>
+      <tr>
+        <td style="vertical-align:middle; text-align: center" class="font12"><div class="div_in_td"></div><i>3.2</i></td> 
+        <td style="vertical-align: middle;" class="font12" style="text-align:justify"><div class="div_in_td" > <i>Sử dụng hình thức và danh nghĩa hợp pháp, ngụy trang thích hợp cho HTBM</i></div></td> 
+          <td style="vertical-align: middle;" class="ta_center font12 "><div class="div_in_td" ><i>05</i></div></td> 
+          <td style="vertical-align:middle;"><div class="ta_center font12 diem_cb_muc_3" contentEditable ></div></td> 
+          <td style="vertical-align:middle;" ><div class="ta_center font12 diem_ch_muc_3" contentEditable ></div></td> 
+        </tr>
+        <tr>
+          <td style="vertical-align:middle; text-align: center" class="font12"><div class="div_in_td"></div><i>3.3</i></td> 
+          <td style="vertical-align: middle;" class="font12" style="text-align:justify"><div class="div_in_td" > <i>Thống kê danh sách cán bộ nghiệp vụ sử dụng HTBM</i></div></td> 
+            <td style="vertical-align: middle;" class="ta_center font12 "><div class="div_in_td" ><i>05</i></div></td> 
+            <td style="vertical-align:middle;"><div class="ta_center font12 diem_cb_muc_3" contentEditable ></div></td> 
+            <td style="vertical-align:middle;" ><div class="ta_center font12 diem_ch_muc_3" contentEditable ></div></td> 
+          </tr>
+          <tr>
+            <td style="vertical-align:middle; text-align: center" class="font12"><div class="div_in_td"></div><i>3.4</i></td> 
+            <td style="vertical-align: middle;" class="font12" style="text-align:justify"><div class="div_in_td" > <i>Thống kê danh sách cộng tác viên bí mật (theo bí danh) kết nạp, sinh hoạt tại HTBM</i></div></td> 
+              <td style="vertical-align: middle;" class="ta_center font12 "><div class="div_in_td" ><i>05</i></div></td> 
+              <td style="vertical-align:middle;"><div class="ta_center font12 diem_cb_muc_3" contentEditable ></div></td> 
+              <td style="vertical-align:middle;" ><div class="ta_center font12 diem_ch_muc_3" contentEditable ></div></td> 
+            </tr>
+            <tr>
+              <td style="vertical-align:middle; text-align: center" class="font12"><div class="div_in_td"></div><i>3.5</i></td> 
+              <td style="vertical-align: middle;" class="font12" style="text-align:justify"><div class="div_in_td" > <i>Dự kiến lịch sinh hoạt cộng tác viên bí mật (theo bí danh) kết nạp, sinh hoạt tại HTBM</i></div></td> 
+                <td style="vertical-align: middle;" class="ta_center font12 "><div class="div_in_td" ><i>05</i></div></td> 
+                <td style="vertical-align:middle;"><div class="ta_center font12 diem_cb_muc_3" contentEditable ></div></td> 
+                <td style="vertical-align:middle;" ><div class="ta_center font12 diem_ch_muc_3" contentEditable ></div></td> 
+              </tr>
+               <tr>
+              <td style="vertical-align:middle; text-align: center" class="font12"><div class="div_in_td"></div><i>3.6</i></td> 
+              <td style="vertical-align: middle;" class="font12" style="text-align:justify"><div class="div_in_td" > <i>Thường xuyên bồi dưỡng ý thức cảnh giác, giữ bí mật và bồi dưỡng kiến thức nghiệp vụ cần thiết cho người quản lý HTBM</i></div></td> 
+                <td style="vertical-align: middle;" class="ta_center font12 "><div class="div_in_td" ><i>05</i></div></td> 
+                <td style="vertical-align:middle;"><div class="ta_center font12 diem_cb_muc_3" contentEditable ></div></td> 
+                <td style="vertical-align:middle;" ><div class="ta_center font12 diem_ch_muc_3" contentEditable ></div></td> 
+              </tr>
+               <tr>
+              <td style="vertical-align:middle; text-align: center" class="font12"><div class="div_in_td"></div><i>3.7</i></td> 
+              <td style="vertical-align: middle;" class="font12" style="text-align:justify"><div class="div_in_td" > <i>Kiểm tra kỹ các điều kiện đảm bảo an toàn, bí mật của HTBM trước mỗi lần tổ chức kết nạp, sinh hoạt, liên lạc với cộng tác viên bí mật tại HTBM</i></div></td> 
+                <td style="vertical-align: middle;" class="ta_center font12 "><div class="div_in_td" ><i>05</i></div></td> 
+                <td style="vertical-align:middle;"><div class="ta_center font12 diem_cb_muc_3" contentEditable ></div></td> 
+                <td style="vertical-align:middle;" ><div class="ta_center font12 diem_ch_muc_3" contentEditable ></div></td> 
+              </tr>
+              <tr>
+<td style="vertical-align:middle; text-align: center" class="font12"><div class="div_in_td" ></div>4</td> 
+<td style="text-align:justify"><div class="div in_td" >Báo cáo kết quả quản lý, sử dụng HTBM: Định kỳ 6 tháng có báo cáo đánh giá kết quả quản lý, sử dụng HTBM, được lãnh đạo có thẩm quyền phê duyệt</div></td>
+<td style="vertical-align: middle;" class="ta_center font12"><div class="div_in_td" >10</div></td>
+<td style="vertical-align:middle;"><div class="ta_center font12 diem_cb_muc_4" contentEditable ></div></td> 
+    <td style="vertical-align:middle;" ><div class="ta_center font12 diem_ch_muc_4" contentEditable ></div></td>
+</tr>
+<tr>
+<td style="vertical-align:middle; text-align: center" class="font12"><div class="div_in_td" ></div>5</td> 
+<td style="text-align:justify"><div class="div in_td" >Thực hiện công tác hồ sơ</div></td>
+<td style="vertical-align: middle;" class="ta_center font12"><div class="div_in_td" >10</div></td>
+<td style="vertical-align:middle;"><div class="ta_center font12 diem cb" id='tong_diem_cb_muc_5' ></div></td> 
+<td style="vertical-align:middle;"><div class="ta_center font12 diem_ch" id='tong_diem_ch_muc_5'></div></td>
+</tr>
+              <tr>
+                <td style="vertical-align:middle; text-align: center" class="font12"><div class="div_in_td" ></div>6</td> 
+                <td style="text-align:justify"><div class="div in_td" >Điểm trừ (-)</div></td>
+                <td style="vertical-align: middle;" class="ta_center font12"><div class="div_in_td" >-100</div></td>
+                <td style="vertical-align:middle;"><div class="ta_center font12 diem cb" id='tong_diem_cb_muc_6' ></div></td> 
+                <td style="vertical-align:middle;"><div class="ta_center font12 diem_ch" id='tong_diem_ch_muc_6'></div></td>
+                </tr>
+                <tr>
+               
+                  <tr>
+                    <td style="vertical-align:middle; text-align: center" class="font12"><div class="div_in_td"></div><i>6.1</i></td> 
+                    <td style="vertical-align: middle;" class="font12" style="text-align:justify"><div class="div_in_td" > <i>HTBM được xây dựng không đúng theo phân công, phân cấp</i></div></td> 
+                      <td style="vertical-align: middle;" class="ta_center font12 "><div class="div_in_td" ><i>-100</i></div></td> 
+                      <td style="vertical-align:middle;"><div class="ta_center font12 diem_cb_muc_6" contentEditable ></div></td> 
+                      <td style="vertical-align:middle;" ><div class="ta_center font12 diem_ch_muc_6" contentEditable ></div></td> 
+                    </tr>
+                    <tr>
+                      <td style="vertical-align:middle; text-align: center" class="font12"><div class="div_in_td"></div><i>6.2</i></td> 
+                      <td style="vertical-align: middle;" class="font12" style="text-align:justify"><div class="div_in_td" > <i>HTBM được xây dựng không xuất phát từ yêu cầu phục vụ công tác xây dựng, sử dụng cộng tác viên bí mật</i></div></td> 
+                        <td style="vertical-align: middle;" class="ta_center font12 "><div class="div_in_td" ><i>-100</i></div></td> 
+                        <td style="vertical-align:middle;"><div class="ta_center font12 diem_cb_muc_6" contentEditable ></div></td> 
+                        <td style="vertical-align:middle;" ><div class="ta_center font12 diem_ch_muc_6" contentEditable ></div></td> 
+                      </tr>
+                      <tr>
+                        <td style="vertical-align:middle; text-align: center" class="font12"><div class="div_in_td"></div><i>6.3</i></td> 
+                        <td style="vertical-align: middle;" class="font12" style="text-align:justify"><div class="div_in_td" > <i>HTBM không bảo đảm điều kiện theo quy định</i></div></td> 
+                          <td style="vertical-align: middle;" class="ta_center font12 "><div class="div_in_td" ><i>-100</i></div></td> 
+                          <td style="vertical-align:middle;"><div class="ta_center font12 diem_cb_muc_6" contentEditable ></div></td> 
+                          <td style="vertical-align:middle;" ><div class="ta_center font12 diem_ch_muc_6" contentEditable ></div></td> 
+                        </tr>
+                        <tr>
+                          <td style="vertical-align:middle; text-align: center" class="font12"><div class="div_in_td"></div><i>6.4</i></td> 
+                          <td style="vertical-align: middle;" class="font12" style="text-align:justify"><div class="div_in_td" > <i>Người quản lý HTBM không bảo đảm yêu cầu theo quy định</i></div></td> 
+                            <td style="vertical-align: middle;" class="ta_center font12 "><div class="div_in_td" ><i>-100</i></div></td> 
+                            <td style="vertical-align:middle;"><div class="ta_center font12 diem_cb_muc_6" contentEditable ></div></td> 
+                            <td style="vertical-align:middle;" ><div class="ta_center font12 diem_ch_muc_6" contentEditable ></div></td> 
+                          </tr>
+                          <tr>
+                            <td style="vertical-align:middle; text-align: center" class="font12"><div class="div_in_td"></div><i>6.5</i></td> 
+                            <td style="vertical-align: middle;" class="font12" style="text-align:justify"><div class="div_in_td" > <i>Phương pháp, cách thức xây dựng HTBM thực hiện không đúng quy định</i></div></td> 
+                              <td style="vertical-align: middle;" class="ta_center font12 "><div class="div_in_td" ><i>-100</i></div></td> 
+                              <td style="vertical-align:middle;"><div class="ta_center font12 diem_cb_muc_6" contentEditable ></div></td> 
+                              <td style="vertical-align:middle;" ><div class="ta_center font12 diem_ch_muc_6" contentEditable ></div></td> 
+                            </tr>
+                            <tr>
+                              <td style="vertical-align:middle; text-align: center" class="font12"><div class="div_in_td"></div><i>6.6</i></td> 
+                              <td style="vertical-align: middle;" class="font12" style="text-align:justify"><div class="div_in_td" > <i>Sử dụng HTBM trái mục đích (không phục vụ công tác xây dựng, sử dụng cộng tác viên bí mật)</i></div></td> 
+                                <td style="vertical-align: middle;" class="ta_center font12 "><div class="div_in_td" ><i>-100</i></div></td> 
+                                <td style="vertical-align:middle;"><div class="ta_center font12 diem_cb_muc_6" contentEditable ></div></td> 
+                                <td style="vertical-align:middle;" ><div class="ta_center font12 diem_ch_muc_6" contentEditable ></div></td> 
+                              </tr>
+                              <tr>
+                                <td style="vertical-align:middle; text-align: center" class="font12"><div class="div_in_td"></div><i>6.7</i></td> 
+                                <td style="vertical-align: middle;" class="font12" style="text-align:justify"><div class="div_in_td" > <i>Tổ chức kết nạp, sinh hoạt, liên lạc với đặc tình, cộng tác viên danh dự và cơ sở bí mật mà họ quen biết nhau hoặc cùng thực hiện một yêu cầu điều tra trinh sát trong cùng HTBM hoặc đặc tình, cơ sở bí mật quen biết người quản lý HTBM</i></div></td> 
+                                  <td style="vertical-align: middle;" class="ta_center font12 "><div class="div_in_td" ><i>-20 <br>điểm/01 <br>lần</i></div></td> 
+                                  <td style="vertical-align:middle;"><div class="ta_center font12 diem_cb_muc_6" contentEditable ></div></td> 
+                                  <td style="vertical-align:middle;" ><div class="ta_center font12 diem_ch_muc_6" contentEditable ></div></td> 
+                                </tr>
+                                <tr>
+                                  <td style="vertical-align:middle; text-align: center" class="font12"><div class="div_in_td"></div><i>6.8</i></td> 
+                                  <td style="vertical-align: middle;" class="font12" style="text-align:justify"><div class="div_in_td" > <i>Kết thúc HTBM không đúng quy định hoặc không kết thúc HTBM theo quy định</i></div></td> 
+                                    <td style="vertical-align: middle;" class="ta_center font12 "><div class="div_in_td" ><i>-100</i></div></td> 
+                                    <td style="vertical-align:middle;"><div class="ta_center font12 diem_cb_muc_6" contentEditable ></div></td> 
+                                    <td style="vertical-align:middle;" ><div class="ta_center font12 diem_ch_muc_6" contentEditable ></div></td> 
+                                  </tr>                           
+                                  <tr>
+                                  <td colspan="3" style="vertical-align: middle;text-align: center;" class="font12" ><div class="div_in_td" > <b>Cộng</b></div></td>
+                                  <td style="vertical-align:middle;"><div class="ta_center font12 " id="sum_all_cb" contentEditable ></div></td> 
+                                    <td style="vertical-align:middle;" ><div class="ta_center font12 " id="sum_all_ch" contentEditable ></div></td>
+                                </tr>
+          
+                              </table>
+                              <br>
+
+
+                              <div style="margin-left: 1cm;" class="font14 clean"><br>
+                                <b>1. Kết quả chấm điểm, xếp loại do cán bộ tự thực hiện:</b>
+                              
+                                <!-- Khối chứa ngày tháng và "CÁN BỘ" căn phải, nhưng "CÁN BỘ" nằm chính giữa so với nội dung ngày tháng -->
+                                <div style="width: 100%; margin-top: 10px; text-align: right;">
+                                  <div id="ngayThang" style="display: inline-block; text-align: left;">
+                                    <div>
+                                      <i><span class="dia_danh border" contenteditable="">..................</span>,
+                                      ngày <span class="o_nhap_ngay border" contenteditable="">...</span>
+                                      tháng <span class="o_nhap_thang border" contenteditable="">...</span>
+                                      năm 20<span class="o_nhap_nam border" contenteditable="">....</span></i>
+                                    </div>
+                                    <div style="text-align: center; margin-top: 20px;">
+                                      <b>CÁN BỘ</b><br>
+                                      <i class="font12">(Ký, cấp bậc, họ tên)</i>
+                                    </div>
+                                  </div>
+                                </div>
+                              
+                                <!-- Phần nội dung chấm điểm -->
+                                <div style="margin-top: 20px;">
+                                  <div id="tongDiemCb">- Tổng số điểm đạt được: ..................</div>
+                                  <div id="mucXepLoaiCb" style="margin-top: 10px;">- Mức xếp loại: ......................</div>
+                                </div>
+                              </div>
+    <br>
+    <br><br><br><br>
+
+    <div style="margin-left: 1cm;" class="font14 clean"><br>
+      <b>2. Kết quả chấm điểm, xếp loại do lãnh đạo, chỉ huy phụ trách thực hiện:</b>
+    
+      <div style="width: 100%; margin-top: 10px; text-align: right;">
+        <div id="ngayThang" style="display: inline-block; text-align: left;">
+          <div>
+            <i><span class="dia_danh border" contenteditable="">..................</span>,
+            ngày <span class="o_nhap_ngay border" contenteditable="">...</span>
+            tháng <span class="o_nhap_thang border" contenteditable="">...</span>
+            năm 20<span class="o_nhap_nam border" contenteditable="">....</span></i>
+          </div>
+          <div style="text-align: center; margin-top: 20px;">
+           <b>LÃNH ĐẠO, CHỈ HUY PHỤ TRÁCH</b><br>
+            <i class="font12">(Ký, cấp bậc, họ tên, chức vụ)</i>
+          </div>
+        </div>
+      </div>
+    
+      <!-- Phần nội dung chấm điểm -->
+      <div style="margin-top: 20px;">
+        <div id="tongDiemCh">- Tổng số điểm đạt được: ..................</div>
+        <div id="mucXepLoaiCh" style="margin-top: 10px;">- Mức xếp loại: ......................</div>
+      </div>
+    </div>
+    <img src="./../images/print.png" class="button_print" width="50px" height="50px" onclick="In_bieu_mau();"><br>
+    <img src="./../images/save.png" class="button_save" width="45px" height="45px" onclick="save()";><br>
+    <img src="./../images/reload.png" class="button_reload" width="45px" height="45px" onclick="window.location.reload(true);">
+    </body>
+    </html>
+
+
+
+
+
+
+    
+  
+
+
+
+
+  
+  
+
+  
+  
+
+
+
+

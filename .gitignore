@@ -1,0 +1,42 @@
+# macOS system files
+.DS_Store
+
+# Node modules (if ever used)
+node_modules/
+
+# Logs
+*.log
+
+# Local data, backups, or temp files
+*.bak
+*.tmp
+*.swp
+
+# VSCode and other editor settings
+.vscode/
+.idea/
+*.sublime-workspace
+*.sublime-project
+
+# OS/Editor trash
+Thumbs.db
+
+# Ignore database or local data (if any in data/)
+data/*.sqlite
+data/*.db
+data/*.bak
+data/*.json
+
+# Ignore environment files
+.env
+.env.*
+
+# Ignore build/dist folders (if ever used)
+dist/
+build/
+
+# Ignore coverage reports
+coverage/
+
+# Ignore npm debug log
+npm-debug.log*

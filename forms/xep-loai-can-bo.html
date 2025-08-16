@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="en" id="bieumau">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>MẪU PC2</title>
+<link rel="stylesheet" href="./../styles/style.css">
+<link rel="stylesheet" href="./../styles/cross-platform.css">
+<link rel="stylesheet" href="./../styles/print.css">
+<script language="javascript" src="./../js/chamdiem.js"></script>
+<script type='text/javascript'>
+function save() {
+  var htmlContent = ['<!DOCTYPE html>', '<html lang="en" id="bieumau">',
+                     document.getElementById('bieumau').innerHTML, '</html>',
+                     '<img src="./../images/print.png" class="button_print" width="50px" height="50px" onclick="In_bieu_mau();">',
+                     '<img src="./../images/save.png" class="button_save" width="45px" height="45px" onclick="save()">',
+                     '<img src="./../images/reload.png" class="button_reload" width="45px" height="45px" onclick="window.location.reload(true);">'].join('\n');
+  var bl = new Blob(htmlContent, {type: "text/html"});
+  var a = document.createElement("a");
+  a.href = URL.createObjectURL(bl);
+  a.download = document.title + ".html";
+  a.hidden = true;
+  document.body.appendChild(a);
+  a.click();
+}
+function In_bieu_mau() {
+  window.print();
+}
+</script>
+</head>
+<body class="font14 ta_jus" onkeyup='cong_diem()'>
+  <div class="wrapper border" >
+    <div class="content_mau_pa">
+      <div class="cq_banhanh_mau_pa f_left ta_center font12">
+        <!--Số: <span class="o_nhap_1cm ta_left border" contenteditable=""></span>/QD <span class="o_nhap_1cm ta_left border" contenteditable=""></span>-->
+      </div>
+      <div class="td_bieumau ta_center f_right lh_08">
+        <span class=" fontBold" style='font-size: 13.3px'>MẪU CB1</span><br>
+        <div class='lh_06' style='margin-top:5px'>
+          <span class=" " style='font-size:12px'> Ban hành kèm theo </span> <br>
+          <span class=" " style='font-size:12px'> Thông tư số </span> <br>
+          <span class=" " style='font-size:12px'> 17/2025/TT-BCA </span> <br>
+          <span class=" " style='font-size:12px'> ngày 28/02/2025 </span> <br>
+        </div>
+      </div>
+      <br> <br>
+      <div style="text-align: center;" class="font14 clean">
+        <b>BẢNG TỔNG HỢP CHẤM ĐIỂM, XẾP LOẠI</b><br>
+        <div style="display: inline-block; text-align: center;">
+          <div class="font13 clean"><b>Cá nhân cán bộ, chiến sĩ không giữ chức vụ lãnh đạo, chỉ huy trong thực <br>hiện công tác nghiệp vụ cơ bản của lực lượng Cảnh sát nhân dân</b>
+          <br><i> (Năm:<span class="o_nhap_nam border" contenteditable="">.......)</span></i></div>
+          <div style="min-height: 1px; border-top: 1px solid black; width: 2cm; margin: 4px auto 0 auto;"></div>
+        </div>
+      </div>
+      <br>
+      <span class='TAB'></span>Họ và tên: <span class='o_nhap_1cm border' contenteditable style='min-width:500px'></span><br>
+      <span class='TAB'></span>Cấp bậc: <span class='o_nhap_1cm border' contenteditable style='min-width: 200px'></span>
+      <span class='TAB'></span>Chức vụ: <span class='o_nhap_1cm border' contenteditable style='min-width: 200px'></span> <br>
+      <span class= 'TAB'></span>Đơn vị: <span class='o_nhap_thang border' contenteditable style='min-width:400px'></span><br>
+      <i><span class='TAB'></span>(Thời gian: Từ ngày <span class="o_nhap_ngay border" contenteditable="">...</span>
+      tháng<span class="o_nhap_thang border" contenteditable="">...</span>
+      năm 20<span class="o_nhap_nam border" contenteditable="">....</span>
+      đến ngày<span class="o_nhap_ngay border" contenteditable="">...</span>
+      tháng<span class="o_nhap_thang border" contenteditable="">...</span>
+      năm 20<span class="o_nhap_nam border" contenteditable="">....)</span></i><br>
+      <span class='TAB'></span><b>I. TỔNG HỢP KẾT QUẢ CHẤM ĐIỂM CÔNG TÁC NGHIỆP VỤ CƠ BẢN</b>
+      <table class='table_mau_pa' style="width: 100%;border: 1px; border-collapse: collapse; border-color: black; border-style:solid; font-size:16px; margin-top:10px";
+      border="1px" cellpadding="0" cellspacing="0" id="Table3" >
+      <tr class=''>
+      <td rowspan="2" class="Table_TH font12" style="width: 1cm;height: 2.4cm; text-align:center"><b>STT</b></td>
+      <td colspan="2" class="Table TH font12" style="min-width:11.5cm; text-align:center"><b>Công tác nghiệp vụ cơ bản (NVCB) chủ trì thực hiện</b></td>
+      <td colspan="2" class="Table_TH font12" style="width: 4.5cm; text-align:center"><b>Điểm LĐ, CH<br>phụ trách đã chấm</b></td>
+      </tr>
+      <tr>
+      <td class="Table TH font12" style="width: 9.5cm; text-align:center"><b>Tên công tác</b></td>
+      <td class="Table_TH font12" style="width: 2cm; text-align:center"><b>Số lượng</b></td>
+      <td class="Table_TH font12" style="width: 2cm; text-align:center">Tổng số</td>
+      <td class="Table_TH font12" style="width: 2.5cm; text-align:center">Điểm trung <br>bình</td>
+
+      </tr>
+      <tr>
+      <td style="vertical-align:middle; text-align: center" class="font12"><div class="div_in_td" ></div><b>1</b></td>
+      <td style="text-align:justify"><div class="div in_td" ><b>Điều tra cơ bản</b></div></td>
+      <td style="vertical-align:middle;"><div class="ta_center font12 diem_cb" id='tong_soluong_DTBC' ></div></td>
+      <td style="vertical-align:middle;"><div class="ta_center font12 diem_ch" id='tong_diem_DTBC'></div></td>
+      <td style="vertical-align:middle;"><div class="ta_center font12 diem_ch" id='tong_trungbinh'></div></td>
+      </tr>
+
+      <tr>
+        <td style="vertical-align:middle; text-align: center" class="font12"><div class="div_in_td"></div><i>1.1</i></td>
+        <td style="vertical-align: middle;" class="font12" style="text-align:justify"><div class="div_in_td" > <i>Xã, phường, thị trấn (cấp xã)</i></div></td>
+        <td style="vertical-align:middle;"><div class="ta_center font12 diem_cb_muc_1" contentEditable ></div></td>
+          <td style="vertical-align:middle;"><div class="ta_center font12 diem_cb_muc_1" contentEditable ></div></td>
+          <td style="vertical-align:middle;" ><div class="ta_center font12 diem_ch_muc_1" contentEditable ></div></td>
+        </tr>
+
+        <tr>
+          <td style="vertical-align:middle; text-align: center" class="font12"><div class="div_in_td"></div><i>1.2</i></td>
+          <td style="vertical-align: middle;" class="font12" style="text-align:justify"><div class="div_in_td" > <i>Địa bàn, khu vực trọng điểm</i></div></td>
+          <td style="vertical-align:middle;"><div class="ta_center font12 diem_cb_muc_1" contentEditable ></div></td>
+            <td style="vertical-align:middle;"><div class="ta_center font12 diem_cb_muc_1" contentEditable ></div></td>
+            <td style="vertical-align:middle;" ><div class="ta_center font12 diem_ch_muc_1" contentEditable ></div></td>
+          </tr>
+
+          <tr>
+            <td style="vertical-align:middle; text-align: center" class="font12"><div class="div_in_td"></div><i>1.3</i></td>
+            <td style="vertical-align: middle;" class="font12" style="text-align:justify"><div class="div_in_td" > <i>Tổ chức</i></div></td>
+            <td style="vertical-align:middle;"><div class="ta_center font12 diem_cb_muc_1" contentEditable ></div></td>
+              <td style="vertical-align:middle;"><div class="ta_center font12 diem_cb_muc_1" contentEditable ></div></td>
+              <td style="vertical-align:middle;" ><div class="ta_center font12 diem_ch_muc_1" contentEditable ></div></td>
+            </tr>
+
+            <tr>
+              <td style="vertical-align:middle; text-align: center" class="font12"><div class="div_in_td"></div><i>1.4</i></td>
+              <td style="vertical-align: middle;" class="font12" style="text-align:justify"><div class="div_in_td" > <i>Mục tiêu</i></div></td>
+              <td style="vertical-align:middle;"><div class="ta_center font12 diem_cb_muc_1" contentEditable ></div></td>
+                <td style="vertical-align:middle;"><div class="ta_center font12 diem_cb_muc_1" contentEditable ></div></td>
+                <td style="vertical-align:middle;" ><div class="ta_center font12 diem_ch_muc_1" contentEditable ></div></td>
+              </tr>
+
+              <tr>
+                <td style="vertical-align:middle; text-align: center" class="font12"><div class="div_in_td"></div><i>1.6</i></td>
+                <td style="vertical-align: middle;" class="font12" style="text-align:justify"><div class="div_in_td" > <i>Lĩnh vực</i></div></td>
+                <td style="vertical-align:middle;"><div class="ta_center font12 diem_cb_muc_1" contentEditable ></div></td>
+                  <td style="vertical-align:middle;"><div class="ta_center font12 diem_cb_muc_1" contentEditable ></div></td>
+                  <td style="vertical-align:middle;" ><div class="ta_center font12 diem_ch_muc_1" contentEditable ></div></td>
+                </tr>
+                <tr>
+                  <td style="vertical-align:middle; text-align: center" class="font12"><div class="div_in_td"></div><i>1.7</i></td>
+                  <td style="vertical-align: middle;" class="font12" style="text-align:justify"><div class="div_in_td" > <i>Hệ loại đối tượng</i></div></td>
+                  <td style="vertical-align:middle;"><div class="ta_center font12 diem_cb_muc_1" contentEditable ></div></td>
+                    <td style="vertical-align:middle;"><div class="ta_center font12 diem_cb_muc_1" contentEditable ></div></td>
+                    <td style="vertical-align:middle;" ><div class="ta_center font12 diem_ch_muc_1" contentEditable ></div></td>
+                  </tr>
+                  <tr>
+                    <td style="vertical-align:middle; text-align: center" class="font12"><div class="div_in_td"></div><i>1.8</i></td>
+                    <td style="vertical-align: middle;" class="font12" style="text-align:justify"><div class="div_in_td" > <i>Hội, nhóm, tài khoản trên không gian mạng</i></div></td>
+                    <td style="vertical-align:middle;"><div class="ta_center font12 diem_cb_muc_1" contentEditable ></div></td>
+                      <td style="vertical-align:middle;"><div class="ta_center font12 diem_cb_muc_1" contentEditable ></div></td>
+                      <td style="vertical-align:middle;" ><div class="ta_center font12 diem_ch_muc_1" contentEditable ></div></td>
+                    </tr>
+                    <tr>
+                      <td style="vertical-align:middle; text-align: center" class="font12"><div class="div_in_td"></div><b>2</b></td>
+                      <td style="vertical-align: middle;" class="font12" style="text-align:justify"><div class="div_in_td" > <b>Sưu tra</b></div></td>
+                      <td style="vertical-align:middle;"><div class="ta_center font12 diem_cb_muc_2" contentEditable ></div></td>
+                        <td style="vertical-align:middle;"><div class="ta_center font12 diem_cb_muc_2" contentEditable ></div></td>
+                        <td style="vertical-align:middle;" ><div class="ta_center font12 diem_ch_muc_2" contentEditable ></div></td>
+                      </tr>
+      <tr>
+      <td style="vertical-align:middle; text-align: center" class="font12"><div class="div_in_td" ></div><b>3</b></td>
+      <td style="text-align:justify"><div class="div in_td" ><b>Hiềm nghi</b></div></td>
+      <td style="vertical-align:middle;"><div class="ta_center font12 diem_cb" id='tong_soluong_DTBC' ></div></td>
+      <td style="vertical-align:middle;"><div class="ta_center font12 diem_ch" id='tong_diem_DTBC'></div></td>
+      <td style="vertical-align:middle;"><div class="ta_center font12 diem_ch" id='tong_trungbinh'></div></td>
+      </tr>
+
+      <tr>
+      <td style="vertical-align:middle; text-align: center" class="font12"><div class="div_in_td"></div><i>3.1</i></td>
+      <td style="vertical-align: middle;" class="font12" style="text-align:justify"><div class="div_in_td" > <i>Cá nhân</i></div></td>
+      <td style="vertical-align:middle;"><div class="ta_center font12 diem_cb_muc_3" contentEditable ></div></td>
+      <td style="vertical-align:middle;"><div class="ta_center font12 diem_cb_muc_3" contentEditable ></div></td>
+      <td style="vertical-align:middle;" ><div class="ta_center font12 diem_ch_muc_3" contentEditable ></div></td>
+      </tr>
+      <tr>
+        <td style="vertical-align:middle; text-align: center" class="font12"><div class="div_in_td"></div><i>3.2</i></td>
+        <td style="vertical-align: middle;" class="font12" style="text-align:justify"><div class="div_in_td" > <i>Tổ chức</i></div></td>
+        <td style="vertical-align:middle;"><div class="ta_center font12 diem_cb_muc_3" contentEditable ></div></td>
+        <td style="vertical-align:middle;"><div class="ta_center font12 diem_cb_muc_3" contentEditable ></div></td>
+        <td style="vertical-align:middle;" ><div class="ta_center font12 diem_ch_muc_3" contentEditable ></div></td>
+        </tr>
+        <tr>
+          <td style="vertical-align:middle; text-align: center" class="font12"><div class="div_in_td"></div><i>3.3</i></td>
+          <td style="vertical-align: middle;" class="font12" style="text-align:justify"><div class="div_in_td" > <i>Việc, hiện tượng</i></div></td>
+          <td style="vertical-align:middle;"><div class="ta_center font12 diem_cb_muc_3" contentEditable ></div></td>
+          <td style="vertical-align:middle;"><div class="ta_center font12 diem_cb_muc_3" contentEditable ></div></td>
+          <td style="vertical-align:middle;" ><div class="ta_center font12 diem_ch_muc_3" contentEditable ></div></td>
+          </tr>
+
+          <tr>
+            <td style="vertical-align:middle; text-align: center" class="font12"><div class="div_in_td" ></div><b>4</b></td>
+            <td style="text-align:justify"><div class="div in_td" ><b>Chuyên án</b></div></td>
+            <td style="vertical-align:middle;"><div class="ta_center font12 diem_cb" id='tong_soluong_DTBC' ></div></td>
+            <td style="vertical-align:middle;"><div class="ta_center font12 diem_ch" id='tong_diem_DTBC'></div></td>
+            <td style="vertical-align:middle;"><div class="ta_center font12 diem_ch" id='tong_trungbinh'></div></td>
+            </tr>
+
+            <tr>
+            <td style="vertical-align:middle; text-align: center" class="font12"><div class="div_in_td"></div><i>4.1</i></td>
+            <td style="vertical-align: middle;" class="font12" style="text-align:justify"><div class="div_in_td" > <i>Chuyên án trinh sát</i></div></td>
+            <td style="vertical-align:middle;"><div class="ta_center font12 diem_cb_muc_3" contentEditable ></div></td>
+            <td style="vertical-align:middle;"><div class="ta_center font12 diem_cb_muc_3" contentEditable ></div></td>
+            <td style="vertical-align:middle;" ><div class="ta_center font12 diem_ch_muc_3" contentEditable ></div></td>
+            </tr>
+            <tr>
+              <td style="vertical-align:middle; text-align: center" class="font12"><div class="div_in_td"></div><i>4.2</i></td>
+              <td style="vertical-align: middle;" class="font12" style="text-align:justify"><div class="div_in_td" > <i>Chuyên án truy xét</i></div></td>
+              <td style="vertical-align:middle;"><div class="ta_center font12 diem_cb_muc_4" contentEditable ></div></td>
+              <td style="vertical-align:middle;"><div class="ta_center font12 diem_cb_muc_4" contentEditable ></div></td>
+              <td style="vertical-align:middle;" ><div class="ta_center font12 diem_ch_muc_4" contentEditable ></div></td>
+              </tr>
+
+              <tr>
+                <td style="vertical-align:middle; text-align: center" class="font12"><div class="div_in_td" ></div><b>5</b></td>
+                <td style="text-align:justify"><div class="div in_td" ><b>Cộng tác viên bí mật</b></div></td>
+                <td style="vertical-align:middle;"><div class="ta_center font12 diem_cb" id='tong_soluong_DTBC' ></div></td>
+                <td style="vertical-align:middle;"><div class="ta_center font12 diem_ch" id='tong_diem_DTBC'></div></td>
+                <td style="vertical-align:middle;"><div class="ta_center font12 diem_ch" id='tong_trungbinh'></div></td>
+                </tr>
+
+                <tr>
+                <td style="vertical-align:middle; text-align: center" class="font12"><div class="div_in_td"></div><i>5.1</i></td>
+                <td style="vertical-align: middle;" class="font12" style="text-align:justify"><div class="div_in_td" > <i>Đặc tình</i></div></td>
+                <td style="vertical-align:middle;"><div class="ta_center font12 diem_cb_muc_3" contentEditable ></div></td>
+                <td style="vertical-align:middle;"><div class="ta_center font12 diem_cb_muc_3" contentEditable ></div></td>
+                <td style="vertical-align:middle;" ><div class="ta_center font12 diem_ch_muc_3" contentEditable ></div></td>
+                </tr>
+                <tr>
+                  <td style="vertical-align:middle; text-align: center" class="font12"><div class="div_in_td"></div><i>5.2</i></td>
+                  <td style="vertical-align: middle;" class="font12" style="text-align:justify"><div class="div_in_td" > <i>Cộng tác viên danh dự</i></div></td>
+                  <td style="vertical-align:middle;"><div class="ta_center font12 diem_cb_muc_3" contentEditable ></div></td>
+                  <td style="vertical-align:middle;"><div class="ta_center font12 diem_cb_muc_3" contentEditable ></div></td>
+                  <td style="vertical-align:middle;" ><div class="ta_center font12 diem_ch_muc_3" contentEditable ></div></td>
+                  </tr>
+                  <tr>
+                    <td style="vertical-align:middle; text-align: center" class="font12"><div class="div_in_td"></div><i>5.3</i></td>
+                    <td style="vertical-align: middle;" class="font12" style="text-align:justify"><div class="div_in_td" > <i>Cơ sở bí mật</i></div></td>
+                    <td style="vertical-align:middle;"><div class="ta_center font12 diem_cb_muc_3" contentEditable ></div></td>
+                    <td style="vertical-align:middle;"><div class="ta_center font12 diem_cb_muc_3" contentEditable ></div></td>
+                    <td style="vertical-align:middle;" ><div class="ta_center font12 diem_ch_muc_3" contentEditable ></div></td>
+                    </tr>
+                    <tr>
+                      <td style="vertical-align:middle; text-align: center" class="font12"><div class="div_in_td"></div><b>6</b></td>
+                      <td style="vertical-align: middle;" class="font12" style="text-align:justify"><div class="div_in_td" > <b>Vai ảo nghiệp vụ</b></div></td>
+                      <td style="vertical-align:middle;"><div class="ta_center font12 diem_cb_muc_2" contentEditable ></div></td>
+                        <td style="vertical-align:middle;"><div class="ta_center font12 diem_cb_muc_2" contentEditable ></div></td>
+                        <td style="vertical-align:middle;" ><div class="ta_center font12 diem_ch_muc_2" contentEditable ></div></td>
+                      </tr>
+                      <tr>
+                        <td style="vertical-align:middle; text-align: center" class="font12"><div class="div_in_td"></div><b>7</b></td>
+                        <td style="vertical-align: middle;" class="font12" style="text-align:justify"><div class="div_in_td" > <b>Hợp thư bí mật</b></div></td>
+                        <td style="vertical-align:middle;"><div class="ta_center font12 diem_cb_muc_2" contentEditable ></div></td>
+                          <td style="vertical-align:middle;"><div class="ta_center font12 diem_cb_muc_2" contentEditable ></div></td>
+                          <td style="vertical-align:middle;" ><div class="ta_center font12 diem_ch_muc_2" contentEditable ></div></td>
+                        </tr>
+                        <tr>
+                          <td style="vertical-align:middle; text-align: center" class="font12"><div class="div_in_td"></div><b>8</b></td>
+                          <td style="vertical-align: middle;" class="font12" style="text-align:justify"><div class="div_in_td" > <b>Nhà nghiệp vụ</b></div></td>
+                          <td style="vertical-align:middle;"><div class="ta_center font12 diem_cb_muc_2" contentEditable ></div></td>
+                            <td style="vertical-align:middle;"><div class="ta_center font12 diem_cb_muc_2" contentEditable ></div></td>
+                            <td style="vertical-align:middle;" ><div class="ta_center font12 diem_ch_muc_2" contentEditable ></div></td>
+                          </tr>
+                          <tr>
+                            <td colspan="2" style="vertical-align:middle; text-align: center" class="font12"><div class="div_in_td"></div><b>Tổng/Điểm trung bình</b></td>
+                            <td style="vertical-align:middle;"><div class="ta_center font12 " id="sum_all_cb" contentEditable ></div></td>
+                            <td style="vertical-align:middle;" ><div class="ta_center font12 " id="sum_all_ch" contentEditable ></div></td>
+                            <td style="vertical-align:middle;"><div class="ta_center font12 " id="sum_all_cb" contentEditable ></div></td>
+                            </tr>
+                            </table>
+    <br>
+    <span class='TAB'></span><b>II. TIÊU CHÍ CÔNG TÁC NVCB KÈM THEO</b>
+    <table class='table_mau_pa' style="width: 100%;border: 1px; border-collapse: collapse; border-color: black; border-style:solid; font-size:16px; margin-top:10px";
+    border="1px" cellpadding="0" cellspacing="0" id="Table3" >
+    <tr class=''>
+    <td rowspan="2" class="Table_TH font12" style="width: 1cm;height: 2.4cm; text-align:center"><b>STT</b></td>
+    <td rowspan="2" class="Table TH font12" style="width:9.6cm;height: 2.4cm; text-align:center"><b>Nội dung tiêu chí</b></td>
+    <td colspan="2" class="Table_TH font12" style="width: 2.9cm; text-align:center"><b>Cá nhân tự<br>đánh giá</b></td>
+    <td colspan="2" class="Table_TH font12" style="width: 3.1cm; text-align:center"><b>Thủ trưởng đơn<br>vị đánh giá</b></td>
+    </tr>
+    <tr>
+    <td class="Table TH font12" style="width: 1.3cm; text-align:center">Đạt</td>
+    <td class="Table_TH font12" style="width: 1.6cm; text-align:center">Không </b>đạt</td>
+    <td class="Table_TH font12" style="width: 1.6cm; text-align:center">Đạt</td>
+    <td class="Table_TH font12" style="width: 1.5cm; text-align:center">Không <br>đạt</td>
+    <tr>
+      <td style="vertical-align:middle; text-align: center" class="font12"><div class="div_in_td"></div>1</td>
+      <td style="vertical-align: middle;" class="font12" style="text-align:justify"><div class="div_in_td" >Thực hiện nghiêm túc, đầy đủ, bảo
+        đảm chất lượng, tiến độ các văn bản, chỉ đạo của cấp trên về công tác NVCB
+      </div></td>
+      <td style="vertical-align:middle;"><div class="ta_center font12 diem_cb_muc_3" contentEditable ></div></td>
+      <td style="vertical-align:middle;"><div class="ta_center font12 diem_cb_muc_3" contentEditable ></div></td>
+      <td style="vertical-align:middle;" ><div class="ta_center font12 diem_ch_muc_3" contentEditable ></div></td>
+      <td style="vertical-align:middle;" ><div class="ta_center font12 diem_ch_muc_3" contentEditable ></div></td>
+      </tr>
+      <tr>
+        <td style="vertical-align:middle; text-align: center" class="font12"><div class="div_in_td"></div>2</td>
+        <td style="vertical-align: middle;" class="font12" style="text-align:justify"><div class="div_in_td" >Thực hiện
+          đạt các chỉ tiêu công tác NVCB được giao
+        </div></td>
+        <td style="vertical-align:middle;"><div class="ta_center font12 diem_cb_muc_3" contentEditable ></div></td>
+        <td style="vertical-align:middle;"><div class="ta_center font12 diem_cb_muc_3" contentEditable ></div></td>
+        <td style="vertical-align:middle;" ><div class="ta_center font12 diem_ch_muc_3" contentEditable ></div></td>
+        <td style="vertical-align:middle;" ><div class="ta_center font12 diem_ch_muc_3" contentEditable ></div></td>
+        </tr>
+        <tr>
+          <td style="vertical-align:middle; text-align: center" class="font12"><div class="div_in_td"></div>3</td>
+          <td style="vertical-align: middle;" class="font12" style="text-align:justify"><div class="div_in_td" >Thực hiện
+            vượt mức ít nhất 01 chỉ tiêu công tác NVCB được giao
+          </div></td>
+          <td style="vertical-align:middle;"><div class="ta_center font12 diem_cb_muc_3" contentEditable ></div></td>
+          <td style="vertical-align:middle;"><div class="ta_center font12 diem_cb_muc_3" contentEditable ></div></td>
+          <td style="vertical-align:middle;" ><div class="ta_center font12 diem_ch_muc_3" contentEditable ></div></td>
+          <td style="vertical-align:middle;" ><div class="ta_center font12 diem_ch_muc_3" contentEditable ></div></td>
+          </tr>
+          <tr>
+            <td style="vertical-align:middle; text-align: center" class="font12"><div class="div_in_td"></div>4</td>
+            <td style="vertical-align: middle;" class="font12" style="text-align:justify"><div class="div_in_td" >Không để sót, lọt
+              đối tượng sưu theo chức năng, nhiệm vụ được giao
+            </div></td>
+            <td style="vertical-align:middle;"><div class="ta_center font12 diem_cb_muc_3" contentEditable ></div></td>
+            <td style="vertical-align:middle;"><div class="ta_center font12 diem_cb_muc_3" contentEditable ></div></td>
+            <td style="vertical-align:middle;" ><div class="ta_center font12 diem_ch_muc_3" contentEditable ></div></td>
+            <td style="vertical-align:middle;" ><div class="ta_center font12 diem_ch_muc_3" contentEditable ></div></td>
+            </tr>
+            <tr>
+              <td style="vertical-align:middle; text-align: center" class="font12"><div class="div_in_td"></div>5</td>
+              <td style="vertical-align: middle;" class="font12" style="text-align:justify"><div class="div_in_td" >Không có công tác
+                NVCB xếp loại Kém
+              </div></td>
+              <td style="vertical-align:middle;"><div class="ta_center font12 diem_cb_muc_3" contentEditable ></div></td>
+              <td style="vertical-align:middle;"><div class="ta_center font12 diem_cb_muc_3" contentEditable ></div></td>
+              <td style="vertical-align:middle;" ><div class="ta_center font12 diem_ch_muc_3" contentEditable ></div></td>
+              <td style="vertical-align:middle;" ><div class="ta_center font12 diem_ch_muc_3" contentEditable ></div></td>
+              </tr>
+              <tr>
+                <td style="vertical-align:middle; text-align: center" class="font12"><div class="div_in_td"></div>6</td>
+                <td style="vertical-align: middle;" class="font12" style="text-align:justify"><div class="div_in_td" >Riêng đối với cán bộ,
+                  chiến sĩ thuộc đơn vị nghiệp vụ có chức năng trinh sát phải thực hiện từ 02 mặt công tác NVCB trở lên
+                </div></td>
+                <td style="vertical-align:middle;"><div class="ta_center font12 diem_cb_muc_3" contentEditable ></div></td>
+                <td style="vertical-align:middle;"><div class="ta_center font12 diem_cb_muc_3" contentEditable ></div></td>
+                <td style="vertical-align:middle;" ><div class="ta_center font12 diem_ch_muc_3" contentEditable ></div></td>
+                <td style="vertical-align:middle;" ><div class="ta_center font12 diem_ch_muc_3" contentEditable ></div></td>
+                </tr>
+                <tr>
+                  <td style="vertical-align:middle; text-align: center" class="font12"><div class="div_in_td"></div>7</td>
+                  <td style="vertical-align: middle;" class="font12" style="text-align:justify"><div class="div_in_td" >Thực hiện chỉ tiêu
+                    công tác nghiệp vụ cơ bản theo phân công
+                  </div></td>
+                  <td style="vertical-align:middle;"><div class="ta_center font12 diem_cb_muc_3" contentEditable ></div></td>
+                  <td style="vertical-align:middle;"><div class="ta_center font12 diem_cb_muc_3" contentEditable ></div></td>
+                  <td style="vertical-align:middle;" ><div class="ta_center font12 diem_ch_muc_3" contentEditable ></div></td>
+                  <td style="vertical-align:middle;" ><div class="ta_center font12 diem_ch_muc_3" contentEditable ></div></td>
+                  </tr>
+                  </table> <br>
+
+                  <div>Lý do tiêu chí không đạt hoặc không thực hiện: ...............................................................</div>
+                  <div>............................................................................................................................................</div>
+                  <div>............................................................................................................................................</div>
+
+                              <br>
+                              <span class='TAB'></span><b>III. TỔNG HỢP CHUNG</b>
+
+                              <div style="margin-left: 1cm;" class="font14 clean"><br>
+                                <b>1. Kết quả chấm điểm, xếp loại do cán bộ tự tổng hợp:</b>
+
+                                <!-- Khối chứa ngày tháng và "CÁN BỘ" căn phải, nhưng "CÁN BỘ" nằm chính giữa so với nội dung ngày tháng -->
+                                <div style="width: 100%; margin-top: 10px; text-align: right;">
+                                  <div id="ngayThang" style="display: inline-block; text-align: left;">
+                                    <div>
+                                      <i><span class="dia_danh border" contenteditable="">..................</span>,
+                                      ngày <span class="o_nhap_ngay border" contenteditable="">...</span>
+                                      tháng <span class="o_nhap_thang border" contenteditable="">...</span>
+                                      năm 20<span class="o_nhap_nam border" contenteditable="">....</span></i>
+                                    </div>
+                                    <div style="text-align: center; margin-top: 20px;">
+                                      <b>CÁN BỘ</b><br>
+                                      <i class="font8">(Ký, cấp bậc, họ tên)</i>
+                                    </div>
+                                  </div>
+                                </div>
+
+                                <!-- Phần nội dung chấm điểm -->
+                                <div style="margin-top: 20px;">
+                                  <div id="tongDiemCb">- Điểm trung bình đạt được: ..................</div>
+                                  <div id="mucXepLoaiCb" style="margin-top: 10px;">- Mức xếp loại: ......................</div>
+                                </div>
+                              </div>
+    <br>
+    <br>
+
+    <div style="margin-left: 1cm;" class="font14 clean"><br>
+      <b>2. Kết quả chấm điểm, xếp loại do Thủ trưởng đơn vị thực hiện:</b>
+
+      <div style="width: 100%; margin-top: 10px; text-align: right;">
+        <div id="ngayThang" style="display: inline-block; text-align: left;">
+          <div>
+            <i><span class="dia_danh border" contenteditable="">..................</span>,
+            ngày <span class="o_nhap_ngay border" contenteditable="">...</span>
+            tháng <span class="o_nhap_thang border" contenteditable="">...</span>
+            năm 20<span class="o_nhap_nam border" contenteditable="">....</span></i>
+          </div>
+          <div style="text-align: center; margin-top: 20px;">
+           <b>THỦ TRƯỞNG ĐƠN VỊ</b><br>
+            <i class="font8">(Ký, cấp bậc, họ tên, chức vụ)</i>
+          </div>
+        </div>
+      </div>
+
+      <!-- Phần nội dung chấm điểm -->
+      <div style="margin-top: 20px;">
+        <div id="tongDiemCh">- Điểm trung bình đạt được: ..................</div>
+        <div id="mucXepLoaiCh" style="margin-top: 10px;">- Mức xếp loại: ......................</div>
+      </div>
+      <img src="./../images/print.png" class="button_print" width="50px" height="50px" onclick="In_bieu_mau();"><br>
+      <img src="./../images/save.png" class="button_save" width="45px" height="45px" onclick="save()";><br>
+      <img src="./../images/reload.png" class="button_reload" width="45px" height="45px" onclick="window.location.reload(true);">
+    </div>
+  </div>
+</body>
+</html>
+
+
+
+
+
+
+    
+  
+
+
+
+
+  
+  
+
+  
+  
+
+
+
+

@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en" id="bieumau">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>MẪU CĐ6</title>
+<link rel="stylesheet" href="./../styles/style.css">
+<link rel="stylesheet" href="./../styles/cross-platform.css">
+<link rel="stylesheet" href="./../Style/print.css" media="print">
+<script language="javascript" src="./../js/chamdiem.js"></script>
+<script language="javascript" src="./../js/xuongdong.js"></script>
+<script type='text/javascript'>
+function save() {
+  var htmlContent = ['<!DOCTYPE html>', '<html lang="en" id="bieumau">',
+                     document.getElementById('bieumau').innerHTML, '</html>',
+                     '<img src="./../Image/print.png" class="button_print" width="50px" height="50px" onclick="In_bieu_mau();">',
+                     '<img src="./../Image/save.png" class="button_save" width="45px" height="45px" onclick="save()">',
+                     '<img src="./../Image/reload.png" class="button_reload" width="45px" height="45px" onclick="window.location.reload(true);">'].join('\n');
+  var bl = new Blob(htmlContent, {type: "text/html"});
+  var a = document.createElement("a");
+  a.href = URL.createObjectURL(bl);
+  a.download = document.title + ".html";
+  a.hidden = true;
+  document.body.appendChild(a);
+  a.click();
+}
+function In_bieu_mau() {
+  window.print();
+}
+</script>
+</head>
+<body class="font14 ta_jus" onkeyup='cong_diem()'>
+  <div class="wrapper border" >
+    <div class="content_mau_pa">
+      <div class="cq_banhanh_mau_pa f_left ta_center font12">
+        <!--Số: <span class="o_nhap_1cm ta_left border" contenteditable=""></span>/QD <span class="o_nhap_1cm ta_left border" contenteditable=""></span>-->
+      </div>
+      <div class="td_bieumau ta_center f_right lh_08">
+        <span class=" fontBold" style='font-size: 13.3px'>MẪU CĐ6</span><br>
+        <div class='lh_06' style='margin-top:5px'>
+          <span class=" " style='font-size:12px'> Ban hành kèm theo </span> <br>
+          <span class=" " style='font-size:12px'> Thông tư số </span> <br>
+          <span class=" " style='font-size:12px'> 17/2025/TT-BCA </span> <br>
+          <span class=" " style='font-size:12px'> ngày 28/02/2025 </span> <br>
+        </div>
+      </div>
+      <br> <br>
+      <div style="text-align: center;" class="font14 clean">
+        <b>PHIẾU CHẤM ĐIỂM, XẾP LOẠI</b><br>
+        <div style="display: inline-block; text-align: center;">
+          <div class="font13 clean"><b>Công tác vai ảo nghiệp vụ của lực lượng Cảnh sát nhân dân</b></div>
+          <div style="min-height: 1px; border-top: 1px solid black; width: 2cm; margin: 4px auto 0 auto;"></div>
+        </div>
+      </div>
+      <br>
+      <span class='TAB'></span>Họ và tên: <span class='o_nhap_1cm border' contenteditable style='min-width:500px'></span><br>
+      <span class='TAB'></span>Cấp bậc: <span class='o_nhap_1cm border' contenteditable style='min-width: 200px'></span>
+      <span class='TAB'></span>Chức vụ: <span class='o_nhap_1cm border' contenteditable style='min-width: 200px'></span> <br>
+      <span class= 'TAB'></span>Đơn vị: <span class='o_nhap_thang border' contenteditable style='min-width:400px'></span><br>
+      <span class='TAB'></span>Tên vai ảo nghiệp vụ (VANV): <span class='o_nhap_1cm border' contenteditable style='min-width:250px'></span><br>
+      <span class='TAB'></span>Số hồ sơ: <span class='o_nhap_1cm border' contenteditable style='min-width:500px'></span><br>
+      <i><span class='TAB'></span>(Thời gian: Từ ngày <span class="o_nhap_ngay border" contenteditable="">...</span>
+      tháng<span class="o_nhap_thang border" contenteditable="">...</span>
+      năm 20<span class="o_nhap_nam border" contenteditable="">....</span>
+      đến ngày<span class="o_nhap_ngay border" contenteditable="">...</span>
+      tháng<span class="o_nhap_thang border" contenteditable="">...</span>
+      năm 20<span class="o_nhap_nam border" contenteditable="">....)</span></i>
+      <table class='table_mau_pa' style="width: 100%;border: 1px; border-collapse: collapse; border-color: black; border-style:solid; font-size:16px; margin-top:10px";
+      border="1px" cellpadding="0" cellspacing="0" id="Table3" >
+      <tr class=''>
+  <td class="Table_TH font12" style="width: 1.2cm; text-align:center"><b>STT</b></td>
+<td class="Table TH font12" style="min-width:11.5cm; text-align:center"><b>Nội dung tiêu chí chấm điểm</b></td> 
+<td class="Table_TH font12" style="width: 1.5cm; text-align:center"><b>Mức<br>điểm</b></td> 
+<td class="Table TH font12" style="width: 1.3cm; text-align:center"><b>Cán bộ<br>tự<br>chấm</b></td>
+<td class="Table_TH font12" style="width: 1.5cm; text-align:center"><b>LĐ, CH <br>phụ trách<br>chấm</b></td> 
+</tr>
+<tr>
+<td style="vertical-align:middle; text-align: center" class="font12"><div class="div_in_td" ></div>1</td> 
+<td style="text-align:justify"><div class="div in_td" >Xây dựng VANV</div></td>
+<td style="vertical-align: middle;" class="ta_center font12"><div class="div_in_td" >15</div></td>
+<td style="vertical-align:middle;"><div class="ta_center font12 diem_cb" id='tong_diem_cb_muc_1' ></div></td> 
+<td style="vertical-align:middle;"><div class="ta_center font12 diem_ch" id='tong_diem_ch_muc_1'></div></td>
+</tr>
+<tr>
+  <td style="vertical-align:middle; text-align: center" class="font12"><div class="div_in_td"></div><i>1.1</i></td> 
+  <td style="vertical-align: middle;" class="font12" style="text-align:justify"><div class="div_in_td" > <i>Bảo đảm điều kiện xây dựng</i></div></td> 
+    <td style="vertical-align: middle;" class="ta_center font12 "><div class="div_in_td" ><i>05</i></div></td> 
+    <td style="vertical-align:middle;"><div class="ta_center font12 diem_cb_muc_1" contentEditable ></div></td> 
+    <td style="vertical-align:middle;" ><div class="ta_center font12 diem_ch_muc_1" contentEditable ></div></td> 
+  </tr>
+  <tr>
+  <td style="vertical-align:middle; text-align: center" class="font12"><div class="div_in_td"></div><i>1.2</i></td> 
+  <td style="vertical-align: middle;" class="font12" style="text-align:justify"><div class="div_in_td" > <i>Bảo đảm phương pháp xây dựng</i></div></td> 
+    <td style="vertical-align: middle;" class="ta_center font12 "><div class="div_in_td" ><i>05</i></div></td> 
+    <td style="vertical-align:middle;"><div class="ta_center font12 diem_cb_muc_1" contentEditable ></div></td> 
+    <td style="vertical-align:middle;" ><div class="ta_center font12 diem_ch_muc_1" contentEditable ></div></td> 
+  </tr>
+  <tr>
+  <td style="vertical-align:middle; text-align: center" class="font12"><div class="div_in_td"></div><i>1.3</i></td> 
+  <td style="vertical-align: middle;" class="font12" style="text-align:justify"><div class="div_in_td" > <i>Bảo đảm trình tự xây dựng</i></div></td> 
+    <td style="vertical-align: middle;" class="ta_center font12 "><div class="div_in_td" ><i>05</i></div></td> 
+    <td style="vertical-align:middle;"><div class="ta_center font12 diem_cb_muc_1" contentEditable ></div></td> 
+    <td style="vertical-align:middle;" ><div class="ta_center font12 diem_ch_muc_1" contentEditable ></div></td> 
+  </tr>
+  <tr>
+    <td style="vertical-align:middle; text-align: center" class="font12"><div class="div_in_td" ></div>2</td> 
+    <td style="text-align:justify"><div class="div in_td" >Kế hoạch sử dụng VANV: Bảo đảm đầy đủ, chi tiết; dự kiến thực hiện các hoạt động trên không gian mạng; lên phương án xử lý các tình huống có thể nảy sinh trong thực tiễn; được lãnh đạo có thẩm quyền phê duyệt</div></td>
+    <td style="vertical-align: middle;" class="ta_center font12"><div class="div_in_td" >05</div></td>
+    <td style="vertical-align:middle;"><div class="ta_center font12 diem_cb_muc_2" contentEditable ></div></td> 
+    <td style="vertical-align:middle;" ><div class="ta_center font12 diem_ch_muc_2" contentEditable ></div></td>
+    </tr>
+    <td style="vertical-align:middle; text-align: center" class="font12"><div class="div_in_td" ></div>3</td> 
+    <td style="text-align:justify"><div class="div in_td" >Sử dụng VANV</div></td>
+    <td style="vertical-align: middle;" class="ta_center font12"><div class="div_in_td" >30</div></td>
+    <td style="vertical-align:middle;"><div class="ta_center font12 diem cb" id='tong_diem_cb_muc_3' ></div></td> 
+    <td style="vertical-align:middle;"><div class="ta_center font12 diem_ch" id='tong_diem_ch_muc_3'></div></td>
+    </tr>
+    <tr>
+      <td style="vertical-align:middle; text-align: center" class="font12"><div class="div_in_td"></div><i>3.1</i></td> 
+      <td style="vertical-align: middle;" class="font12" style="text-align:justify"><div class="div_in_td" > <i>Bảo đảm sử dụng VANV theo Kế hoạch</i></div></td> 
+        <td style="vertical-align: middle;" class="ta_center font12 "><div class="div_in_td" ><i>05</i></div></td> 
+        <td style="vertical-align:middle;"><div class="ta_center font12 diem_cb_muc_3" contentEditable ></div></td> 
+        <td style="vertical-align:middle;" ><div class="ta_center font12 diem_ch_muc_3" contentEditable ></div></td> 
+      </tr>
+      <tr>
+        <td style="vertical-align:middle; text-align: center" class="font12"><div class="div_in_td"></div><i>3.2</i></td> 
+        <td style="vertical-align: middle;" class="font12" style="text-align:justify"><div class="div_in_td" > <i>Thường xuyên kiểm tra an toàn, bí mật, đánh giá tình hình, hiệu quả sử dụng VANV</i></div></td> 
+          <td style="vertical-align: middle;" class="ta_center font12 "><div class="div_in_td" ><i>10</i></div></td> 
+          <td style="vertical-align:middle;"><div class="ta_center font12 diem_cb_muc_3" contentEditable ></div></td> 
+          <td style="vertical-align:middle;" ><div class="ta_center font12 diem_ch_muc_3" contentEditable ></div></td> 
+        </tr>
+        <tr>
+          <td style="vertical-align:middle; text-align: center" class="font12"><div class="div_in_td"></div><i>3.3</i></td> 
+          <td style="vertical-align: middle;" class="font12" style="text-align:justify"><div class="div_in_td" > <i>Có hoạt động xử lý, xác minh thông tin, tài liệu thu được qua VANV và báo cáo kết quả, được lãnh đạo có thẩm quyền phê duyệt</i></div></td> 
+            <td style="vertical-align: middle;" class="ta_center font12 "><div class="div_in_td" ><i>20</i></div></td> 
+            <td style="vertical-align:middle;"><div class="ta_center font12 diem_cb_muc_3" contentEditable ></div></td> 
+            <td style="vertical-align:middle;" ><div class="ta_center font12 diem_ch_muc_3" contentEditable ></div></td> 
+          </tr>
+          <tr>
+            <td style="vertical-align:middle; text-align: center" class="font12"><div class="div_in_td"></div><i>3.4</i></td> 
+            <td style="vertical-align: middle;" class="font12" style="text-align:justify"><div class="div_in_td" > <i>Chi mật phí phục vụ hoạt động của VANV đúng quy định</i></div></td> 
+              <td style="vertical-align: middle;" class="ta_center font12 "><div class="div_in_td" ><i>05</i></div></td> 
+              <td style="vertical-align:middle;"><div class="ta_center font12 diem_cb_muc_3" contentEditable ></div></td> 
+              <td style="vertical-align:middle;" ><div class="ta_center font12 diem_ch_muc_3" contentEditable ></div></td> 
+            </tr>
+              <tr>
+<td style="vertical-align:middle; text-align: center" class="font12"><div class="div_in_td" ></div>4</td> 
+<td style="text-align:justify"><div class="div in_td" >Báo cáo lãnh đạo có thẩm quyền hiệu quả VANV (bảo đảm thời gian ít nhất 01 lần/tháng); được lãnh đạo có thẩm quyền phê duyệt</div></td>
+<td style="vertical-align: middle;" class="ta_center font12"><div class="div_in_td" >05</div></td>
+<td style="vertical-align:middle;"><div class="ta_center font12 diem_cb_muc_4" contentEditable ></div></td> 
+    <td style="vertical-align:middle;" ><div class="ta_center font12 diem_ch_muc_4" contentEditable ></div></td>
+</tr>
+<tr>
+<td style="vertical-align:middle; text-align: center" class="font12"><div class="div_in_td" ></div>5</td> 
+<td style="text-align:justify"><div class="div in_td" >Chất lượng, hiệu quả VANV</div></td>
+<td style="vertical-align: middle;" class="ta_center font12"><div class="div_in_td" >35</div></td>
+<td style="vertical-align:middle;"><div class="ta_center font12 diem cb" id='tong_diem_cb_muc_5' ></div></td> 
+<td style="vertical-align:middle;"><div class="ta_center font12 diem_ch" id='tong_diem_ch_muc_5'></div></td>
+</tr>
+<tr>
+  <td style="vertical-align:middle; text-align: center" class="font12"><div class="div_in_td"></div><i>5.1</i></td> 
+  <td style="vertical-align: middle;" class="font12" style="text-align:justify"><div class="div_in_td" > <i>VANV thu thập được nhiều thông tin phục vụ công tác nắm tình hình, điều tra cơ bản</i></div></td> 
+    <td style="vertical-align: middle;" class="ta_center font12 "><div class="div_in_td" ><i>10</i></div></td> 
+    <td style="vertical-align:middle;"><div class="ta_center font12 diem_cb_muc_5" contentEditable ></div></td> 
+    <td style="vertical-align:middle;" ><div class="ta_center font12 diem_ch_muc_5" contentEditable ></div></td> 
+  </tr>
+  <tr>
+    <td style="vertical-align:middle; text-align: center" class="font12"><div class="div_in_td"></div><i>5.2</i></td> 
+    <td style="vertical-align: middle;" class="font12" style="text-align:justify"><div class="div_in_td" > <i>VANV thu thập được thông tin có giá trị để phục vụ tham mưu ban hành chính sách, xây dựng kế hoạch/phương án phòng ngừa, đấu tranh với tội phạm</i></div></td> 
+      <td style="vertical-align: middle;" class="ta_center font12 "><div class="div_in_td" ><i>10</i></div></td> 
+      <td style="vertical-align:middle;"><div class="ta_center font12 diem_cb_muc_5" contentEditable ></div></td> 
+      <td style="vertical-align:middle;" ><div class="ta_center font12 diem_ch_muc_5" contentEditable ></div></td> 
+    </tr>
+    <tr>
+      <td style="vertical-align:middle; text-align: center" class="font12"><div class="div_in_td"></div><i>5.3</i></td> 
+      <td style="vertical-align: middle;" class="font12" style="text-align:justify"><div class="div_in_td" > <i>VANV tác động, chuyển hóa, ngăn chặn được đối tượng phạm tội, vi phạm pháp luật</i></div></td> 
+        <td style="vertical-align: middle;" class="ta_center font12 "><div class="div_in_td" ><i>10</i></div></td> 
+        <td style="vertical-align:middle;"><div class="ta_center font12 diem_cb_muc_5" contentEditable ></div></td> 
+        <td style="vertical-align:middle;" ><div class="ta_center font12 diem_ch_muc_5" contentEditable ></div></td> 
+      </tr>
+      <tr>
+        <td style="vertical-align:middle; text-align: center" class="font12"><div class="div_in_td"></div><i>5.4</i></td> 
+        <td style="vertical-align: middle;" class="font12" style="text-align:justify"><div class="div_in_td" > <i>VANV phát hiện đưa đối tượng vào sưu tra</i></div></td> 
+          <td style="vertical-align: middle;" class="ta_center font12 "><div class="div_in_td" ><i>10</i></div></td> 
+          <td style="vertical-align:middle;"><div class="ta_center font12 diem_cb_muc_5" contentEditable ></div></td> 
+          <td style="vertical-align:middle;" ><div class="ta_center font12 diem_ch_muc_5" contentEditable ></div></td> 
+        </tr>
+        <tr>
+        <td style="vertical-align:middle; text-align: center" class="font12"><div class="div_in_td"></div><i>5.5</i></td> 
+        <td style="vertical-align: middle;" class="font12" style="text-align:justify"><div class="div_in_td" > <i>VANV phát hiện và xác lập được hiềm nghi</i></div></td> 
+          <td style="vertical-align: middle;" class="ta_center font12 "><div class="div_in_td" ><i>20</i></div></td> 
+          <td style="vertical-align:middle;"><div class="ta_center font12 diem_cb_muc_5" contentEditable ></div></td> 
+          <td style="vertical-align:middle;" ><div class="ta_center font12 diem_ch_muc_5" contentEditable ></div></td> 
+        </tr>
+        <tr>
+        <td style="vertical-align:middle; text-align: center" class="font12"><div class="div_in_td"></div><i>5.6</i></td> 
+        <td style="vertical-align: middle;" class="font12" style="text-align:justify"><div class="div_in_td" > <i>VANV phát hiện và xác lập được chuyên án</i></div></td> 
+          <td style="vertical-align: middle;" class="ta_center font12 "><div class="div_in_td" ><i>30</i></div></td> 
+          <td style="vertical-align:middle;"><div class="ta_center font12 diem_cb_muc_5" contentEditable ></div></td> 
+          <td style="vertical-align:middle;" ><div class="ta_center font12 diem_ch_muc_5" contentEditable ></div></td> 
+        </tr>
+        <tr>
+        <td style="vertical-align:middle; text-align: center" class="font12"><div class="div_in_td"></div><i>5.7</i></td> 
+        <td style="vertical-align: middle;" class="font12" style="text-align:justify"><div class="div_in_td" > <i>VANV phát hiện và bổ sung được đối tượng chuyên án</i></div></td> 
+          <td style="vertical-align: middle;" class="ta_center font12 "><div class="div_in_td" ><i>20</i></div></td> 
+          <td style="vertical-align:middle;"><div class="ta_center font12 diem_cb_muc_5" contentEditable ></div></td> 
+          <td style="vertical-align:middle;" ><div class="ta_center font12 diem_ch_muc_5" contentEditable ></div></td> 
+        </tr>
+        <tr>
+        <td style="vertical-align:middle; text-align: center" class="font12"><div class="div_in_td"></div><i>5.8</i></td> 
+        <td style="vertical-align: middle;" class="font12" style="text-align:justify"><div class="div_in_td" > <i>VANV phát hiện và xử lý được đối tượng vi phạm pháp luật</i></div></td> 
+          <td style="vertical-align: middle;" class="ta_center font12 "><div class="div_in_td" ><i>10</i></div></td> 
+          <td style="vertical-align:middle;"><div class="ta_center font12 diem_cb_muc_5" contentEditable ></div></td> 
+          <td style="vertical-align:middle;" ><div class="ta_center font12 diem_ch_muc_5" contentEditable ></div></td> 
+        </tr>
+        <tr>
+        <td style="vertical-align:middle; text-align: center" class="font12"><div class="div_in_td"></div><i>5.9</i></td> 
+        <td style="vertical-align: middle;" class="font12" style="text-align:justify"><div class="div_in_td" > <i>VANV phát hiện, thu thập được tài liệu, chứng cứ để xử lý được đối tượng phạm tội</i></div></td> 
+          <td style="vertical-align: middle;" class="ta_center font12 "><div class="div_in_td" ><i>20</i></div></td> 
+          <td style="vertical-align:middle;"><div class="ta_center font12 diem_cb_muc_5" contentEditable ></div></td> 
+          <td style="vertical-align:middle;" ><div class="ta_center font12 diem_ch_muc_5" contentEditable ></div></td> 
+        </tr>
+        <tr>
+        <td style="vertical-align:middle; text-align: center" class="font12"><div class="div_in_td"></div><i>5.10</i></td> 
+        <td style="vertical-align: middle;" class="font12" style="text-align:justify"><div class="div_in_td" > <i>VANV phát hiện được người và tuyển chọn xây dựng thành cộng tác viên bí mật của lực lượng Cảnh sát nhân dân</i></div></td> 
+          <td style="vertical-align: middle;" class="ta_center font12 "><div class="div_in_td" ><i>05</i></div></td> 
+          <td style="vertical-align:middle;"><div class="ta_center font12 diem_cb_muc_5" contentEditable ></div></td> 
+          <td style="vertical-align:middle;" ><div class="ta_center font12 diem_ch_muc_5" contentEditable ></div></td> 
+        </tr>
+            <tr>
+              <td style="vertical-align:middle; text-align: center" class="font12"><div class="div_in_td" ></div>6</td> 
+              <td style="text-align:justify"><div class="div in_td" >Thực hiện công tác hồ sơ</div></td>
+              <td style="vertical-align: middle;" class="ta_center font12"><div class="div_in_td" >10</div></td>
+              <td style="vertical-align:middle;"><div class="ta_center font12 diem_cb_muc_6" contentEditable ></div></td> 
+    <td style="vertical-align:middle;" ><div class="ta_center font12 diem_ch_muc_6" contentEditable ></div></td>
+              </tr>
+              <tr>
+                <td style="vertical-align:middle; text-align: center" class="font12"><div class="div_in_td" ></div>7</td> 
+                <td style="text-align:justify"><div class="div in_td" >Điểm trừ (-)</div></td>
+                <td style="vertical-align: middle;" class="ta_center font12"><div class="div_in_td" >-100</div></td>
+                <td style="vertical-align:middle;"><div class="ta_center font12 diem cb" id='tong_diem_cb_muc_7' ></div></td> 
+                <td style="vertical-align:middle;"><div class="ta_center font12 diem_ch" id='tong_diem_ch_muc_7'></div></td>
+                </tr>
+                <tr>
+               
+                  <tr>
+                    <td style="vertical-align:middle; text-align: center" class="font12"><div class="div_in_td"></div><i>7.1</i></td> 
+                    <td style="vertical-align: middle;" class="font12" style="text-align:justify"><div class="div_in_td" > <i>Xây dựng, sử dụng VANV với vai trò chủ mưu, cầm đầu, kích động, lôi kéo đối tượng trong hội, nhóm hoạt động chống Đảng, Nhà nước, thực hiện hành vi phạm tội hoặc vi phạm pháp luật</i></div></td> 
+                      <td style="vertical-align: middle;" class="ta_center font12 "><div class="div_in_td" ><i>-100</i></div></td> 
+                      <td style="vertical-align:middle;"><div class="ta_center font12 diem_cb_muc_7" contentEditable ></div></td> 
+                      <td style="vertical-align:middle;" ><div class="ta_center font12 diem_ch_muc_7" contentEditable ></div></td> 
+                    </tr>
+                    <tr>
+                      <td style="vertical-align:middle; text-align: center" class="font12"><div class="div_in_td"></div><i>7.2</i></td> 
+                      <td style="vertical-align: middle;" class="font12" style="text-align:justify"><div class="div_in_td" > <i>Không đảm bảo bí mật, an toàn vai ảo, nhân thân cán bộ khi tiếp cận đối tượng trên không gian mạng và trên thực tế</i></div></td> 
+                        <td style="vertical-align: middle;" class="ta_center font12 "><div class="div_in_td" ><i>-50</i></div></td> 
+                        <td style="vertical-align:middle;"><div class="ta_center font12 diem_cb_muc_7" contentEditable ></div></td> 
+                        <td style="vertical-align:middle;" ><div class="ta_center font12 diem_ch_muc_7" contentEditable ></div></td> 
+                      </tr>
+                      <tr>
+                        <td style="vertical-align:middle; text-align: center" class="font12"><div class="div_in_td"></div><i>7.3</i></td> 
+                        <td style="vertical-align: middle;" class="font12" style="text-align:justify"><div class="div_in_td" > <i>Sử dụng thông tin thật về nhân thân, số điện thoại, địa chỉ nơi ở của cán bộ (hoặc người thân) đứng tên, thông tin liên quan đơn vị công tác của cán bộ thực hiện hoặc cán bộ khác trong lực lượng Công an nhân dân, địa chỉ e-mail đang sử dụng công khai hoặc đã dùng đăng ký dịch vụ khác, tài khoản khác của cán bộ đang sử dụng chính thức trên không gian mạng để thiết lập VANV.</i></div></td> 
+                          <td style="vertical-align: middle;" class="ta_center font12 "><div class="div_in_td" ><i>-100</i></div></td> 
+                          <td style="vertical-align:middle;"><div class="ta_center font12 diem_cb_muc_7" contentEditable ></div></td> 
+                          <td style="vertical-align:middle;" ><div class="ta_center font12 diem_ch_muc_7" contentEditable ></div></td> 
+                        </tr>
+                        <tr>
+                          <td style="vertical-align:middle; text-align: center" class="font12"><div class="div_in_td"></div><i>7.4</i></td> 
+                          <td style="vertical-align: middle;" class="font12" style="text-align:justify"><div class="div_in_td" > <i>VANV thực hiện các hoạt động không được phép</i></div></td> 
+                            <td style="vertical-align: middle;" class="ta_center font12 "><div class="div_in_td" ><i>-100</i></div></td> 
+                            <td style="vertical-align:middle;"><div class="ta_center font12 diem_cb_muc_7" contentEditable ></div></td> 
+                            <td style="vertical-align:middle;" ><div class="ta_center font12 diem_ch_muc_7" contentEditable ></div></td> 
+                          </tr>
+                          <tr>
+                            <td style="vertical-align:middle; text-align: center" class="font12"><div class="div_in_td"></div><i>7.5</i></td> 
+                            <td style="vertical-align: middle;" class="font12" style="text-align:justify"><div class="div_in_td" > <i>Kết thúc VANV không đúng quy định hoặc không kết thúc VANV theo quy định</i></div></td> 
+                              <td style="vertical-align: middle;" class="ta_center font12 "><div class="div_in_td" ><i>-100</i></div></td> 
+                              <td style="vertical-align:middle;"><div class="ta_center font12 diem_cb_muc_7" contentEditable ></div></td> 
+                              <td style="vertical-align:middle;" ><div class="ta_center font12 diem_ch_muc_7" contentEditable ></div></td> 
+                            </tr>
+                               
+                                  <tr>
+                                  <td colspan="3" style="vertical-align: middle;text-align: center;" class="font12" ><div class="div_in_td" > <b>Cộng</b></div></td>
+                                  <td style="vertical-align:middle;"><div class="ta_center font12 " id="sum_all_cb" contentEditable ></div></td> 
+                                    <td style="vertical-align:middle;" ><div class="ta_center font12 " id="sum_all_ch" contentEditable ></div></td>
+                                </tr>
+          
+                              </table>
+                              <br>
+
+
+                              <div style="margin-left: 1cm;" class="font14 clean"><br>
+                                <b>1. Kết quả chấm điểm, xếp loại do cán bộ tự thực hiện:</b>
+                              
+                                <!-- Khối chứa ngày tháng và "CÁN BỘ" căn phải, nhưng "CÁN BỘ" nằm chính giữa so với nội dung ngày tháng -->
+                                <div style="width: 100%; margin-top: 10px; text-align: right;">
+                                  <div id="ngayThang" style="display: inline-block; text-align: left;">
+                                    <div>
+                                      <i><span class="dia_danh border" contenteditable="">..................</span>,
+                                      ngày <span class="o_nhap_ngay border" contenteditable="">...</span>
+                                      tháng <span class="o_nhap_thang border" contenteditable="">...</span>
+                                      năm 20<span class="o_nhap_nam border" contenteditable="">....</span></i>
+                                    </div>
+                                    <div style="text-align: center; margin-top: 20px;">
+                                      <b>CÁN BỘ</b><br>
+                                      <i class="font12">(Ký, cấp bậc, họ tên)</i>
+                                    </div>
+                                  </div>
+                                </div>
+                              
+                                <!-- Phần nội dung chấm điểm -->
+                                <div style="margin-top: 20px;">
+                                  <div id="tongDiemCb">- Tổng số điểm đạt được: ..................</div>
+                                  <div id="mucXepLoaiCb" style="margin-top: 10px;">- Mức xếp loại: ......................</div>
+                                </div>
+                              </div>
+    <br>
+    <br><br><br><br>
+
+    <div style="margin-left: 1cm;" class="font14 clean"><br>
+      <b>2. Kết quả chấm điểm, xếp loại do lãnh đạo, chỉ huy phụ trách thực hiện:</b>
+    
+      <div style="width: 100%; margin-top: 10px; text-align: right;">
+        <div id="ngayThang" style="display: inline-block; text-align: left;">
+          <div>
+            <i><span class="dia_danh border" contenteditable="">..................</span>,
+            ngày <span class="o_nhap_ngay border" contenteditable="">...</span>
+            tháng <span class="o_nhap_thang border" contenteditable="">...</span>
+            năm 20<span class="o_nhap_nam border" contenteditable="">....</span></i>
+          </div>
+          <div style="text-align: center; margin-top: 20px;">
+           <b>LÃNH ĐẠO, CHỈ HUY PHỤ TRÁCH</b><br>
+            <i class="font12">(Ký, cấp bậc, họ tên, chức vụ)</i>
+          </div>
+        </div>
+      </div>
+    
+      <!-- Phần nội dung chấm điểm -->
+      <div style="margin-top: 20px;">
+        <div id="tongDiemCh">- Tổng số điểm đạt được: ..................</div>
+        <div id="mucXepLoaiCh" style="margin-top: 10px;">- Mức xếp loại: ......................</div>
+      </div>
+    </div>
+    <img src="./../Image/print.png" class="button_print" width="50px" height="50px" onclick="In_bieu_mau();"><br>
+    <img src="./../Image/save.png" class="button_save" width="45px" height="45px" onclick="save()";><br>
+    <img src="./../Image/reload.png" class="button_reload" width="45px" height="45px" onclick="window.location.reload(true);">
+    </body>
+    </html>
+
+
+
+
+
+
+    
+  
+
+
+
+
+  
+  
+
+  
+  
+
+
+
+

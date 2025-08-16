@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <title>Trang chủ - Hệ thống chấm điểm</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="Style/common.css">
+  <link rel="stylesheet" href="Style/homepage.css">
+</head>
+<body>
+  <div class="header">
+    <div class="user-info">
+      <div class="user-avatar" id="userAvatar">A</div>
+      <div class="user-details">
+        <h2 id="userName">Admin</h2>
+        <p>Quản trị viên hệ thống</p>
+      </div>
+    </div>
+    <button class="btn btn-danger" onclick="logout()">Đăng xuất</button>
+  </div>
+
+  <div class="container">
+    <div class="welcome-section">
+      <h1 class="heading-large text-shadow">Chào mừng đến với hệ thống chấm điểm</h1>
+      <p class="text-white">Vui lòng chọn loại chấm điểm phù hợp với yêu cầu của bạn</p>
+    </div>
+
+    <div class="grid-2">
+      <div class="option-card card" onclick="goToTT17()">
+        <div class="option-icon icon-large">📋</div>
+        <div class="option-title heading-medium">CHẤM ĐIỂM THEO TT17</div>
+        <div class="option-description">
+          Hệ thống chấm điểm theo Thông tư 17 với 8 loại biểu mẫu chuyên nghiệp, 
+          bao gồm: Sưu tra, Điều tra cơ bản, Hiềm nghi, Chuyên án, Cộng tác viên bí mật, 
+          Hộp thư bí mật, Vai ảo nghiệp vụ, và Nhà nghiệp vụ.
+        </div>
+        <button class="option-btn btn btn-primary">Bắt đầu chấm điểm</button>
+      </div>
+
+      <div class="option-card card" onclick="goToXepLoai()">
+        <div class="option-icon icon-large">📊</div>
+        <div class="option-title heading-medium">XẾP LOẠI CÁN BỘ, ĐƠN VỊ</div>
+        <div class="option-description">
+          Tự động xếp loại, đánh giá công tác chấm điểm nghiệp vụ cơ bản của từng cán bộ, đơn vị 
+          dựa vào thống kê các phiếu chấm điểm đã có ở trong form từ CHẤM ĐIỂM THEO TT17.
+        </div>
+        <button class="option-btn btn btn-primary">Xem xếp loại</button>
+      </div>
+    </div>
+
+    <div class="footer">
+      <p>&copy; 2024 Hệ thống chấm điểm HSNV. Phát triển bởi đội ngũ chuyên môn.</p>
+    </div>
+  </div>
+
+  <script>
+    // Check if user is logged in
+    function checkAuth() {
+      const isLoggedIn = sessionStorage.getItem('isLoggedIn');
+      if (!isLoggedIn) {
+        window.location.href = 'login.html';
+        return;
+      }
+      
+      // Display user info
+      const username = sessionStorage.getItem('username') || 'Admin';
+      document.getElementById('userName').textContent = username;
+      document.getElementById('userAvatar').textContent = username.charAt(0).toUpperCase();
+    }
+
+    function logout() {
+      sessionStorage.removeItem('isLoggedIn');
+      sessionStorage.removeItem('username');
+      window.location.href = 'login.html';
+    }
+
+    function goToTT17() {
+      window.location.href = 'tt17.html';
+    }
+
+    function goToXepLoai() {
+      // TODO: Implement ranking and evaluation functionality
+      alert('Tính năng xếp loại cán bộ, đơn vị đang được phát triển. Sẽ sớm có mặt!');
+    }
+
+    // Check authentication when page loads
+    document.addEventListener('DOMContentLoaded', checkAuth);
+  </script>
+</body>
+</html>

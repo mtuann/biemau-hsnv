@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <title>Chấm điểm theo TT17</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="Style/common.css">
+  <link rel="stylesheet" href="Style/list-pages.css">
+</head>
+<body>
+  <div class="header">
+    <h1 class="page-title">Chấm điểm theo TT17</h1>
+    <div class="header-buttons">
+      <a href="trangchu.html" class="btn btn-secondary">← Về trang chủ</a>
+      <a href="forms-manager.html" class="btn btn-info">Quản lý tổng hợp</a>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="description">
+      <p>Chọn loại biểu mẫu chấm điểm phù hợp với yêu cầu của bạn</p>
+    </div>
+
+    <div class="forms-grid">
+      <div class="form-card" onclick="openFormsList('SN')">
+        <div class="form-icon">🔍</div>
+        <div class="form-title">Chấm điểm Sưu tra</div>
+        <div class="form-description">
+          Biểu mẫu chấm điểm hoạt động sưu tra, điều tra thông tin
+        </div>
+        <button class="form-btn">Xem danh sách</button>
+      </div>
+
+      <div class="form-card" onclick="openForm('forms/phieuchamdiemDTBC.html')">
+        <div class="form-icon">📋</div>
+        <div class="form-title">Chấm điểm Điều tra cơ bản</div>
+        <div class="form-description">
+          Biểu mẫu chấm điểm hoạt động điều tra cơ bản
+        </div>
+        <button class="form-btn">Mở biểu mẫu</button>
+      </div>
+
+      <div class="form-card" onclick="openForm('forms/phieuchamdiemHN.html')">
+        <div class="form-icon">⚠️</div>
+        <div class="form-title">Chấm điểm Hiềm nghi</div>
+        <div class="form-description">
+          Biểu mẫu chấm điểm hoạt động điều tra hiềm nghi
+        </div>
+        <button class="form-btn">Mở biểu mẫu</button>
+      </div>
+
+      <div class="form-card" onclick="openForm('forms/phieuchamdiemchuyenan.html')">
+        <div class="form-icon">🎯</div>
+        <div class="form-title">Chấm điểm Chuyên án</div>
+        <div class="form-description">
+          Biểu mẫu chấm điểm hoạt động chuyên án
+        </div>
+        <button class="form-btn">Mở biểu mẫu</button>
+      </div>
+
+      <div class="form-card" onclick="openForm('forms/phieuchamdiemLC.html')">
+        <div class="form-icon">🤝</div>
+        <div class="form-title">Chấm điểm Cộng tác viên bí mật</div>
+        <div class="form-description">
+          Biểu mẫu chấm điểm hoạt động cộng tác viên bí mật
+        </div>
+        <button class="form-btn">Mở biểu mẫu</button>
+      </div>
+
+      <div class="form-card" onclick="openForm('forms/phieuchamdiemLH.html')">
+        <div class="form-icon">📮</div>
+        <div class="form-title">Chấm điểm Hộp thư bí mật</div>
+        <div class="form-description">
+          Biểu mẫu chấm điểm hoạt động hộp thư bí mật
+        </div>
+        <button class="form-btn">Mở biểu mẫu</button>
+      </div>
+
+      <div class="form-card" onclick="openForm('forms/phieuchamdiemLA.html')">
+        <div class="form-icon">🎭</div>
+        <div class="form-title">Chấm điểm Vai ảo nghiệp vụ</div>
+        <div class="form-description">
+          Biểu mẫu chấm điểm hoạt động vai ảo nghiệp vụ
+        </div>
+        <button class="form-btn">Mở biểu mẫu</button>
+      </div>
+
+      <div class="form-card" onclick="openForm('forms/phieuchamdiemLN.html')">
+        <div class="form-icon">🏠</div>
+        <div class="form-title">Chấm điểm Nhà nghiệp vụ</div>
+        <div class="form-description">
+          Biểu mẫu chấm điểm hoạt động nhà nghiệp vụ
+        </div>
+        <button class="form-btn">Mở biểu mẫu</button>
+      </div>
+    </div>
+
+    <div class="footer">
+      <p>&copy; 2024 Hệ thống chấm điểm HSNV. Phát triển bởi đội ngũ chuyên môn.</p>
+    </div>
+  </div>
+
+  <script>
+    // Check if user is logged in
+    function checkAuth() {
+      const isLoggedIn = sessionStorage.getItem('isLoggedIn');
+      if (!isLoggedIn) {
+        window.location.href = 'login.html';
+        return;
+      }
+    }
+
+    function openForm(formPath) {
+      // Open form in new tab
+      window.open(formPath, '_blank');
+    }
+
+    function openFormsList(formType) {
+      // Open forms list page
+      window.open('forms-list.html', '_blank');
+    }
+
+    // Check authentication when page loads
+    document.addEventListener('DOMContentLoaded', checkAuth);
+  </script>
+</body>
+</html>
