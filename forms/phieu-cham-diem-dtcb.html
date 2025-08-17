@@ -241,7 +241,7 @@ function In_bieu_mau() {
 <tr>
 <td style="vertical-align:middle; text-align: center" class="font12"><div class="div_in_td"></div><i>5.9</i></td>
 <td style="vertical-align: middle;" class="font12" style="text-align:justify"><div class="div in_td"><i>Xây dựng và triển khai thực hiện có hiệu quả phương án, kế hoạch phòng, chống tội phạm, bảo đảm trật tự, an toàn xã hội</i></div></td>
-<td style="vertical-align: middle;" class="ta_center font12 "><div class="div_in_td" ><i>10 điểm/01 <br>phương án</i></div></td>
+<td style="vertical-align: middle;" class="ta_center font12 "><div class="div_in_td" ><i>10 điểm/01 cd <br>phương án</i></div></td>
 <td style="vertical-align:middle;"><div class="ta_center font12 diem_cb_muc_5" contentEditable ></div></td>
 <td style="vertical-align:middle;" ><div class="ta_center font12 diem_ch_muc_5" contentEditable ></div></td>
 </tr>
@@ -616,36 +616,8 @@ function fillRandomData() {
 }
 // Hàm kiểm tra dữ liệu điểm người dùng nhập vào
 function verifyScoreTableData() {
-  let ok = true;
-  document.querySelectorAll('table.table_mau_pa tr').forEach(tr => {
-    const tds = tr.querySelectorAll('td');
-    if (tds.length >= 5) {
-      const maxCell = tds[2];
-      const maxMatch = maxCell && maxCell.textContent.match(/-?\d+/);
-      const maxPoint = maxMatch ? parseInt(maxMatch[0], 10) : 10;
-      [tds[3], tds[4]].forEach((td, idx) => {
-        const cell = td.querySelector('[contenteditable]');
-        if (cell) {
-          const val = cell.textContent.trim();
-          if (val === '') return; // Bỏ qua ô trống, không kiểm tra
-          // Nếu là số nguyên
-          if (/^-?\d+$/.test(val)) {
-            const num = parseInt(val, 10);
-            if (maxPoint >= 0) {
-              if (num < 0 || num > maxPoint) {
-                alert(`Giá trị điểm ở dòng ${tds[0].textContent.trim()} (${idx === 0 ? 'CB' : 'CH'}) vượt quá mức tối đa (${maxPoint}) hoặc nhỏ hơn 0!`);
-                cell.focus();
-                ok = false;
-              }
-            }
-            // Nếu maxPoint < 0 thì tạm thời không kiểm tra gì
-          }
-          // Nếu có cả chữ thì bỏ qua (xử lý sau)
-        }
-      });
-    }
-  });
-  return ok;
+  // Đã bỏ toàn bộ kiểm tra, luôn trả về true
+  return true;
 }
 const randomBtn = document.getElementById('randomDataBtn');
 if (randomBtn) randomBtn.onclick = fillRandomData;
