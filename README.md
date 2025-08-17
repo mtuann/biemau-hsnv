@@ -194,3 +194,85 @@ PORT=10000 # hoặc để trống để Render tự chọn
 - Đảm bảo file `.env` KHÔNG commit lên GitHub (thêm vào `.gitignore`).
 
 ---
+
+## Hướng dẫn chạy app trên LOCAL với database PostgreSQL
+
+### 1. Cài đặt PostgreSQL
+- **macOS:**
+  ```sh
+  brew install postgresql
+  brew services start postgresql
+  ```
+- **Ubuntu/Debian:**
+  ```sh
+  sudo apt update
+  sudo apt install postgresql postgresql-contrib
+  sudo service postgresql start
+  ```
+- **Windows:**
+  - Tải từ https://www.postgresql.org/download/windows/ và cài đặt theo hướng dẫn.
+
+### 2. Tạo database và user
+- Mở terminal/cmd và chạy:
+  ```sh
+  psql -U postgres
+  ```
+  (Nếu được hỏi password, nhập password bạn đã đặt khi cài PostgreSQL)
+
+- Trong psql prompt:
+  ```sql
+  CREATE DATABASE myformsdb;
+  CREATE USER myformsuser WITH PASSWORD 'mypassword';
+  GRANT ALL PRIVILEGES ON DATABASE myformsdb TO myformsuser;
+  \q
+  ```
+
+### 3. Tạo bảng trong database
+- Kết nối vào database vừa tạo:
+  ```sh
+  psql -U myformsuser -d myformsdb
+  ```
+- Dán lệnh SQL tạo bảng:
+  ```sql
+  CREATE TABLE forms_dtcb (
+      id SERIAL PRIMARY KEY,
+      form_id TEXT UNIQUE,
+      form_type TEXT,
+      info JSONB,
+      score_table JSONB,
+      tong_diem_cb TEXT,
+      tong_diem_ch TEXT,
+      xep_loai_cb TEXT,
+      xep_loai_ch TEXT,
+      ngay_thang_cb TEXT,
+      ngay_thang_ch TEXT,
+      created_at TIMESTAMP DEFAULT now()
+  );
+  \q
+  ```
+
+### 4. Tạo file .env cấu hình kết nối local
+- Tạo file `.env` ở thư mục gốc với nội dung:
+  ```env
+  DATABASE_URL=postgresql://myformsuser:mypassword@localhost:5432/myformsdb
+  PORT=3000
+  ```
+
+### 5. Cài đặt Node.js và các package
+- Nếu chưa có Node.js, tải tại https://nodejs.org/
+- Cài đặt dependencies:
+  ```sh
+  npm install
+  ```
+
+### 6. Chạy app trên local
+  ```sh
+  npm start
+  ```
+- App sẽ chạy tại http://localhost:3000 (hoặc port bạn đặt trong .env)
+
+### 7. Kiểm tra
+- Truy cập http://localhost:3000 trên trình duyệt.
+- Đăng nhập, điền form, kiểm tra lưu dữ liệu.
+
+---
