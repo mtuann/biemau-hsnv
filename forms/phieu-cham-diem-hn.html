@@ -6,16 +6,18 @@
 <title>MẪU CĐ3</title>
 <link rel="stylesheet" href="./../styles/style.css">
 <link rel="stylesheet" href="./../styles/cross-platform.css">
-<link rel="stylesheet" href="./../Style/print.css" media="print">
+<link rel="stylesheet" href="./../styles/common.css">
+<link rel="stylesheet" href="./../styles/forms.css">
+<link rel="stylesheet" href="./../styles/print.css" media="print">
 <script language="javascript" src="./../js/chamdiem.js"></script>
 <script language="javascript" src="./../js/xuongdong.js"></script>
 <script type='text/javascript'>
 function save() {
   var htmlContent = ['<!DOCTYPE html>', '<html lang="en" id="bieumau">',
                      document.getElementById('bieumau').innerHTML, '</html>',
-                     '<img src="./../Image/print.png" class="button_print" width="50px" height="50px" onclick="In_bieu_mau();">',
-                     '<img src="./../Image/save.png" class="button_save" width="45px" height="45px" onclick="save()">',
-                     '<img src="./../Image/reload.png" class="button_reload" width="45px" height="45px" onclick="window.location.reload(true);">'].join('\n');
+                     '<img src="./../images/print.png" class="button_print" width="50px" height="50px" onclick="In_bieu_mau();">',
+                     '<img src="./../images/save.png" class="button_save" width="45px" height="45px" onclick="save()">',
+                     '<img src="./../images/reload.png" class="button_reload" width="45px" height="45px" onclick="window.location.reload(true);">'].join('\n');
   var bl = new Blob(htmlContent, {type: "text/html"});
   var a = document.createElement("a");
   a.href = URL.createObjectURL(bl);
@@ -30,6 +32,9 @@ function In_bieu_mau() {
 </script>
 </head>
 <body class="font14 ta_jus" onkeyup='cong_diem()'>
+  <header class="main-header" style="text-align: center;">
+    <h1>Hệ thống chấm điểm HSNV</h1>
+  </header>
   <div class="wrapper border" >
     <div class="content_mau_pa">
       <div class="cq_banhanh_mau_pa f_left ta_center font12">
@@ -282,11 +287,194 @@ function In_bieu_mau() {
           <div id="mucXepLoaiCh" style="margin-top: 10px;">- Mức xếp loại: ......................</div>
         </div>
       </div>
-      <img src="./../Image/print.png" class="button_print" width="50px" height="50px" onclick="In_bieu_mau();"><br>
-      <img src="./../Image/save.png" class="button_save" width="45px" height="45px" onclick="save()";><br>
-      <img src="./../Image/reload.png" class="button_reload" width="45px" height="45px" onclick="window.location.reload(true);">
+      <!-- Nút Random Data và Lưu -->
+      <div style="margin-bottom: 10px;">
+        <button onclick="generateRandomData()" style="padding:6px 16px;margin-right:10px;">Random Data</button>
+        <button onclick="saveForm()" style="padding:6px 16px;">Lưu</button>
+      </div>
+      <!-- End Nút Random Data và Lưu -->
+      <img src="./../images/print.png" class="button_print" width="50px" height="50px" onclick="In_bieu_mau();"><br>
+      <img src="./../images/save.png" class="button_save" width="45px" height="45px" onclick="save()";><br>
+      <img src="./../images/reload.png" class="button_reload" width="45px" height="45px" onclick="window.location.reload(true);">
     </div>
+
+    <footer class="main-footer" style="text-align: center;">
+      <p>&copy; 2024 Hệ thống chấm điểm HSNV. Phát triển bởi đội ngũ chuyên môn.</p>
+    </footer>
   </div>
+  <script>
+    function collectFormData() {
+      // Thông tin cá nhân & đối tượng
+      const info = {
+        ho_ten: document.querySelector("span[contenteditable][style*='min-width:500px']")?.textContent || "",
+        cap_bac: document.querySelectorAll("span[contenteditable][style*='min-width: 200px']")[0]?.textContent || "",
+        chuc_vu: document.querySelectorAll("span[contenteditable][style*='min-width: 200px']")[1]?.textContent || "",
+        don_vi: document.querySelector("span.o_nhap_thang.border[contenteditable]")?.textContent || "",
+        ten_doi_tuong: document.querySelector("span[contenteditable][style*='min-width:300px']")?.textContent || "",
+        loai_doi_tuong: document.querySelectorAll("span.o_nhap_1cm.border[contenteditable]")[4]?.textContent || "",
+        so_ho_so: document.querySelectorAll("span.o_nhap_1cm.border[contenteditable]")[5]?.textContent || "",
+        thoi_gian_tu_ngay: document.querySelectorAll('.o_nhap_ngay.border[contenteditable]')[0]?.textContent || "",
+        thoi_gian_tu_thang: document.querySelectorAll('.o_nhap_thang.border[contenteditable]')[0]?.textContent || "",
+        thoi_gian_tu_nam: document.querySelectorAll('.o_nhap_nam.border[contenteditable]')[0]?.textContent || "",
+        thoi_gian_den_ngay: document.querySelectorAll('.o_nhap_ngay.border[contenteditable]')[1]?.textContent || "",
+        thoi_gian_den_thang: document.querySelectorAll('.o_nhap_thang.border[contenteditable]')[1]?.textContent || "",
+        thoi_gian_den_nam: document.querySelectorAll('.o_nhap_nam.border[contenteditable]')[1]?.textContent || "",
+        can_bo_dia_danh: document.querySelectorAll('.dia_danh.border[contenteditable]')[0]?.textContent || "",
+        lanh_dao_dia_danh: document.querySelectorAll('.dia_danh.border[contenteditable]')[1]?.textContent || ""
+      };
+      // Bảng chấm điểm
+      const score_table = [];
+      const rows = document.querySelectorAll('table.table_mau_pa tr');
+      for (let i = 1; i < rows.length - 6; i++) { // Loại bỏ header/footer
+        const cells = rows[i].querySelectorAll('td');
+        if (cells.length >= 5) {
+          score_table.push({
+            stt: cells[0].innerText.trim(),
+            noi_dung: cells[1].innerText.trim(),
+            muc_diem: cells[2].innerText.trim(),
+            diem_cb: cells[3].innerText.trim(),
+            diem_ch: cells[4].innerText.trim()
+          });
+        }
+      }
+      // Tổng điểm, xếp loại
+      const tong_diem_cb = document.getElementById('sum_all_cb')?.innerText.trim() || "";
+      const tong_diem_ch = document.getElementById('sum_all_ch')?.innerText.trim() || "";
+      const xep_loai_cb = document.getElementById('mucXepLoaiCb')?.innerText.trim() || "";
+      const xep_loai_ch = document.getElementById('mucXepLoaiCh')?.innerText.trim() || "";
+      // Ngày tháng cán bộ
+      const cb_dia_danh = document.querySelectorAll('.font14.clean .dia_danh.border')[0]?.textContent || "";
+      const cb_ngay = document.querySelectorAll('.font14.clean .o_nhap_ngay.border')[0]?.textContent || "";
+      const cb_thang = document.querySelectorAll('.font14.clean .o_nhap_thang.border')[0]?.textContent || "";
+      const cb_nam = document.querySelectorAll('.font14.clean .o_nhap_nam.border')[0]?.textContent || "";
+      // Ngày tháng lãnh đạo
+      const ld_dia_danh = document.querySelectorAll('.font14.clean .dia_danh.border')[1]?.textContent || "";
+      const ld_ngay = document.querySelectorAll('.font14.clean .o_nhap_ngay.border')[1]?.textContent || "";
+      const ld_thang = document.querySelectorAll('.font14.clean .o_nhap_thang.border')[1]?.textContent || "";
+      const ld_nam = document.querySelectorAll('.font14.clean .o_nhap_nam.border')[1]?.textContent || "";
+      return {
+        info, score_table, tong_diem_cb, tong_diem_ch, xep_loai_cb, xep_loai_ch,
+        cb_dia_danh, cb_ngay, cb_thang, cb_nam,
+        ld_dia_danh, ld_ngay, ld_thang, ld_nam
+      };
+    }
+    function randomString(length) {
+      const chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz';
+      let result = '';
+      for (let i = 0; i < length; i++) result += chars.charAt(Math.floor(Math.random() * chars.length));
+      return result;
+    }
+    function randomNumber(min, max) {
+      return Math.floor(Math.random() * (max - min + 1)) + min;
+    }
+    function generateRandomData() {
+      // Thông tin cá nhân
+      document.querySelector("span[contenteditable][style*='min-width:500px']").textContent = randomString(8) + ' ' + randomString(6);
+      document.querySelectorAll("span[contenteditable][style*='min-width: 200px']")[0].textContent = 'Đại úy';
+      document.querySelectorAll("span[contenteditable][style*='min-width: 200px']")[1].textContent = 'Trưởng phòng';
+      document.querySelector("span.o_nhap_thang.border[contenteditable]").textContent = 'Phòng PA' + randomNumber(1,9);
+      document.querySelector("span[contenteditable][style*='min-width:300px']").textContent = randomString(10);
+      document.querySelectorAll("span.o_nhap_1cm.border[contenteditable]")[4].textContent = 'Cá nhân';
+      document.querySelectorAll("span.o_nhap_1cm.border[contenteditable]")[5].textContent = 'HS' + randomNumber(100,999);
+      // Thời gian
+      document.querySelectorAll('.o_nhap_ngay.border[contenteditable]')[0].textContent = randomNumber(1,28);
+      document.querySelectorAll('.o_nhap_thang.border[contenteditable]')[0].textContent = randomNumber(1,12);
+      document.querySelectorAll('.o_nhap_nam.border[contenteditable]')[0].textContent = randomNumber(20,24);
+      document.querySelectorAll('.o_nhap_ngay.border[contenteditable]')[1].textContent = randomNumber(1,28);
+      document.querySelectorAll('.o_nhap_thang.border[contenteditable]')[1].textContent = randomNumber(1,12);
+      document.querySelectorAll('.o_nhap_nam.border[contenteditable]')[1].textContent = randomNumber(20,24);
+      // Địa danh, ngày tháng năm cán bộ
+      document.querySelectorAll('.font14.clean .dia_danh.border')[0].textContent = 'Hà Nội';
+      document.querySelectorAll('.font14.clean .o_nhap_ngay.border')[0].textContent = randomNumber(1,28);
+      document.querySelectorAll('.font14.clean .o_nhap_thang.border')[0].textContent = randomNumber(1,12);
+      document.querySelectorAll('.font14.clean .o_nhap_nam.border')[0].textContent = randomNumber(20,24);
+      // Địa danh, ngày tháng năm lãnh đạo
+      document.querySelectorAll('.font14.clean .dia_danh.border')[1].textContent = 'Hải Phòng';
+      document.querySelectorAll('.font14.clean .o_nhap_ngay.border')[1].textContent = randomNumber(1,28);
+      document.querySelectorAll('.font14.clean .o_nhap_thang.border')[1].textContent = randomNumber(1,12);
+      document.querySelectorAll('.font14.clean .o_nhap_nam.border')[1].textContent = randomNumber(20,24);
+      // Bảng điểm - random cho tất cả các ô điểm trong bảng
+      // Cán bộ tự chấm
+      document.querySelectorAll('td:nth-child(4) [contenteditable], td:nth-child(4) > div[contenteditable], td:nth-child(4) > div:not([contenteditable])').forEach(e => {
+        if (e.closest('tr') && e.closest('tr').querySelectorAll('td').length >= 5) {
+          e.textContent = randomNumber(0, 10);
+        }
+      });
+      // Lãnh đạo chấm
+      document.querySelectorAll('td:nth-child(5) [contenteditable], td:nth-child(5) > div[contenteditable], td:nth-child(5) > div:not([contenteditable])').forEach(e => {
+        if (e.closest('tr') && e.closest('tr').querySelectorAll('td').length >= 5) {
+          e.textContent = randomNumber(0, 10);
+        }
+      });
+      document.getElementById('sum_all_cb').textContent = randomNumber(50,100);
+      document.getElementById('sum_all_ch').textContent = randomNumber(50,100);
+      document.getElementById('mucXepLoaiCb').textContent = 'A';
+      document.getElementById('mucXepLoaiCh').textContent = 'A';
+    }
+    function saveForm() {
+      const data = collectFormData();
+      alert(JSON.stringify(data, null, 2));
+      console.log(data);
+    }
+  </script>
+  <script>
+window.addEventListener('DOMContentLoaded', function() {
+  const urlParams = new URLSearchParams(window.location.search);
+  const formId = urlParams.get('form_id');
+  if (formId) {
+    fetch(`/api/forms/dtcb/${encodeURIComponent(formId)}`)
+      .then(res => res.json())
+      .then(data => {
+        if (data && data.info) {
+          // Điền dữ liệu vào các trường tương ứng
+          document.querySelector("span[contenteditable][style*='min-width:500px']").textContent = data.info.ho_ten || '';
+          document.querySelectorAll("span[contenteditable][style*='min-width: 200px']")[0].textContent = data.info.cap_bac || '';
+          document.querySelectorAll("span[contenteditable][style*='min-width: 200px']")[1].textContent = data.info.chuc_vu || '';
+          document.querySelector("span.o_nhap_thang.border[contenteditable]").textContent = data.info.don_vi || '';
+          document.querySelector("span[contenteditable][style*='min-width:300px']").textContent = data.info.ten_doi_tuong || '';
+          document.querySelectorAll("span.o_nhap_1cm.border[contenteditable]")[4].textContent = data.info.loai_doi_tuong || '';
+          document.querySelectorAll("span.o_nhap_1cm.border[contenteditable]")[5].textContent = data.info.so_ho_so || '';
+          document.querySelectorAll('.o_nhap_ngay.border[contenteditable]')[0].textContent = data.info.thoi_gian_tu_ngay || '';
+          document.querySelectorAll('.o_nhap_thang.border[contenteditable]')[0].textContent = data.info.thoi_gian_tu_thang || '';
+          document.querySelectorAll('.o_nhap_nam.border[contenteditable]')[0].textContent = data.info.thoi_gian_tu_nam || '';
+          document.querySelectorAll('.o_nhap_ngay.border[contenteditable]')[1].textContent = data.info.thoi_gian_den_ngay || '';
+          document.querySelectorAll('.o_nhap_thang.border[contenteditable]')[1].textContent = data.info.thoi_gian_den_thang || '';
+          document.querySelectorAll('.o_nhap_nam.border[contenteditable]')[1].textContent = data.info.thoi_gian_den_nam || '';
+          document.querySelectorAll('.dia_danh.border[contenteditable]')[0].textContent = data.info.can_bo_dia_danh || '';
+          document.querySelectorAll('.dia_danh.border[contenteditable]')[1].textContent = data.info.lanh_dao_dia_danh || '';
+          // Bảng điểm
+          if (Array.isArray(data.score_table)) {
+            const rows = document.querySelectorAll('table.table_mau_pa tr');
+            let idx = 0;
+            for (let i = 1; i < rows.length - 6; i++) {
+              const cells = rows[i].querySelectorAll('td');
+              if (cells.length >= 5 && data.score_table[idx]) {
+                cells[3].innerText = data.score_table[idx].diem_cb || '';
+                cells[4].innerText = data.score_table[idx].diem_ch || '';
+                idx++;
+              }
+            }
+          }
+          // Tổng điểm, xếp loại, ngày tháng
+          document.getElementById('sum_all_cb').innerText = data.tong_diem_cb || '';
+          document.getElementById('sum_all_ch').innerText = data.tong_diem_ch || '';
+          document.getElementById('mucXepLoaiCb').innerText = data.xep_loai_cb || '';
+          document.getElementById('mucXepLoaiCh').innerText = data.xep_loai_ch || '';
+          // Ngày tháng cán bộ, lãnh đạo
+          document.querySelectorAll('.font14.clean .dia_danh.border')[0].textContent = data.cb_dia_danh || '';
+          document.querySelectorAll('.font14.clean .o_nhap_ngay.border')[0].textContent = data.cb_ngay || '';
+          document.querySelectorAll('.font14.clean .o_nhap_thang.border')[0].textContent = data.cb_thang || '';
+          document.querySelectorAll('.font14.clean .o_nhap_nam.border')[0].textContent = data.cb_nam || '';
+          document.querySelectorAll('.font14.clean .dia_danh.border')[1].textContent = data.ld_dia_danh || '';
+          document.querySelectorAll('.font14.clean .o_nhap_ngay.border')[1].textContent = data.ld_ngay || '';
+          document.querySelectorAll('.font14.clean .o_nhap_thang.border')[1].textContent = data.ld_thang || '';
+          document.querySelectorAll('.font14.clean .o_nhap_nam.border')[1].textContent = data.ld_nam || '';
+        }
+      });
+  }
+});
+</script>
+
 </body>
 </html>
 

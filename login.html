@@ -4,10 +4,13 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Đăng nhập</title>
-  <link rel="stylesheet" href="Style/common.css">
-  <link rel="stylesheet" href="Style/login.css">
+  <link rel="stylesheet" href="styles/common.css">
+  <link rel="stylesheet" href="styles/login.css">
 </head>
 <body>
+  <header class="main-header" style="text-align: center;">
+    <h1>Hệ thống chấm điểm HSNV</h1>
+  </header>
   <form class="login-form glass-card-light" id="loginForm" onsubmit="handleLogin(event)">
     <h2>Đăng nhập</h2>
     <div class="form-group">
@@ -22,6 +25,8 @@
     <button type="submit" class="btn btn-primary">Đăng nhập</button>
     <div class="message" id="message"></div>
   </form>
+
+  <footer class="main-footer" style="text-align: center;">     <p>&copy; 2024 Hệ thống chấm điểm HSNV. Phát triển bởi đội ngũ chuyên môn.</p>   </footer>
 
   <script>
     function togglePassword() {

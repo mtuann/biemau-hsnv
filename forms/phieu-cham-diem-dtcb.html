@@ -4,9 +4,11 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>MẪU CĐ1</title>
-<link rel="stylesheet" href="./../styles/style.css">
-<link rel="stylesheet" href="./../styles/cross-platform.css">
-<link rel="stylesheet" href="./../styles/print.css" media="print">
+<link rel="stylesheet" href="../styles/style.css">
+<link rel="stylesheet" href="../styles/cross-platform.css">
+<link rel="stylesheet" href="../styles/print.css" media="print">
+<link rel="stylesheet" href="../styles/common.css">
+<link rel="stylesheet" href="../styles/forms.css">
 <script language="javascript" src="./../js/chamdiem.js"></script>
 <script language="javascript" src="./../js/xuong-dong.js"></script>
 <script type='text/javascript'>
@@ -28,8 +30,30 @@ function In_bieu_mau() {
   window.print();
 }
 </script>
+<style>
+.tong-diem-cell {
+  background: #f0f0f0;
+  font-weight: bold;
+  border: 2px solid #888;
+  cursor: default;
+}
+[contenteditable="true"] {
+  background: #fff;
+  border: 1px solid #ccc;
+  min-width: 30px;
+  cursor: text;
+  transition: background 0.2s;
+}
+[contenteditable="true"]:focus {
+  background: #e6f7ff;
+  outline: 2px solid #1890ff;
+}
+</style>
 </head>
 <body class="font14 ta_jus" onkeyup='cong_diem()'>
+  <header class="main-header" style="text-align: center;">
+    <h1>Hệ thống chấm điểm HSNV</h1>
+  </header>
   <div class="wrapper border" >
     <div class="content_mau_pa">
       <div class="cq_banhanh_mau_pa f_left ta_center font12">
@@ -53,19 +77,21 @@ function In_bieu_mau() {
         </div>
       </div>
       <br>
-      <span class='TAB'></span>Họ và tên: <span class='o_nhap_1cm border' contenteditable style='min-width:500px'></span><br>
-      <span class='TAB'></span>Cấp bậc: <span class='o_nhap_1cm border' contenteditable style='min-width: 200px'></span>
-      <span class='TAB'></span>Chức vụ: <span class='o_nhap_1cm border' contenteditable style='min-width: 200px'></span> <br>
-      <span class= 'TAB'></span>Đơn vị: <span class='o_nhap_thang border' contenteditable style='min-width:400px'></span><br>
-      <span class='TAB'></span>Tên đối tượng điều tra cơ bản (DTBC) chủ trì: <span class='o_nhap_1cm border' contenteditable style='min-width:250px'></span><br>
-      <span class='TAB'></span>Loại đối tượng DTBC <i>((Xã, phường, thị trấn; địa bàn, khu vực trọng điểm; tổ chức, mục tiêu; tuyến; lĩnh vực, hệ loại đối tượng; hội, nhóm, tài khoản trên không gian mạng):</i> <span class='o_nhap_1cm border' contenteditable style='min-width:100px'></span><br>
-      <span class='TAB'></span>Số hồ sơ: <span class='o_nhap_1cm border' contenteditable style='min-width:500px'></span><br>
+      <span class='TAB'></span>Họ và tên: <span class='o_nhap_1cm border' contenteditable style='min-width:400px'></span><br>
+      <span class='TAB'></span>Cấp bậc: <span class='o_nhap_1cm border' contenteditable style='min-width: 150px'></span>
+      <span class='TAB'></span>Chức vụ: <span class='o_nhap_1cm border' contenteditable style='min-width: 150px'></span> <br>
+      <span class= 'TAB'></span>Đơn vị: <span class='o_nhap_1cm border' contenteditable style='min-width:400px'></span><br>
+      <span class='TAB'></span>Tên đối tượng điều tra cơ bản (DTBC) chủ trì: <span class='o_nhap_1cm border' contenteditable style='min-width:600px'></span><br>
+      <span class='TAB'></span>Loại đối tượng DTBC <i>((Xã, phường, thị trấn; địa bàn, khu vực trọng điểm; tổ chức, mục tiêu; tuyến; lĩnh vực, hệ loại đối tượng; hội, nhóm, tài khoản trên không gian mạng):</i> <span class='o_nhap_1cm border' contenteditable style='min-width:300px'></span><br>
+      <span class='TAB'></span>Số hồ sơ: <span class='o_nhap_1cm border' contenteditable style='min-width:400px'></span><br>
       <i><span class='TAB'></span>(Thời gian: Từ ngày <span class="o_nhap_ngay border" contenteditable="">...</span>
-      tháng<span class="o_nhap_thang border" contenteditable="">...</span>
-      năm 20<span class="o_nhap_nam border" contenteditable="">....</span>
-      đến ngày<span class="o_nhap_ngay border" contenteditable="">...</span>
-      tháng<span class="o_nhap_thang border" contenteditable="">...</span>
-      năm 20<span class="o_nhap_nam border" contenteditable="">....)</span></i>
+      tháng <span class="o_nhap_thang border" contenteditable="">...</span>
+      năm 20<span class="o_nhap_nam border" contenteditable="true">....</span>
+      đến ngày <span class="o_nhap_ngay border" contenteditable="">...</span>
+      tháng <span class="o_nhap_thang border" contenteditable="">...</span>
+      <!-- năm 20<span class="o_nhap_nam border" contenteditable="true">....)</span></i> -->
+      năm 20<span class="o_nhap_nam border" contenteditable="true">....</span>)</i>
+
       <table class='table_mau_pa' style="width: 100%;border: 1px; border-collapse: collapse; border-color: black; border-style:solid; font-size:16px; margin-top:10px";
       border="1px" cellpadding="0" cellspacing="0" id="Table3" >
       <tr class=''>
@@ -77,192 +103,198 @@ function In_bieu_mau() {
       </tr>
       <tr>
       <td style="vertical-align:middle; text-align: center" class="font12"><div class="div_in_td" ></div>1</td>
-      <td style="text-align:justify"><div class="div in_td" >Báo cáo đề xuất đưa đối tượng vào diện DTBC đúng quy định, đúng phân công, phân cấp, được lãnh đạo có thẩm quyền phê duyệt</div></td>
+      <td style="text-align:justify"><div class="div in_td">Báo cáo đề xuất đưa đối tượng vào diện DTBC đúng quy định, đúng phân công, phân cấp, được lãnh đạo có thẩm quyền phê duyệt</div></td>
       <td style="vertical-align: middle;" class="ta_center font12"><div class="div_in_td" >05</div></td>
-      <td style="vertical-align:middle;"><div class="ta_center font12 diem_cb" id='tong_diem_cb_muc_1' ></div></td>
-      <td style="vertical-align:middle;"><div class="ta_center font12 diem_ch" id='tong_diem_ch_muc_1'></div></td>
+      <td style="vertical-align:middle;"><div class="ta_center font12 diem_cb_muc_1" contentEditable ></div></td>
+      <td style="vertical-align:middle;"><div class="ta_center font12 diem_ch_muc_1" contentEditable ></div></td>
       </tr>
       <tr>
         <td style="vertical-align:middle; text-align: center" class="font12"><div class="div_in_td" ></div>2</td>
-        <td style="text-align:justify"><div class="div in_td" >Kế hoạch DTBC (mới hoặc bổ sung hằng năm) đối với đối tượng DTBC đảm bảo cụ thể hóa các nội dung về mục đích, yêu cầu, nội dung (những thông tin, tài liệu cần thu thập; xác định nguồn để thu thập thông tin, tài liệu), phương pháp (biện pháp), thời gian thực hiện, tổ chức thực hiện; được lãnh đạo có thẩm quyền phê duyệt</div></td>
+        <td style="text-align:justify"><div class="div in_td">Kế hoạch DTBC (mới hoặc bổ sung hằng năm) đối với đối tượng DTBC đảm bảo cụ thể hóa các nội dung về mục đích, yêu cầu, nội dung (những thông tin, tài liệu cần thu thập; xác định nguồn để thu thập thông tin, tài liệu), phương pháp (biện pháp), thời gian thực hiện, tổ chức thực hiện; được lãnh đạo có thẩm quyền phê duyệt</div></td>
         <td style="vertical-align: middle;" class="ta_center font12"><div class="div_in_td" >05</div></td>
         <td style="vertical-align:middle;"><div class="ta_center font12 diem_cb_muc_2" contentEditable ></div></td>
         <td style="vertical-align:middle;" ><div class="ta_center font12 diem_ch_muc_2" contentEditable ></div></td>
         </tr>
         <tr>
         <td style="vertical-align:middle; text-align: center" class="font12"><div class="div_in_td" ></div>3</td>
-        <td style="text-align:justify"><div class="div in_td" >Triển khai kế hoạch DTBC</div></td>
+        <td style="text-align:justify"><div class="div in_td">Triển khai kế hoạch DTBC</div></td>
         <td style="vertical-align: middle;" class="ta_center font12"><div class="div_in_td" >25</div></td>
-        <td style="vertical-align:middle;"><div class="ta_center font12 diem cb" id='tong_diem_cb_muc_3' ></div></td>
-        <td style="vertical-align:middle;"><div class="ta_center font12 diem_ch" id='tong_diem_ch_muc_3'></div></td>
+        <td style="vertical-align:middle;"><div class="ta_center font12 tong-diem-cell" id="tong_diem_cb_muc_3" title="Tổng điểm mục 3, tự động tính"></div></td>
+        <td style="vertical-align:middle;"><div class="ta_center font12 tong-diem-cell" id="tong_diem_ch_muc_3" title="Tổng điểm mục 3, tự động tính"></div></td>
         </tr>
         <tr>
           <td style="vertical-align:middle; text-align: center" class="font12"><div class="div_in_td"></div><i>3.1</i></td>
-          <td style="vertical-align: middle;" class="font12" style="text-align:justify"><div class="div_in_td" > <i>Thông tin, tài liệu có liên quan đến đối tượng DTBC được thu thập đầy đủ, đa dạng theo kế hoạch và quy định từ nhiều nguồn khác nhau hoặc nhiều biện pháp (hành chính, công khai, nghiệp vụ)</i></div></td>
+          <td style="vertical-align: middle;" class="font12" style="text-align:justify"><div class="div_in_td"><i>Thông tin, tài liệu có liên quan đến đối tượng DTBC được thu thập đầy đủ, đa dạng theo kế hoạch và quy định từ nhiều nguồn khác nhau hoặc nhiều biện pháp (hành chính, công khai, nghiệp vụ)</i></div></td>
             <td style="vertical-align: middle;" class="ta_center font12 "><div class="div_in_td" ><i>10</i></div></td>
             <td style="vertical-align:middle;"><div class="ta_center font12 diem_cb_muc_3" contentEditable ></div></td>
             <td style="vertical-align:middle;" ><div class="ta_center font12 diem_ch_muc_3" contentEditable ></div></td>
           </tr>
           <tr>
             <td style="vertical-align:middle; text-align: center" class="font12"><div class="div_in_td"></div><i>3.2</i></td>
-            <td style="vertical-align: middle;" class="font12" style="text-align:justify"><div class="div_in_td" > <i>Việc thu thập thông tin, tài liệu bảo đảm thời gian tính theo kế hoạch đề ra</i></div></td>
-              <td style="vertical-align: middle;" class="ta_center font12 "><div class="div_in_td" ><i>05</i></div></td>
-              <td style="vertical-align:middle;"><div class="ta_center font12 diem_cb_muc_3" contentEditable ></div></td>
-              <td style="vertical-align:middle;" ><div class="ta_center font12 diem_ch_muc_3" contentEditable ></div></td>
-            </tr>
-            <tr>
-              <td style="vertical-align:middle; text-align: center" class="font12"><div class="div_in_td"></div><i>3.3</i></td>
-              <td style="vertical-align: middle;" class="font12" style="text-align:justify"><div class="div_in_td" > <i>Có hoạt động xác minh, chọn lọc, tổng hợp, hệ thống hóa thông tin, tài liệu thu thập được về đối tượng DTBC</i></div></td>
-                <td style="vertical-align: middle;" class="ta_center font12 "><div class="div_in_td" ><i>05</i></div></td>
-                <td style="vertical-align:middle;"><div class="ta_center font12 diem_cb_muc_3" contentEditable ></div></td>
-                <td style="vertical-align:middle;" ><div class="ta_center font12 diem_ch_muc_3" contentEditable ></div></td>
-              </tr>
-              <tr>
-                <td style="vertical-align:middle; text-align: center" class="font12"><div class="div_in_td"></div><i>3.4</i></td>
-                <td style="vertical-align: middle;" class="font12" style="text-align:justify"><div class="div_in_td" > <i>Thường xuyên rà soát, bổ sung thông tin, tài liệu theo kế hoạch hoặc quy định, hướng dẫn về đối tượng DTBC</i></div></td>
-                  <td style="vertical-align: middle;" class="ta_center font12 "><div class="div_in_td" ><i>05</i></div></td>
-                  <td style="vertical-align:middle;"><div class="ta_center font12 diem_cb_muc_3" contentEditable ></div></td>
-                  <td style="vertical-align:middle;" ><div class="ta_center font12 diem_ch_muc_3" contentEditable ></div></td>
-                </tr>
+            <td style="vertical-align: middle;" class="font12" style="text-align:justify"><div class="div in_td"><i>Việc thu thập thông tin, tài liệu bảo đảm thời gian tính theo kế hoạch đề ra</i></div></td>
+            <td style="vertical-align: middle;" class="ta_center font12 "><div class="div_in_td" ><i>05</i></div></td>
+            <td style="vertical-align:middle;"><div class="ta_center font12 diem_cb_muc_3" contentEditable ></div></td>
+            <td style="vertical-align:middle;" ><div class="ta_center font12 diem_ch_muc_3" contentEditable ></div></td>
+          </tr>
+          <tr>
+            <td style="vertical-align:middle; text-align: center" class="font12"><div class="div_in_td"></div><i>3.3</i></td>
+            <td style="vertical-align: middle;" class="font12" style="text-align:justify"><div class="div in_td"><i>Có hoạt động xác minh, chọn lọc, tổng hợp, hệ thống hóa thông tin, tài liệu thu thập được về đối tượng DTBC</i></div></td>
+            <td style="vertical-align: middle;" class="ta_center font12 "><div class="div_in_td" ><i>05</i></div></td>
+            <td style="vertical-align:middle;"><div class="ta_center font12 diem_cb_muc_3" contentEditable ></div></td>
+            <td style="vertical-align:middle;" ><div class="ta_center font12 diem_ch_muc_3" contentEditable ></div></td>
+          </tr>
+          <tr>
+            <td style="vertical-align:middle; text-align: center" class="font12"><div class="div_in_td"></div><i>3.4</i></td>
+            <td style="vertical-align: middle;" class="font12" style="text-align:justify"><div class="div in_td"><i>Thường xuyên rà soát, bổ sung thông tin, tài liệu theo kế hoạch hoặc quy định, hướng dẫn về đối tượng DTBC</i></div></td>
+            <td style="vertical-align: middle;" class="ta_center font12 "><div class="div_in_td" ><i>05</i></div></td>
+            <td style="vertical-align:middle;"><div class="ta_center font12 diem_cb_muc_3" contentEditable ></div></td>
+            <td style="vertical-align:middle;" ><div class="ta_center font12 diem_ch_muc_3" contentEditable ></div></td>
+          </tr>
 
 <td style="vertical-align:middle; text-align: center" class="font12"><div class="div_in_td" ></div>4</td>
-<td style="text-align:justify"><div class="div in_td" >Báo cáo kết quả DTBC, được lãnh đạo có thẩm quyền phê duyệt và có ý kiến chỉ đạo</div></td>
+<td style="text-align:justify"><div class="div in_td">Báo cáo kết quả DTBC, được lãnh đạo có thẩm quyền phê duyệt và có ý kiến chỉ đạo</div></td>
 <td style="vertical-align: middle;" class="ta_center font12"><div class="div_in_td" >15</div></td>
-<td style="vertical-align:middle;"><div class="ta_center font12 diem_cb_muc_4" contentEditable ></div></td>
-    <td style="vertical-align:middle;" ><div class="ta_center font12 diem_ch_muc_4" contentEditable ></div></td>
+<td style="vertical-align:middle;"><div class="ta_center font12 tong-diem-cell" id="tong_diem_cb_muc_4" title="Tổng điểm mục 4, tự động tính"></div></td>
+<td style="vertical-align:middle;"><div class="ta_center font12 tong-diem-cell" id="tong_diem_ch_muc_4" title="Tổng điểm mục 4, tự động tính"></div></td>
+
 </tr>
+
 <tr>
 <td style="vertical-align:middle; text-align: center" class="font12"><div class="div_in_td"></div><i>4.1</i></td>
-<td style="vertical-align: middle;" class="font12" style="text-align:justify"><div class="div_in_td" > <i>Báo cáo tổng hợp, thống kê, phân tích, đánh giá làm rõ những nội dung về đối tượng DTBC theo kế hoạch đã đề ra hoặc theo quy định, hướng dẫn về đối tượng DTBC</i></div></td>
+<td style="vertical-align: middle;" class="font12" style="text-align:justify"><div class="div in_td"><i>Báo cáo tổng hợp, thống kê, phân tích, đánh giá làm rõ những nội dung về đối tượng DTBC theo kế hoạch đã đề ra hoặc theo quy định, hướng dẫn về đối tượng DTBC</i></div></td>
 <td style="vertical-align: middle;" class="ta_center font12 "><div class="div_in_td" ><i>10</i></div></td>
 <td style="vertical-align:middle;"><div class="ta_center font12 diem_cb_muc_4" contentEditable ></div></td>
 <td style="vertical-align:middle;" ><div class="ta_center font12 diem_ch_muc_4" contentEditable ></div></td>
 </tr>
+
 <tr>
 <td style="vertical-align:middle; text-align: center" class="font12"><div class="div_in_td"></div><i>4.2</i></td>
-<td style="vertical-align: middle;" class="font12" style="text-align:justify"><div class="div_in_td" > <i>Bảo đảm thời gian báo cáo định kỳ hoặc tối thiểu theo quy định đối với đối tượng DTBC</i></div></td>
+<td style="vertical-align: middle;" class="font12" style="text-align:justify"><div class="div in_td"><i>Bảo đảm thời gian báo cáo định kỳ hoặc tối thiểu theo quy định đối với đối tượng DTBC</i></div></td>
 <td style="vertical-align: middle;" class="ta_center font12 "><div class="div_in_td" ><i>05</i></div></td>
 <td style="vertical-align:middle;"><div class="ta_center font12 diem_cb_muc_4" contentEditable ></div></td>
 <td style="vertical-align:middle;" ><div class="ta_center font12 diem_ch_muc_4" contentEditable ></div></td>
 </tr>
+
 <tr>
 <td style="vertical-align:middle; text-align: center" class="font12"><div class="div_in_td" ></div>5</td>
-<td style="text-align:justify"><div class="div in_td" >Hiệu quả phát triển nghiệp vụ qua DTBC</div></td>
+<td style="text-align:justify"><div class="div in_td">Hiệu quả phát triển nghiệp vụ qua DTBC</div></td>
 <td style="vertical-align: middle;" class="ta_center font12"><div class="div_in_td" >40</div></td>
-<td style="vertical-align:middle;"><div class="ta_center font12 diem cb" id='tong_diem_cb_muc_5' ></div></td>
-<td style="vertical-align:middle;"><div class="ta_center font12 diem_ch" id='tong_diem_ch_muc_5'></div></td>
+<td style="vertical-align:middle;"><div class="ta_center font12 tong-diem-cell" id="tong_diem_cb_muc_5" title="Tổng điểm mục 5, tự động tính"></div></td>
+<td style="vertical-align:middle;"><div class="ta_center font12 tong-diem-cell" id="tong_diem_ch_muc_5" title="Tổng điểm mục 5, tự động tính"></div></td>
 </tr>
 <tr>
   <td style="vertical-align:middle; text-align: center" class="font12"><div class="div_in_td"></div><i>5.1</i></td>
-  <td style="vertical-align: middle;" class="font12" style="text-align:justify"><div class="div_in_td" > <i>Phát hiện được đối tượng đưa vào diện sưu tra</i></div></td>
+  <td style="vertical-align: middle;" class="font12" style="text-align:justify"><div class="div in_td"><i>Phát hiện được đối tượng đưa vào diện sưu tra</i></div></td>
     <td style="vertical-align: middle;" class="ta_center font12 "><div class="div_in_td" ><i>05 điểm/01 <br> đối tượng</i></div></td>
     <td style="vertical-align:middle;"><div class="ta_center font12 diem_cb_muc_5" contentEditable ></div></td>
     <td style="vertical-align:middle;" ><div class="ta_center font12 diem_ch_muc_5" contentEditable ></div></td>
   </tr>
   <tr>
     <td style="vertical-align:middle; text-align: center" class="font12"><div class="div_in_td"></div><i>5.2</i></td>
-    <td style="vertical-align: middle;" class="font12" style="text-align:justify"><div class="div_in_td" > <i>Phát hiện, xác lập được hiềm nghi</i></div></td>
+    <td style="vertical-align: middle;" class="font12" style="text-align:justify"><div class="div in_td"><i>Phát hiện, xác lập được hiềm nghi</i></div></td>
       <td style="vertical-align: middle;" class="ta_center font12 "><div class="div_in_td" ><i>10 điểm/01 <br> đối tượng</i></div></td>
       <td style="vertical-align:middle;"><div class="ta_center font12 diem_cb_muc_5" contentEditable ></div></td>
       <td style="vertical-align:middle;" ><div class="ta_center font12 diem_ch_muc_5" contentEditable ></div></td>
     </tr>
     <tr>
       <td style="vertical-align:middle; text-align: center" class="font12"><div class="div_in_td"></div><i>5.3</i></td>
-      <td style="vertical-align: middle;" class="font12" style="text-align:justify"><div class="div_in_td" > <i>Phát hiện, xác lập được chuyên án trinh sát</i></div></td>
+      <td style="vertical-align: middle;" class="font12" style="text-align:justify"><div class="div in_td"><i>Phát hiện, xác lập được chuyên án trinh sát</i></div></td>
         <td style="vertical-align: middle;" class="ta_center font12 "><div class="div_in_td" ><i>20 điểm/01 <br> chuyên án</i></div></td>
         <td style="vertical-align:middle;"><div class="ta_center font12 diem_cb_muc_5" contentEditable ></div></td>
         <td style="vertical-align:middle;" ><div class="ta_center font12 diem_ch_muc_5" contentEditable ></div></td>
       </tr>
 <tr>
 <td style="vertical-align:middle; text-align: center" class="font12"><div class="div_in_td"></div><i>5.4</i></td>
-<td style="vertical-align: middle;" class="font12" style="text-align:justify"><div class="div_in_td" > <i>Phát hiện hành vi vi phạm pháp luật, trực tiếp hoặc chuyển xử lý vụ việc vi phạm hành chính hoặc khởi tố điều tra theo thẩm quyền</i></div></td>
+<td style="vertical-align: middle;" class="font12" style="text-align:justify"><div class="div in_td"><i>Phát hiện hành vi vi phạm pháp luật, trực tiếp hoặc chuyển xử lý vụ việc vi phạm hành chính hoặc khởi tố điều tra theo thẩm quyền</i></div></td>
 <td style="vertical-align: middle;" class="ta_center font12 "><div class="div_in_td" ><i>10 điểm/01 <br>vụ</i></div></td>
 <td style="vertical-align:middle;"><div class="ta_center font12 diem_cb_muc_5" contentEditable ></div></td>
 <td style="vertical-align:middle;" ><div class="ta_center font12 diem_ch_muc_5" contentEditable ></div></td>
 </tr>
 <tr>
 <td style="vertical-align:middle; text-align: center" class="font12"><div class="div_in_td"></div><i>5.5</i></td>
-<td style="vertical-align: middle;" class="font12" style="text-align:justify"><div class="div_in_td" > <i>Lập hồ sơ đưa đi cơ sở giáo dục bắt buộc hoặc trường giáo dưỡng hoặc cơ sở cai nghiện bắt buộc</i></div></td>
+<td style="vertical-align: middle;" class="font12" style="text-align:justify"><div class="div in_td"><i>Lập hồ sơ đưa đi cơ sở giáo dục bắt buộc hoặc trường giáo dưỡng hoặc cơ sở cai nghiện bắt buộc</i></div></td>
 <td style="vertical-align: middle;" class="ta_center font12 "><div class="div_in_td" ><i>05 điểm/01 <br>đối tượng</i></div></td>
 <td style="vertical-align:middle;"><div class="ta_center font12 diem_cb_muc_5" contentEditable ></div></td>
 <td style="vertical-align:middle;" ><div class="ta_center font12 diem_ch_muc_5" contentEditable ></div></td>
 </tr>
 <tr>
 <td style="vertical-align:middle; text-align: center" class="font12"><div class="div_in_td"></div><i>5.6</i></td>
-<td style="vertical-align: middle;" class="font12" style="text-align:justify"><div class="div_in_td" > <i>Phát hiện, xây dựng được cộng tác viên bí mật</i></div></td>
+<td style="vertical-align: middle;" class="font12" style="text-align:justify"><div class="div in_td"><i>Phát hiện, xây dựng được cộng tác viên bí mật</i></div></td>
 <td style="vertical-align: middle;" class="ta_center font12 "><div class="div_in_td" ><i>05 điểm/01 <br>CTVBM</i></div></td>
 <td style="vertical-align:middle;"><div class="ta_center font12 diem_cb_muc_5" contentEditable ></div></td>
 <td style="vertical-align:middle;" ><div class="ta_center font12 diem_ch_muc_5" contentEditable ></div></td>
 </tr>
 <tr>
 <td style="vertical-align:middle; text-align: center" class="font12"><div class="div_in_td"></div><i>5.7</i></td>
-<td style="vertical-align: middle;" class="font12" style="text-align:justify"><div class="div_in_td" > <i>Có văn bản tham mưu hoặc đề xuất hoặc kiến nghị được một trong các chủ trương, chiến lược, chương trình, kế hoạch, biện pháp phòng ngừa, phát hiện, đấu tranh chống tội phạm hoặc trong công tác quản lý nhà nước, quản lý kinh tế - xã hội góp phần bảo đảm trật tự, an toàn xã hội</i></div></td>
+<td style="vertical-align: middle;" class="font12" style="text-align:justify"><div class="div in_td"><i>Có văn bản tham mưu hoặc đề xuất hoặc kiến nghị được một trong các chủ trương, chiến lược, chương trình, kế hoạch, biện pháp phòng ngừa, phát hiện, đấu tranh chống tội phạm hoặc trong công tác quản lý nhà nước, quản lý kinh tế - xã hội góp phần bảo đảm trật tự, an toàn xã hội</i></div></td>
 <td style="vertical-align: middle;" class="ta_center font12 "><div class="div_in_td" ><i>20 điểm/01 <br>văn bản</i></div></td>
 <td style="vertical-align:middle;"><div class="ta_center font12 diem_cb_muc_5" contentEditable ></div></td>
 <td style="vertical-align:middle;" ><div class="ta_center font12 diem_ch_muc_5" contentEditable ></div></td>
 </tr>
 <tr>
 <td style="vertical-align:middle; text-align: center" class="font12"><div class="div_in_td"></div><i>5.8</i></td>
-<td style="vertical-align: middle;" class="font12" style="text-align:justify"><div class="div_in_td" > <i>Phục vụ áp dụng biện pháp khoa học – kỹ thuật đạt hiệu quả trong phòng ngừa tội phạm</i></div></td>
+<td style="vertical-align: middle;" class="font12" style="text-align:justify"><div class="div in_td"><i>Phục vụ áp dụng biện pháp khoa học – kỹ thuật đạt hiệu quả trong phòng ngừa tội phạm</i></div></td>
 <td style="vertical-align: middle;" class="ta_center font12 "><div class="div_in_td" ><i>10 điểm/01 <br>biện pháp</i></div></td>
 <td style="vertical-align:middle;"><div class="ta_center font12 diem_cb_muc_5" contentEditable ></div></td>
 <td style="vertical-align:middle;" ><div class="ta_center font12 diem_ch_muc_5" contentEditable ></div></td>
 </tr>
 <tr>
 <td style="vertical-align:middle; text-align: center" class="font12"><div class="div_in_td"></div><i>5.9</i></td>
-<td style="vertical-align: middle;" class="font12" style="text-align:justify"><div class="div_in_td" > <i>Xây dựng và triển khai thực hiện có hiệu quả phương án, kế hoạch phòng, chống tội phạm, bảo đảm trật tự, an toàn xã hội</i></div></td>
+<td style="vertical-align: middle;" class="font12" style="text-align:justify"><div class="div in_td"><i>Xây dựng và triển khai thực hiện có hiệu quả phương án, kế hoạch phòng, chống tội phạm, bảo đảm trật tự, an toàn xã hội</i></div></td>
 <td style="vertical-align: middle;" class="ta_center font12 "><div class="div_in_td" ><i>10 điểm/01 <br>phương án</i></div></td>
 <td style="vertical-align:middle;"><div class="ta_center font12 diem_cb_muc_5" contentEditable ></div></td>
 <td style="vertical-align:middle;" ><div class="ta_center font12 diem_ch_muc_5" contentEditable ></div></td>
 </tr>
 <tr>
 <td style="vertical-align:middle; text-align: center" class="font12"><div class="div_in_td"></div><i>5.10</i></td>
-<td style="vertical-align: middle;" class="font12" style="text-align:justify"><div class="div_in_td" > <i>Xây dựng và triển khai thực hiện có hiệu quả kế hoạch phát động phong trào quần chúng phòng, chống tội phạm, bảo đảm trật tự, an toàn xã hội</i></div></td>
+<td style="vertical-align: middle;" class="font12" style="text-align:justify"><div class="div in_td"><i>Xây dựng và triển khai thực hiện có hiệu quả kế hoạch phát động phong trào quần chúng phòng, chống tội phạm, bảo đảm trật tự, an toàn xã hội</i></div></td>
 <td style="vertical-align: middle;" class="ta_center font12 "><div class="div_in_td" ><i>10 điểm/01 <br>kế hoạch</i></div></td>
 <td style="vertical-align:middle;"><div class="ta_center font12 diem_cb_muc_5" contentEditable ></div></td>
 <td style="vertical-align:middle;" ><div class="ta_center font12 diem_ch_muc_5" contentEditable ></div></td>
 </tr>
 <tr>
 <td style="vertical-align:middle; text-align: center" class="font12"><div class="div_in_td" ></div>6</td>
-<td style="text-align:justify"><div class="div in_td" >Thực hiện công tác hồ sơ</div></td>
+<td style="text-align:justify"><div class="div in_td">Thực hiện công tác hồ sơ</div></td>
 <td style="vertical-align: middle;" class="ta_center font12"><div class="div_in_td" >10</div></td>
 <td style="vertical-align:middle;"><div class="ta_center font12 diem_cb_muc_6" contentEditable ></div></td>
 <td style="vertical-align:middle;" ><div class="ta_center font12 diem_ch_muc_6" contentEditable ></div></td>
 </tr>
               <tr>
                 <td style="vertical-align:middle; text-align: center" class="font12"><div class="div_in_td" ></div>7</td>
-                <td style="text-align:justify"><div class="div in_td" >Điểm trừ (-)</div></td>
+                <td style="text-align:justify"><div class="div in_td">Điểm trừ (-)</div></td>
                 <td style="vertical-align: middle;" class="ta_center font12"><div class="div_in_td" >-100</div></td>
-                <td style="vertical-align:middle;"><div class="ta_center font12 diem cb" id='tong_diem_cb_muc_7' ></div></td>
-                <td style="vertical-align:middle;"><div class="ta_center font12 diem_ch" id='tong_diem_ch_muc_7'></div></td>
+                
+                <td style="vertical-align:middle;"><div class="ta_center font12 tong-diem-cell" id="tong_diem_cb_muc_7" title="Tổng điểm mục 7, tự động tính"></div></td>
+                <td style="vertical-align:middle;"><div class="ta_center font12 tong-diem-cell" id="tong_diem_ch_muc_7" title="Tổng điểm mục 7, tự động tính"></div></td>
+
                 </tr>
                 <tr>
 
                   <tr>
                     <td style="vertical-align:middle; text-align: center" class="font12"><div class="div_in_td"></div><i>7.1</i></td>
-                    <td style="vertical-align: middle;" class="font12" style="text-align:justify"><div class="div_in_td" > <i>Đưa đối tượng vào diện DTBC không đúng đối tượng thuộc diện DTBC</i></div></td>
+                    <td style="vertical-align: middle;" class="font12" style="text-align:justify"><div class="div in_td"><i>Đưa đối tượng vào diện DTBC không đúng đối tượng thuộc diện DTBC</i></div></td>
                       <td style="vertical-align: middle;" class="ta_center font12 "><div class="div_in_td" ><i>-50</i></div></td>
                       <td style="vertical-align:middle;"><div class="ta_center font12 diem_cb_muc_7" contentEditable ></div></td>
                       <td style="vertical-align:middle;" ><div class="ta_center font12 diem_ch_muc_7" contentEditable ></div></td>
                     </tr>
                     <tr>
                       <td style="vertical-align:middle; text-align: center" class="font12"><div class="div_in_td"></div><i>7.2</i></td>
-                      <td style="vertical-align: middle;" class="font12" style="text-align:justify"><div class="div_in_td" > <i>Đối tượng DTBC không đúng phân công, phân cấp</i></div></td>
+                      <td style="vertical-align: middle;" class="font12" style="text-align:justify"><div class="div in_td"><i>Đối tượng DTBC không đúng phân công, phân cấp</i></div></td>
                         <td style="vertical-align: middle;" class="ta_center font12 "><div class="div_in_td" ><i>-50</i></div></td>
                         <td style="vertical-align:middle;"><div class="ta_center font12 diem_cb_muc_7" contentEditable ></div></td>
                         <td style="vertical-align:middle;" ><div class="ta_center font12 diem_ch_muc_7" contentEditable ></div></td>
                       </tr>
                       <tr>
                         <td style="vertical-align:middle; text-align: center" class="font12"><div class="div_in_td"></div><i>7.3</i></td>
-                        <td style="vertical-align: middle;" class="font12" style="text-align:justify"><div class="div_in_td" > <i>Đối tượng DTBC đối với địa bàn, mục tiêu phát sinh vụ việc  phức tạp về tội phạm và trật tự, an toàn xã hội mà trong thời gian 03 ngày (kể từ ngày phát sinh vụ việc) không kịp thời nắm được tình hình hoặc không chủ động tham mưu, đề xuất giải quyết</i></div></td>
+                        <td style="vertical-align: middle;" class="font12" style="text-align:justify"><div class="div in_td"><i>Đối tượng DTBC đối với địa bàn, mục tiêu phát sinh vụ việc  phức tạp về tội phạm và trật tự, an toàn xã hội mà trong thời gian 03 ngày (kể từ ngày phát sinh vụ việc) không kịp thời nắm được tình hình hoặc không chủ động tham mưu, đề xuất giải quyết</i></div></td>
                           <td style="vertical-align: middle;" class="ta_center font12 "><div class="div_in_td" ><i>-10 <br> điểm/01 vụ <br>việc</i></div></td>
                           <td style="vertical-align:middle;"><div class="ta_center font12 diem_cb_muc_7" contentEditable ></div></td>
                           <td style="vertical-align:middle;" ><div class="ta_center font12 diem_ch_muc_7" contentEditable ></div></td>
                         </tr>
                                   <tr>
                                   <td colspan="3" style="vertical-align: middle;text-align: center;" class="font12" ><div class="div_in_td" > <b>Cộng</b></div></td>
-                                  <td style="vertical-align:middle;"><div class="ta_center font12 " id="sum_all_cb" contentEditable ></div></td>
-                                    <td style="vertical-align:middle;" ><div class="ta_center font12 " id="sum_all_ch" contentEditable ></div></td>
+                                  <td style="vertical-align:middle;"><div class="ta_center font12 tong-diem-cell" id="sum_all_cb" title="Tổng điểm tất cả các mục, tự động tính"></div></td>
+                                    <td style="vertical-align:middle;" ><div class="ta_center font12 tong-diem-cell" id="sum_all_ch" title="Tổng điểm tất cả các mục, tự động tính"></div></td>
                                 </tr>
 
                               </table>
@@ -277,9 +309,9 @@ function In_bieu_mau() {
                                   <div id="ngayThang" style="display: inline-block; text-align: left;">
                                     <div>
                                       <i><span class="dia_danh border" contenteditable="">..................</span>,
-                                      ngày <span class="o_nhap_ngay border" contenteditable="">...</span>
-                                      tháng <span class="o_nhap_thang border" contenteditable="">...</span>
-                                      năm 20<span class="o_nhap_nam border" contenteditable="">....</span></i>
+                                      ngày <span class="o_nhap_ngay border" contenteditable="true"></span>
+                                      tháng <span class="o_nhap_thang border" contenteditable="true"></span>
+                                      năm 20<span class="o_nhap_nam border" contenteditable="true"></span></i>
                                     </div>
                                     <div style="text-align: center; margin-top: 20px;">
                                       <b>CÁN BỘ</b><br>
@@ -304,9 +336,9 @@ function In_bieu_mau() {
         <div id="ngayThang" style="display: inline-block; text-align: left;">
           <div>
             <i><span class="dia_danh border" contenteditable="">..................</span>,
-            ngày <span class="o_nhap_ngay border" contenteditable="">...</span>
-            tháng <span class="o_nhap_thang border" contenteditable="">...</span>
-            năm 20<span class="o_nhap_nam border" contenteditable="">....</span></i>
+            ngày <span class="o_nhap_ngay border" contenteditable="true"></span>
+            tháng <span class="o_nhap_thang border" contenteditable="true"></span>
+            năm 20<span class="o_nhap_nam border" contenteditable="true"></span></i>
           </div>
           <div style="text-align: center; margin-top: 20px;">
            <b>LÃNH ĐẠO, CHỈ HUY PHỤ TRÁCH</b><br>
@@ -321,25 +353,408 @@ function In_bieu_mau() {
         <div id="mucXepLoaiCh" style="margin-top: 10px;">- Mức xếp loại: ......................</div>
       </div>
     </div>
-    <img src="./../images/print.png" class="button_print" width="50px" height="50px" onclick="In_bieu_mau();"><br>
-    <img src="./../images/save.png" class="button_save" width="45px" height="45px" onclick="save()";><br>
-    <img src="./../images/reload.png" class="button_reload" width="45px" height="45px" onclick="window.location.reload(true);">
-    </body>
-    </html>
-
-
-
-
-
-
     
-  
+    <!-- Nút In -->
+    <img src="./../images/print.png" class="button_print" width="50px" height="50px" onclick="In_bieu_mau();"><br>
 
+    <!-- Nút Lưu (cũ, dùng ảnh) -->
+    <img src="./../images/save.png" class="button_save" width="45px" height="45px" onclick="save();"><br>
 
+    <!-- Nút Reload -->
+    <img src="./../images/reload.png" class="button_reload" width="45px" height="45px" onclick="window.location.reload(true);"><br>
 
+    <!-- 
+      Regarding the data in the two files:  
+      - You should **keep the file that contains the most up-to-date or correct data structure and logic for your form**.  
+      - If one file is a duplicate or obsolete (for example, an old version or a backup), you can safely **delete the outdated or redundant file**.  
+      - In most cases, you should keep the file in `/Users/mitu/Desktop/work/projects/biemau-hsnv/forms` as this is your main forms directory, and remove any temporary or backup files elsewhere unless you have a specific reason to keep them.
 
-  
-  
+      **Recommendation:**  
+      - Review the contents of both files.  
+      - Keep the one that matches your current requirements and is referenced by your application.  
+      - Delete the other to avoid confusion and ensure you are always editing the correct, active form file.
+    -->
+    <div style="position: fixed; bottom: 30px; right: 30px; display: flex; flex-direction: row; gap: 16px; z-index: 1100;">
+      <!-- Nút Random Data (text button) -->
+      <button id="randomDataBtn" class="button_random_data"
+        title="Random Data"
+        onclick="fillRandomData && fillRandomData();"
+        style="background-color: #f0f0f0; border: 1px solid #ccc; cursor: pointer; text-align: center; min-width: 100px; min-height: 45px;">
+        Random Data
+      </button>
+
+      <!-- Nút Save (text button) -->
+      <button id="saveBtn" class="button_save_data"
+        title="Lưu"
+        onclick="saveForm && saveForm();"
+        style="background-color: #f0f0f0; border: 1px solid #ccc; cursor: pointer; text-align: center; min-width: 45px; min-height: 45px;">
+        Lưu
+      </button>
+    </div>
+    
+    <footer class="main-footer" style="text-align: center;">
+      <p>&copy; 2024 Hệ thống chấm điểm HSNV. Phát triển bởi đội ngũ chuyên môn.</p>
+    </footer>
+
+  </body>
+  </html>
+
+<script>
+async function collectFormData() {
+  // Lấy thông tin cá nhân & đối tượng
+  const infoSpans = document.querySelectorAll('.o_nhap_1cm.border[contenteditable]');
+  const info = {
+    ho_ten: infoSpans[0]?.textContent || "",
+    cap_bac: infoSpans[1]?.textContent || "",
+    chuc_vu: infoSpans[2]?.textContent || "",
+    don_vi: infoSpans[3]?.textContent || "",
+    ten_doi_tuong: infoSpans[4]?.textContent || "",
+    loai_doi_tuong: infoSpans[5]?.textContent || "",
+    so_ho_so: infoSpans[6]?.textContent || "",
+    thoi_gian_tu_ngay: document.querySelectorAll('.o_nhap_ngay.border[contenteditable]')[0]?.textContent || "",
+    thoi_gian_tu_thang: document.querySelectorAll('.o_nhap_thang.border[contenteditable]')[0]?.textContent || "",
+    thoi_gian_tu_nam: document.querySelectorAll('.o_nhap_nam.border[contenteditable]')[0]?.textContent || "",
+    thoi_gian_den_ngay: document.querySelectorAll('.o_nhap_ngay.border[contenteditable]')[1]?.textContent || "",
+    thoi_gian_den_thang: document.querySelectorAll('.o_nhap_thang.border[contenteditable]')[1]?.textContent || "",
+    thoi_gian_den_nam: document.querySelectorAll('.o_nhap_nam.border[contenteditable]')[1]?.textContent || "",
+    can_bo_dia_danh: document.querySelectorAll('.dia_danh.border[contenteditable]')[0]?.textContent || "",
+    lanh_dao_dia_danh: document.querySelectorAll('.dia_danh.border[contenteditable]')[1]?.textContent || "",
+    // Ngày tháng ký tên cán bộ
+    ngay_thang_cb_ngay: document.querySelectorAll('.font14.clean .o_nhap_ngay.border')[0]?.textContent || "",
+    ngay_thang_cb_thang: document.querySelectorAll('.font14.clean .o_nhap_thang.border')[0]?.textContent || "",
+    ngay_thang_cb_nam: document.querySelectorAll('.font14.clean .o_nhap_nam.border')[0]?.textContent || "",
+    // Ngày tháng ký tên lãnh đạo
+    ngay_thang_ch_ngay: document.querySelectorAll('.font14.clean .o_nhap_ngay.border')[1]?.textContent || "",
+    ngay_thang_ch_thang: document.querySelectorAll('.font14.clean .o_nhap_thang.border')[1]?.textContent || "",
+    ngay_thang_ch_nam: document.querySelectorAll('.font14.clean .o_nhap_nam.border')[1]?.textContent || ""
+  };
+  const score_table = [];
+  document.querySelectorAll('table.table_mau_pa tr').forEach(tr => {
+    const tds = tr.querySelectorAll('td');
+    if (tds.length >= 5) {
+      score_table.push({
+        stt: tds[0].innerText.trim(),
+        tieu_chi: tds[1].innerText.trim(),
+        diem_cb: tds[3].querySelector('[contenteditable]')?.textContent || "",
+        diem_ch: tds[4].querySelector('[contenteditable]')?.textContent || ""
+      });
+    }
+  });
+  const tong_diem_cb = (document.getElementById('sum_all_cb')?.innerText || '').replace(/[^\d]/g, '');
+  const tong_diem_ch = (document.getElementById('sum_all_ch')?.innerText || '').replace(/[^\d]/g, '');
+  const xep_loai_cb = (document.getElementById('mucXepLoaiCb')?.innerText || '').replace(/^-?\s*Mức xếp loại:\s*/i, '').trim();
+  const xep_loai_ch = (document.getElementById('mucXepLoaiCh')?.innerText || '').replace(/^-?\s*Mức xếp loại:\s*/i, '').trim();
+  return {
+    info,
+    score_table,
+    tong_diem_cb,
+    tong_diem_ch,
+    xep_loai_cb,
+    xep_loai_ch
+  };
+}
+async function saveForm() {
+  if (!verifyScoreTableData()) {
+    alert('Dữ liệu điểm có lỗi, vui lòng kiểm tra lại!');
+    return;
+  }
+  const data = await collectFormData();
+  try {
+    const res = await fetch('/api/forms/dtcb', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(data)
+    });
+    if (res.ok) {
+      alert('Lưu thành công!');
+    } else {
+      const err = await res.json();
+      alert('Lỗi khi lưu dữ liệu!\n' + (err.error || ''));
+    }
+  } catch (e) {
+    alert('Lỗi khi lưu dữ liệu!');
+  }
+}
+function randomString(length) {
+  const chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+  let result = '';
+  for (let i = 0; i < length; i++) {
+    result += chars.charAt(Math.floor(Math.random() * chars.length));
+  }
+  return result;
+}
+function randomInt(min, max) {
+  return Math.floor(Math.random() * (max - min + 1)) + min;
+}
+function fillRandomData() {
+  // Lấy thông tin cá nhân & đối tượng
+  const infoFields = [
+    { selector: "span[contenteditable][style*='min-width:500px']", value: "Nguyen Van " + randomString(3) },
+    { selector: "span[contenteditable][style*='min-width: 200px']", value: "CB" + randomInt(1, 99) },
+    { selector: "span[contenteditable][style*='min-width: 200px']", value: "ChucVu" + randomInt(1, 10) },
+    { selector: "span.o_nhap_thang.border[contenteditable]", value: "DonVi" + randomInt(1, 10) },
+    { selector: "span[contenteditable][style*='min-width:250px']", value: "DT" + randomString(2) },
+    { selector: "span.o_nhap_1cm.border[contenteditable]", value: "LoaiDT" + randomInt(1, 5) },
+    { selector: "span.o_nhap_1cm.border[contenteditable]", value: "HS" + randomInt(100, 999) },
+  ];
+  let infoIdx = 0;
+  document.querySelectorAll("span[contenteditable][style*='min-width:500px'], span[contenteditable][style*='min-width: 200px'], span.o_nhap_thang.border[contenteditable], span[contenteditable][style*='min-width:250px'], span.o_nhap_1cm.border[contenteditable]").forEach(span => {
+    if (infoFields[infoIdx]) {
+      span.textContent = infoFields[infoIdx].value;
+      infoIdx++;
+    }
+  });
+  // Thời gian
+  const ngay = randomInt(1, 28).toString().padStart(2, '0');
+  const thang = randomInt(1, 12).toString().padStart(2, '0');
+  const nam = (20 + randomInt(20, 25)).toString();
+  document.querySelectorAll('.o_nhap_ngay.border[contenteditable]').forEach(span => span.textContent = ngay);
+  document.querySelectorAll('.o_nhap_thang.border[contenteditable]').forEach(span => span.textContent = thang);
+  document.querySelectorAll('.o_nhap_nam.border[contenteditable]').forEach(span => span.textContent = nam);
+  // Random cho dia_danh (cán bộ và lãnh đạo)
+  const diaDanhList = ["Hà Nội", "TP.HCM", "Đà Nẵng", "Cần Thơ", "Hải Phòng", "Huế"];
+  document.querySelectorAll('.dia_danh.border[contenteditable]').forEach((span, idx) => {
+    span.textContent = diaDanhList[randomInt(0, diaDanhList.length - 1)] + (idx === 0 ? " (CB)" : " (LĐ)");
+  });
+
+  // --- Random bảng điểm với tổng mục cha ---
+  // Xác định các mục cha có tổng điểm (ví dụ mục 5, mục 3...)
+  // Map: key = chỉ số mục cha, value = { max: tổng điểm, rows: [index các dòng con] }
+  const tableRows = Array.from(document.querySelectorAll('table.table_mau_pa tr'));
+  const parentMap = {};
+  tableRows.forEach((tr, idx) => {
+    const tds = tr.querySelectorAll('td');
+    if (tds.length >= 3) {
+      const stt = tds[0].innerText.trim();
+      const maxText = tds[2].textContent.trim();
+      // Nếu là mục cha (STT là số nguyên, maxText là số dương lớn)
+      if (/^\d+$/.test(stt) && /^\d+$/.test(maxText)) {
+        parentMap[stt] = { max: parseInt(maxText, 10), rows: [] };
+      }
+      // Nếu là dòng con (STT dạng x.y)
+      if (/^\d+\.\d+$/.test(stt)) {
+        const parent = stt.split('.')[0];
+        if (parentMap[parent]) {
+          parentMap[parent].rows.push(idx);
+        }
+      }
+    }
+  });
+  // Random cho từng mục cha có dòng con dạng bội
+  Object.keys(parentMap).forEach(parentKey => {
+    const { max, rows } = parentMap[parentKey];
+    if (rows.length > 0) {
+      // Lấy base và random cho từng dòng con, tổng không vượt quá max
+      let remain = max;
+      // Đầu tiên lấy base cho từng dòng con
+      const bases = rows.map(idx => {
+        const tds = tableRows[idx].querySelectorAll('td');
+        const maxText = tds[2].textContent.trim();
+        let baseMatch = maxText.match(/^-?\d+/);
+        let base = baseMatch ? Math.abs(parseInt(baseMatch[0], 10)) : 1;
+        // Nếu có dấu '/' thì mới áp dụng bội, không thì base=1
+        if (!maxText.includes('/')) base = 1;
+        return base;
+      });
+      // Random bội cho từng dòng con
+      let randomBois = [];
+      for (let i = 0; i < rows.length; i++) {
+        const base = bases[i];
+        // Số bội tối đa cho dòng này không vượt quá remain/base
+        let maxBoi = base > 0 ? Math.floor(remain / base) : 0;
+        let randBoi = maxBoi > 0 ? randomInt(0, maxBoi) : 0;
+        randomBois.push(randBoi);
+        remain -= randBoi * base;
+      }
+      // Gán giá trị random cho từng dòng con
+      for (let i = 0; i < rows.length; i++) {
+        const tds = tableRows[rows[i]].querySelectorAll('td');
+        const diemCb = tds[3].querySelector('[contenteditable]');
+        const diemCh = tds[4].querySelector('[contenteditable]');
+        if (diemCb) diemCb.textContent = (randomBois[i] * bases[i]).toString();
+        if (diemCh) diemCh.textContent = (randomBois[i] * bases[i]).toString();
+      }
+    }
+  });
+  // Các dòng còn lại random như cũ
+  tableRows.forEach((tr, idx) => {
+    // Nếu dòng này đã random ở trên thì bỏ qua
+    let skip = false;
+    Object.values(parentMap).forEach(obj => { if (obj.rows.includes(idx)) skip = true; });
+    if (skip) return;
+    const tds = tr.querySelectorAll('td');
+    if (tds.length >= 5) {
+      const maxCell = tds[2];
+      const maxText = maxCell && maxCell.textContent.trim();
+      let baseMatch = maxText && maxText.match(/^-?\d+/);
+      let base = baseMatch ? Math.abs(parseInt(baseMatch[0], 10)) : 1;
+      let hasSlash = maxText && maxText.includes('/');
+      const maxMatch = maxText && maxText.match(/-?\d+/);
+      const maxPoint = maxMatch ? parseInt(maxMatch[0], 10) : 10;
+      const diemCb = tds[3].querySelector('[contenteditable]');
+      const diemCh = tds[4].querySelector('[contenteditable]');
+      if (maxPoint < 0) {
+        const allowed = Math.abs(maxPoint);
+        if (diemCb) diemCb.textContent = Math.random() < 0.5 ? '0' : allowed.toString();
+        if (diemCh) diemCh.textContent = Math.random() < 0.5 ? '0' : allowed.toString();
+      } else if (hasSlash && base > 0) {
+        let maxBoi = Math.floor(maxPoint / base);
+        let randBoiCb = randomInt(0, maxBoi);
+        let randBoiCh = randomInt(0, maxBoi);
+        if (diemCb) diemCb.textContent = (randBoiCb * base).toString();
+        if (diemCh) diemCh.textContent = (randBoiCh * base).toString();
+      } else if (!isNaN(maxPoint)) {
+        if (diemCb) diemCb.textContent = randomInt(0, maxPoint).toString();
+        if (diemCh) diemCh.textContent = randomInt(0, maxPoint).toString();
+      }
+    }
+  });
+  if (document.getElementById('sum_all_cb')) document.getElementById('sum_all_cb').textContent = randomInt(50, 100).toString();
+  if (document.getElementById('sum_all_ch')) document.getElementById('sum_all_ch').textContent = randomInt(50, 100).toString();
+  if (document.getElementById('mucXepLoaiCb')) document.getElementById('mucXepLoaiCb').textContent = "A";
+  if (document.getElementById('mucXepLoaiCh')) document.getElementById('mucXepLoaiCh').textContent = "A";
+}
+// Hàm kiểm tra dữ liệu điểm người dùng nhập vào
+function verifyScoreTableData() {
+  let ok = true;
+  document.querySelectorAll('table.table_mau_pa tr').forEach(tr => {
+    const tds = tr.querySelectorAll('td');
+    if (tds.length >= 5) {
+      const maxCell = tds[2];
+      const maxMatch = maxCell && maxCell.textContent.match(/-?\d+/);
+      const maxPoint = maxMatch ? parseInt(maxMatch[0], 10) : 10;
+      [tds[3], tds[4]].forEach((td, idx) => {
+        const cell = td.querySelector('[contenteditable]');
+        if (cell) {
+          const val = cell.textContent.trim();
+          if (val === '') return; // Bỏ qua ô trống, không kiểm tra
+          // Nếu là số nguyên
+          if (/^-?\d+$/.test(val)) {
+            const num = parseInt(val, 10);
+            if (maxPoint >= 0) {
+              if (num < 0 || num > maxPoint) {
+                alert(`Giá trị điểm ở dòng ${tds[0].textContent.trim()} (${idx === 0 ? 'CB' : 'CH'}) vượt quá mức tối đa (${maxPoint}) hoặc nhỏ hơn 0!`);
+                cell.focus();
+                ok = false;
+              }
+            }
+            // Nếu maxPoint < 0 thì tạm thời không kiểm tra gì
+          }
+          // Nếu có cả chữ thì bỏ qua (xử lý sau)
+        }
+      });
+    }
+  });
+  return ok;
+}
+const randomBtn = document.getElementById('randomDataBtn');
+if (randomBtn) randomBtn.onclick = fillRandomData;
+const saveBtn = document.getElementById('saveBtn');
+if (saveBtn) saveBtn.onclick = saveForm;
+</script>
+
+<script>
+window.addEventListener('DOMContentLoaded', function() {
+  const urlParams = new URLSearchParams(window.location.search);
+  const formId = urlParams.get('form_id');
+  if (formId) {
+    fetch(`/api/forms/dtcb/${encodeURIComponent(formId)}`)
+      .then(res => res.json())
+      .then(data => {
+        console.log('Dữ liệu lấy từ backend:', data);
+        if (data && data.info) {
+          // Điền info
+          const infoSpans = document.querySelectorAll('.o_nhap_1cm.border[contenteditable]');
+          if (infoSpans[0]) infoSpans[0].textContent = data.info.ho_ten || '';
+          if (infoSpans[1]) infoSpans[1].textContent = data.info.cap_bac || '';
+          if (infoSpans[2]) infoSpans[2].textContent = data.info.chuc_vu || '';
+          if (infoSpans[3]) infoSpans[3].textContent = data.info.don_vi || '';
+          if (infoSpans[4]) infoSpans[4].textContent = data.info.ten_doi_tuong || '';
+          if (infoSpans[5]) infoSpans[5].textContent = data.info.loai_doi_tuong || '';
+          if (infoSpans[6]) infoSpans[6].textContent = data.info.so_ho_so || '';
+          // Mapping ngày tháng năm đúng thứ tự
+          const ngayFields = document.querySelectorAll('.o_nhap_ngay.border[contenteditable]');
+          const thangFields = document.querySelectorAll('.o_nhap_thang.border[contenteditable]');
+          const namFields = document.querySelectorAll('.o_nhap_nam.border[contenteditable]');
+          if (ngayFields[0]) { console.log('Gán ngày từ:', data.info.thoi_gian_tu_ngay); ngayFields[0].textContent = data.info.thoi_gian_tu_ngay || ''; }
+          if (thangFields[0]) { console.log('Gán tháng từ:', data.info.thoi_gian_tu_thang); thangFields[0].textContent = data.info.thoi_gian_tu_thang || ''; }
+          if (namFields[0]) { console.log('Gán năm từ:', data.info.thoi_gian_tu_nam); namFields[0].textContent = data.info.thoi_gian_tu_nam || ''; }
+          if (ngayFields[1]) { console.log('Gán ngày đến:', data.info.thoi_gian_den_ngay); ngayFields[1].textContent = data.info.thoi_gian_den_ngay || ''; }
+          if (thangFields[1]) { console.log('Gán tháng đến:', data.info.thoi_gian_den_thang); thangFields[1].textContent = data.info.thoi_gian_den_thang || ''; }
+          if (namFields[1]) { console.log('Gán năm đến:', data.info.thoi_gian_den_nam); namFields[1].textContent = data.info.thoi_gian_den_nam || ''; }
+          
+          // Mapping ngày tháng năm ký tên cán bộ
+          // Mapping địa danh cán bộ
+          const diaDanhFields = document.querySelectorAll('.dia_danh.border[contenteditable]');
+          if (diaDanhFields[0]) {
+            console.log('Gán địa danh CB:', data.info.can_bo_dia_danh);
+            diaDanhFields[0].textContent = data.info.can_bo_dia_danh || '';
+          }
+          if (ngayFields[2]) { console.log('Gán ngày ký CB:', data.info.ngay_thang_cb_ngay); ngayFields[2].textContent = data.info.ngay_thang_cb_ngay || ''; }
+          if (thangFields[2]) { console.log('Gán tháng ký CB:', data.info.ngay_thang_cb_thang); thangFields[2].textContent = data.info.ngay_thang_cb_thang || ''; }
+          if (namFields[2]) { console.log('Gán năm ký CB:', data.info.ngay_thang_cb_nam); namFields[2].textContent = data.info.ngay_thang_cb_nam || ''; }
+          
+          // Mapping ngày tháng năm ký tên lãnh đạo
+          // Mapping địa danh lãnh đạo
+          if (diaDanhFields[1]) {
+            console.log('Gán địa danh LĐ:', data.info.lanh_dao_dia_danh);
+            diaDanhFields[1].textContent = data.info.lanh_dao_dia_danh || '';
+          }
+          if (ngayFields[3]) { console.log('Gán ngày ký LĐ:', data.info.ngay_thang_ch_ngay); ngayFields[3].textContent = data.info.ngay_thang_ch_ngay || ''; }
+          if (thangFields[3]) { console.log('Gán tháng ký LĐ:', data.info.ngay_thang_ch_thang); thangFields[3].textContent = data.info.ngay_thang_ch_thang || ''; }
+          if (namFields[3]) { console.log('Gán năm ký LĐ:', data.info.ngay_thang_ch_nam); namFields[3].textContent = data.info.ngay_thang_ch_nam || ''; }
+          
+
+          // Điền score_table
+          if (Array.isArray(data.score_table)) {
+            const rows = document.querySelectorAll('table.table_mau_pa tr');
+            let idx = 1; // skip header row
+            for (let i = 1; i < rows.length; i++) {
+              console.log('Row', i, rows[i].querySelectorAll('td'));
+              const cells = rows[i].querySelectorAll('td');
+              if (cells.length >= 5 && data.score_table[idx]) {
+                const diemCb = cells[3].querySelector('[contenteditable]');
+                const diemCh = cells[4].querySelector('[contenteditable]');
+                console.log(`Row ${i} - STT: ${data.score_table[idx].stt}, Tiêu chí: ${data.score_table[idx].tieu_chi}`);
+                
+                // Nếu không có điểm CB hoặc CH thì gán = 0 luôn
+                const diemCbValue = (data.score_table[idx].diem_cb !== undefined && data.score_table[idx].diem_cb !== '') ? data.score_table[idx].diem_cb : 0;
+                const diemChValue = (data.score_table[idx].diem_ch !== undefined && data.score_table[idx].diem_ch !== '') ? data.score_table[idx].diem_ch : 0;
+                console.log(`  -> Gán điểm CB:`, diemCbValue, 'vào', diemCb);
+                if (diemCb) diemCb.textContent = diemCbValue;
+                console.log(`  -> Gán điểm CH:`, diemChValue, 'vào', diemCh);
+                if (diemCh) diemCh.textContent = diemChValue;
+                
+                idx++;
+              } else {
+                if (cells.length >= 5) {
+                  console.log(`Row ${i} không có dữ liệu score_table tương ứng (idx=${idx})`);
+                }
+              }
+            }
+          }
+          // Tổng điểm, xếp loại
+          console.log('Gán tổng điểm CB:', data.tong_diem_cb);
+          document.getElementById('sum_all_cb').textContent = data.tong_diem_cb || '';
+          console.log('Gán tổng điểm LĐ:', data.tong_diem_ch);
+          document.getElementById('sum_all_ch').textContent = data.tong_diem_ch || '';
+          console.log('Gán xếp loại CB:', data.xep_loai_cb);
+          document.getElementById('mucXepLoaiCb').textContent = data.xep_loai_cb || '';
+          console.log('Gán xếp loại LĐ:', data.xep_loai_ch);
+          document.getElementById('mucXepLoaiCh').textContent = data.xep_loai_ch || '';
+          // Nếu có hàm tính điểm/xếp loại, gọi lại để cập nhật giao diện
+          if (typeof cong_diem === 'function') cong_diem();
+        }
+      });
+  }
+  // Thêm sự kiện blur cho các ô điểm để kiểm tra dữ liệu khi nhập
+  document.querySelectorAll('table.table_mau_pa td [contenteditable]').forEach(function(el) {
+    el.addEventListener('blur', function () {
+      verifyScoreTableData();
+    });
+  });
+});
+</script>
 
   
   

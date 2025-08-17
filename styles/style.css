@@ -82,6 +82,8 @@ table tr td .table_mau_pa {font-size:15.96px}
 .select_tieude{font-family: Times New Roman; font-size: 16pt; font-weight:bold; text-transform: uppercase}
 .button_print{position: fixed; top: 50px;right: 10px; cursor: pointer;width:45px; height: 45px; text-align: center;background: transparent} .button_save{position: fixed; top:120px; right: 13px; cursor: pointer;width: 40px; height: 40px; background: transparent}
 .button_reload{position: fixed; top:180px;right:7px; cursor: pointer;width:50px; height: 50px; background: transparent} table.khung_chu_ky{width:100%; margin-top: 5px;} I
+.button_random_data{position: fixed; top:240px; right:10px; cursor: pointer;width:100px; height: 50px; background: transparent}
+.button_save_data{position: fixed; top:300px; right:13px; cursor: pointer;width:45px; height: 45px; background: transparent}
 table.khung_chu_ky_1ben{width:100%}
 table.khung_chu_ky tr td {font-weight:bold;width: 33%; vertical-align: top}
 table.khung_chu_ky_1ben tr td {font-weight:bold; vertical-align:top; float: right;}

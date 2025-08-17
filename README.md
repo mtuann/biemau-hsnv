@@ -127,3 +127,70 @@ BieuMauHSNV/
 ## Liên hệ hỗ trợ
 
 Để được hỗ trợ kỹ thuật hoặc báo cáo lỗi, vui lòng liên hệ đội ngũ phát triển.
+
+## Database & Triển khai Render.com
+
+### 1. Cấu trúc bảng PostgreSQL (forms_dtcb)
+
+```sql
+CREATE TABLE forms_dtcb (
+    id SERIAL PRIMARY KEY,
+    form_id TEXT UNIQUE,
+    form_type TEXT,
+    info JSONB,
+    score_table JSONB,
+    tong_diem_cb TEXT,
+    tong_diem_ch TEXT,
+    xep_loai_cb TEXT,
+    xep_loai_ch TEXT,
+    ngay_thang_cb TEXT,
+    ngay_thang_ch TEXT,
+    created_at TIMESTAMP DEFAULT now()
+);
+```
+
+### 2. Cấu hình môi trường (.env)
+Tạo file `.env` ở thư mục gốc với nội dung:
+```env
+DATABASE_URL=postgresql://<user>:<password>@<host>:<port>/<database>
+PORT=10000 # hoặc để trống để Render tự chọn
+```
+
+### 3. Deploy lên Render.com
+
+#### a. Tạo dịch vụ PostgreSQL trên Render
+- Vào Render.com > Databases > Create a new PostgreSQL
+- Lưu lại thông tin kết nối (host, user, password, database, port)
+- Vào tab "Shell" của database, chạy lệnh tạo bảng:
+  - Copy đoạn SQL ở trên vào và chạy (hoặc dùng Query Editor)
+
+#### b. Deploy Node.js app
+- Push code lên GitHub
+- Vào Render.com > Web Services > New Web Service
+- Kết nối repo, chọn branch
+- **Build Command:**
+  ```sh
+  npm install
+  ```
+- **Start Command:**
+  ```sh
+  npm start
+  ```
+- **Environment:**
+  - Thêm biến môi trường `DATABASE_URL` (giống file .env)
+  - (Tùy chọn) Thêm `PORT` nếu muốn cố định
+
+#### c. Cấu hình static file
+- App đã tự động phục vụ static (HTML, CSS, JS, images) từ thư mục gốc.
+- Đảm bảo các đường dẫn trong HTML là tương đối hoặc tuyệt đối từ gốc repo.
+
+#### d. Truy cập app
+- Sau khi deploy thành công, Render sẽ cung cấp URL public.
+- Truy cập URL này để sử dụng hệ thống.
+
+### 4. Ghi chú
+- Nếu cần migrate schema, chỉ cần chạy lại lệnh tạo bảng (sẽ không xóa dữ liệu cũ nếu chỉ thêm cột mới).
+- Để reset dữ liệu: dùng lệnh SQL `TRUNCATE forms_dtcb;` trong Query Editor.
+- Đảm bảo file `.env` KHÔNG commit lên GitHub (thêm vào `.gitignore`).
+
+---

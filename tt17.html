@@ -4,17 +4,86 @@
   <meta charset="UTF-8">
   <title>Chấm điểm theo TT17</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="Style/common.css">
-  <link rel="stylesheet" href="Style/list-pages.css">
+  <link rel="stylesheet" href="styles/common.css">
+  <link rel="stylesheet" href="styles/list-pages.css">
+  <style>
+#formHistoryModal .modal-content, #formHistoryModal > div {
+  max-width: 95vw !important;
+  min-width: 900px !important;
+  padding: 32px 20px 24px 20px !important;
+  overflow-x: auto;
+  max-height: 80vh !important;
+  overflow-y: auto !important;
+}
+#formHistoryModal table { min-width: 1200px; }
+#formHistoryModal table { border-collapse: collapse; width: 100%; font-size: 14px; background: #fff; }
+#formHistoryModal th, #formHistoryModal td { border: 1px solid #ccc; padding: 6px 8px; text-align: center; }
+#formHistoryModal th { background: #f5f5f5; position: sticky; top: 0; z-index: 2; }
+#formHistoryModal tr:hover { background: #e3f2fd; }
+#formHistoryModal input[type="text"] { width: 95%; padding: 2px 4px; font-size: 13px; border: 1px solid #bbb; border-radius: 3px; }
+#formHistoryModal .filter-row input { background: #f9f9f9; }
+@media (max-width: 900px) { #formHistoryModal table, #formHistoryModal th, #formHistoryModal td { font-size: 12px; } }
+
+/* Nút thao tác trong bảng */
+.action-btn {
+  min-width: 110px;
+  padding: 6px 0;
+  font-size: 14px;
+  border-radius: 5px;
+  border: none;
+  margin: 2px 4px;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+}
+.action-view {
+  background: #e3f2fd;
+  color: #1976d2;
+  border: 1px solid #90caf9;
+}
+.action-view:hover {
+  background: #bbdefb;
+}
+.action-delete {
+  background: #ffebee;
+  color: #d32f2f;
+  border: 1px solid #ffcdd2;
+}
+.action-delete:hover {
+  background: #ffcdd2;
+}
+/* Nút trong modal footer */
+#formHistoryModal .modal-footer-btn {
+  min-width: 100px;
+  padding: 8px 0;
+  font-size: 15px;
+  border-radius: 5px;
+  border: none;
+  margin-left: 8px;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+}
+#formHistoryModal .btn-close {
+  background: #f5f5f5;
+  color: #333;
+  border: 1px solid #bbb;
+}
+#formHistoryModal .btn-close:hover {
+  background: #e0e0e0;
+}
+#formHistoryModal .btn-create {
+  background: #1976d2;
+  color: #fff;
+  border: 1px solid #1976d2;
+}
+#formHistoryModal .btn-create:hover {
+  background: #1565c0;
+}
+</style>
 </head>
 <body>
-  <div class="header">
-    <h1 class="page-title">Chấm điểm theo TT17</h1>
-    <div class="header-buttons">
-      <a href="trangchu.html" class="btn btn-secondary">← Về trang chủ</a>
-      <a href="forms-manager.html" class="btn btn-info">Quản lý tổng hợp</a>
-    </div>
-  </div>
+  <header class="main-header" style="text-align: center;">
+    <h1>Hệ thống chấm điểm HSNV</h1>
+  </header>
 
   <div class="container">
     <div class="description">
@@ -31,7 +100,7 @@
         <button class="form-btn">Xem danh sách</button>
       </div>
 
-      <div class="form-card" onclick="openForm('forms/phieuchamdiemDTBC.html')">
+      <div class="form-card" onclick="openFormHistoryDialog('phieu-cham-diem-dtcb','forms/phieu-cham-diem-dtcb.html')">
         <div class="form-icon">📋</div>
         <div class="form-title">Chấm điểm Điều tra cơ bản</div>
         <div class="form-description">
@@ -40,7 +109,7 @@
         <button class="form-btn">Mở biểu mẫu</button>
       </div>
 
-      <div class="form-card" onclick="openForm('forms/phieuchamdiemHN.html')">
+      <div class="form-card" onclick="openFormHistoryDialog('phieu-cham-diem-hn','forms/phieu-cham-diem-hn.html')">
         <div class="form-icon">⚠️</div>
         <div class="form-title">Chấm điểm Hiềm nghi</div>
         <div class="form-description">
@@ -49,7 +118,7 @@
         <button class="form-btn">Mở biểu mẫu</button>
       </div>
 
-      <div class="form-card" onclick="openForm('forms/phieuchamdiemchuyenan.html')">
+      <div class="form-card" onclick="openFormHistoryDialog('phieu-cham-diem-chuyen-an','forms/phieu-cham-diem-chuyen-an.html')">
         <div class="form-icon">🎯</div>
         <div class="form-title">Chấm điểm Chuyên án</div>
         <div class="form-description">
@@ -58,7 +127,7 @@
         <button class="form-btn">Mở biểu mẫu</button>
       </div>
 
-      <div class="form-card" onclick="openForm('forms/phieuchamdiemLC.html')">
+      <div class="form-card" onclick="openFormHistoryDialog('phieu-cham-diem-lc','forms/phieu-cham-diem-lc.html')">
         <div class="form-icon">🤝</div>
         <div class="form-title">Chấm điểm Cộng tác viên bí mật</div>
         <div class="form-description">
@@ -67,7 +136,7 @@
         <button class="form-btn">Mở biểu mẫu</button>
       </div>
 
-      <div class="form-card" onclick="openForm('forms/phieuchamdiemLH.html')">
+      <div class="form-card" onclick="openFormHistoryDialog('phieu-cham-diem-lh','forms/phieu-cham-diem-lh.html')">
         <div class="form-icon">📮</div>
         <div class="form-title">Chấm điểm Hộp thư bí mật</div>
         <div class="form-description">
@@ -76,7 +145,7 @@
         <button class="form-btn">Mở biểu mẫu</button>
       </div>
 
-      <div class="form-card" onclick="openForm('forms/phieuchamdiemLA.html')">
+      <div class="form-card" onclick="openFormHistoryDialog('phieu-cham-diem-la','forms/phieu-cham-diem-la.html')">
         <div class="form-icon">🎭</div>
         <div class="form-title">Chấm điểm Vai ảo nghiệp vụ</div>
         <div class="form-description">
@@ -85,7 +154,7 @@
         <button class="form-btn">Mở biểu mẫu</button>
       </div>
 
-      <div class="form-card" onclick="openForm('forms/phieuchamdiemLN.html')">
+      <div class="form-card" onclick="openFormHistoryDialog('phieu-cham-diem-ln','forms/phieu-cham-diem-ln.html')">
         <div class="form-icon">🏠</div>
         <div class="form-title">Chấm điểm Nhà nghiệp vụ</div>
         <div class="form-description">
@@ -95,8 +164,20 @@
       </div>
     </div>
 
-    <div class="footer">
+    <footer class="main-footer">
       <p>&copy; 2024 Hệ thống chấm điểm HSNV. Phát triển bởi đội ngũ chuyên môn.</p>
+    </footer>
+  </div>
+
+  <!-- Modal hiển thị danh sách form đã điền -->
+  <div id="formHistoryModal" class="modal" style="display:none; position:fixed; z-index:1000; left:0; top:0; width:100vw; height:100vh; background:rgba(0,0,0,0.3);">
+    <div style="background:#fff; margin:60px auto; padding:24px; border-radius:8px; max-width:600px; min-width:320px; position:relative;">
+      <h2>Danh sách các form đã điền</h2>
+      <div id="formHistoryList">Đang tải...</div>
+      <div style="margin-top:16px; text-align:right;">
+        <button class="modal-footer-btn btn-close" onclick="closeFormHistoryModal()">Đóng</button>
+        <button class="modal-footer-btn btn-create" onclick="createNewForm()">Tạo mới</button>
+      </div>
     </div>
   </div>
 
@@ -118,6 +199,157 @@
     function openFormsList(formType) {
       // Open forms list page
       window.open('forms-list.html', '_blank');
+    }
+
+    let currentFormType = null;
+    function openFormHistoryDialog(formType, formPath) {
+      currentFormType = formType;
+      document.getElementById('formHistoryModal').style.display = 'block';
+      document.getElementById('formHistoryList').innerHTML = 'Đang tải...';
+      fetch(`/api/forms/list?form_type=${encodeURIComponent(formType)}`)
+        .then(res => res.json())
+        .then(data => {
+          if (!Array.isArray(data) || data.length === 0) {
+            document.getElementById('formHistoryList').innerHTML = '<i>Chưa có bản ghi nào.</i>';
+            return;
+          }
+          renderFormHistoryTable(data, formPath);
+        })
+        .catch(()=>{
+          document.getElementById('formHistoryList').innerHTML = '<span style="color:red">Lỗi tải dữ liệu!</span>';
+        });
+    }
+    function closeFormHistoryModal() {
+      document.getElementById('formHistoryModal').style.display = 'none';
+      localStorage.removeItem('lastViewedFormId');
+    }
+    function createNewForm() {
+      closeFormHistoryModal();
+      if (currentFormType === 'phieu-cham-diem-hn') {
+        window.open('forms/phieu-cham-diem-hn.html', '_blank');
+      } else if (currentFormType === 'phieu-cham-diem-dtcb') {
+        window.open('forms/phieu-cham-diem-dtcb.html', '_blank');
+      }
+    }
+    function viewForm(formPath, formId) {
+      localStorage.setItem('lastViewedFormId', formId);
+      window.open(`${formPath}?form_id=${encodeURIComponent(formId)}`, '_blank');
+    }
+
+    let formHistoryRawData = [];
+    function renderFormHistoryTable(data, formPath) {
+      formHistoryRawData = data.slice();
+      // Sắp xếp theo thời gian (năm, tháng, ngày) mới nhất lên đầu
+      data.sort((a, b) => {
+        const ia = a.info || {}, ib = b.info || {};
+        const getDate = i => `${i.thoi_gian_tu_nam||''}${i.thoi_gian_tu_thang||''}${i.thoi_gian_tu_ngay||''}`;
+        return getDate(ib).localeCompare(getDate(ia));
+      });
+      const lastViewedFormId = localStorage.getItem('lastViewedFormId');
+      let html = '<table><thead>';
+      html += '<tr><th>Họ tên</th><th>Cấp bậc</th><th>Chức vụ</th><th>Đơn vị</th><th>Loại ĐT</th><th>Số hồ sơ</th><th>Thời gian</th><th>Địa danh CB</th><th>Địa danh LĐ</th><th>Tổng điểm CB</th><th>Tổng điểm LĐ</th><th>Xếp loại CB</th><th>Xếp loại LĐ</th><th>Thao tác</th></tr>';
+      // Hàng filter
+      html += '<tr class="filter-row">';
+      for (let i = 0; i < 13; i++) {
+        html += `<td><input type="text" oninput="filterFormHistoryTable()" data-col="${i}" placeholder="Lọc..." /></td>`;
+      }
+      html += '<td></td></tr></thead><tbody id="formHistoryTableBody">';
+      data.forEach(item => {
+        const i = item.info || {};
+        const highlight = item.form_id === lastViewedFormId ? ' style="background:#ffe082;"' : '';
+        html += `<tr${highlight}>
+          <td>${i.ho_ten||''}</td>
+          <td>${i.cap_bac||''}</td>
+          <td>${i.chuc_vu||''}</td>
+          <td>${i.don_vi||''}</td>
+          <td>${i.loai_doi_tuong||''}</td>
+          <td>${i.so_ho_so||''}</td>
+          <td>${i.thoi_gian_tu_ngay||''}/${i.thoi_gian_tu_thang||''}/${i.thoi_gian_tu_nam||''} - ${i.thoi_gian_den_ngay||''}/${i.thoi_gian_den_thang||''}/${i.thoi_gian_den_nam||''}</td>
+          <td>${i.can_bo_dia_danh||''}</td>
+          <td>${i.lanh_dao_dia_danh||''}</td>
+          <td>${item.tong_diem_cb||''}</td>
+          <td>${item.tong_diem_ch||''}</td>
+          <td>${item.xep_loai_cb||''}</td>
+          <td>${item.xep_loai_ch||''}</td>
+          <td>
+            <button class="action-btn action-view" onclick="viewForm('${formPath}','${item.form_id}')">Xem/Chỉnh sửa</button>
+            <button class="action-btn action-delete" onclick="deleteForm('${item.form_id}', this)">Xóa</button>
+          </td>
+        </tr>`;
+      });
+      html += '</tbody></table>';
+      document.getElementById('formHistoryList').innerHTML = html;
+    }
+    function filterFormHistoryTable() {
+      const filters = Array.from(document.querySelectorAll('#formHistoryModal .filter-row input')).map(input => input.value.trim().toLowerCase());
+      let filtered = formHistoryRawData.filter(item => {
+        const i = item.info || {};
+        const row = [
+          i.ho_ten||'', i.cap_bac||'', i.chuc_vu||'', i.don_vi||'', i.loai_doi_tuong||'', i.so_ho_so||'',
+          `${i.thoi_gian_tu_ngay||''}/${i.thoi_gian_tu_thang||''}/${i.thoi_gian_tu_nam||''} - ${i.thoi_gian_den_ngay||''}/${i.thoi_gian_den_thang||''}/${i.thoi_gian_den_nam||''}`,
+          i.can_bo_dia_danh||'', i.lanh_dao_dia_danh||'',
+          item.tong_diem_cb||'', item.tong_diem_ch||'', item.xep_loai_cb||'', item.xep_loai_ch||''
+        ];
+        return filters.every((f, idx) => !f || row[idx].toLowerCase().includes(f));
+      });
+      // Sắp xếp lại theo thời gian mới nhất lên đầu
+      filtered.sort((a, b) => {
+        const ia = a.info || {}, ib = b.info || {};
+        const getDate = i => `${i.thoi_gian_tu_nam||''}${i.thoi_gian_tu_thang||''}${i.thoi_gian_tu_ngay||''}`;
+        return getDate(ib).localeCompare(getDate(ia));
+      });
+      let html = '';
+      filtered.forEach(item => {
+        const i = item.info || {};
+        html += `<tr>
+          <td>${i.ho_ten||''}</td>
+          <td>${i.cap_bac||''}</td>
+          <td>${i.chuc_vu||''}</td>
+          <td>${i.don_vi||''}</td>
+          <td>${i.loai_doi_tuong||''}</td>
+          <td>${i.so_ho_so||''}</td>
+          <td>${i.thoi_gian_tu_ngay||''}/${i.thoi_gian_tu_thang||''}/${i.thoi_gian_tu_nam||''} - ${i.thoi_gian_den_ngay||''}/${i.thoi_gian_den_thang||''}/${i.thoi_gian_den_nam||''}</td>
+          <td>${i.can_bo_dia_danh||''}</td>
+          <td>${i.lanh_dao_dia_danh||''}</td>
+          <td>${item.tong_diem_cb||''}</td>
+          <td>${item.tong_diem_ch||''}</td>
+          <td>${item.xep_loai_cb||''}</td>
+          <td>${item.xep_loai_ch||''}</td>
+          <td><button class="action-btn action-view" onclick="viewForm('${currentFormType === 'phieu-cham-diem-hn' ? 'forms/phieu-cham-diem-hn.html' : 'forms/phieu-cham-diem-dtcb.html'}','${item.form_id}')">Xem/Chỉnh sửa</button></td>
+        </tr>`;
+      });
+      document.getElementById('formHistoryTableBody').innerHTML = html;
+    }
+
+    // Thêm hàm xóa form
+    function deleteForm(formId, btn) {
+      if (!confirm('Bạn có chắc chắn muốn xóa form này?')) return;
+      btn.disabled = true;
+      console.log('Gửi yêu cầu xóa form_id:', formId);
+      fetch(`/api/forms/dtcb/${encodeURIComponent(formId)}`, { method: 'DELETE' })
+        .then(async res => {
+          let data;
+          try { data = await res.json(); } catch (e) { data = {}; }
+          if (res.ok && data.success) {
+            // Xóa dòng khỏi bảng
+            const tr = btn.closest('tr');
+            if (tr) tr.remove();
+            alert('Đã xóa thành công!');
+          } else if (res.status === 404) {
+            alert('Không tìm thấy form trong database (404). Có thể form này đã bị xóa hoặc không tồn tại.');
+            console.warn('Xóa thất bại: Không tìm thấy form_id:', formId, data);
+            btn.disabled = false;
+          } else {
+            alert('Xóa thất bại!\n' + (data.error || 'Lỗi không xác định.'));
+            console.error('Xóa thất bại:', formId, data);
+            btn.disabled = false;
+          }
+        })
+        .catch((err) => {
+          alert('Lỗi khi xóa!');
+          console.error('Lỗi khi gửi yêu cầu xóa:', err);
+          btn.disabled = false;
+        });
     }
 
     // Check authentication when page loads
