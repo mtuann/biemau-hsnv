@@ -11,6 +11,7 @@
 <link rel="stylesheet" href="../styles/forms.css">
 <script language="javascript" src="./../js/chamdiem.js"></script>
 <script language="javascript" src="./../js/xuong-dong.js"></script>
+<script language="javascript" src="./../js/standard-form-handler.js"></script>
 <script type='text/javascript'>
 function save() {
   var htmlContent = ['<!DOCTYPE html>', '<html lang="en" id="bieumau">',
@@ -317,6 +318,7 @@ function In_bieu_mau() {
         <div id="mucXepLoaiCh" style="margin-top: 10px;">- Mức xếp loại: ......................</div>
       </div>
     </div>
+    <button class="btn btn-primary" style="margin-top: 10px; padding: 10px 20px; margin-right: 10px;" onclick="saveToDatabase()">Lưu vào cơ sở dữ liệu</button><br>
     <img src="./../images/print.png" class="button_print" width="50px" height="50px" onclick="In_bieu_mau();"><br>
     <img src="./../images/save.png" class="button_save" width="45px" height="45px" onclick="save()";><br>
     <img src="./../images/reload.png" class="button_reload" width="45px" height="45px" onclick="window.location.reload(true);">

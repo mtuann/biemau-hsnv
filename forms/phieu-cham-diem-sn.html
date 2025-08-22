@@ -11,8 +11,8 @@
 <link rel="stylesheet" href="./../styles/print.css" media="print">
 <link rel="stylesheet" href="./../styles/forms-table.css">
 <script language="javascript" src="./../js/chamdiem.js"></script>
-<script language="javascript" src="./../js/xuongdong.js"></script>
-<script language="javascript" src="./../js/formManager.js"></script>
+<script language="javascript" src="./../js/xuong-dong.js"></script>
+<script language="javascript" src="./../js/standard-form-handler.js"></script>
  
 <script type='text/javascript'>
 function save() {
@@ -31,20 +31,7 @@ function save() {
   a.click();
 }
 
-function saveToDatabase() {
-  const formData = formManager.collectCompleteFormData();
-  if (formData.hoTen && formData.hoTen.trim() !== '') {
-    const formId = formManager.saveForm('SN', formData);
-    if (formId) {
-      alert('Đã lưu biểu mẫu vào cơ sở dữ liệu thành công!');
-    } else {
-      alert('Có lỗi xảy ra khi lưu biểu mẫu!');
-    }
-  } else {
-    alert('Vui lòng điền ít nhất họ tên trước khi lưu!');
-    return;
-  }
-}
+// saveToDatabase function is now provided by standard-form-handler.js
 
 // Lưu và tạo bản sao
 function saveAndClone() {

@@ -1,278 +1,345 @@
-# Hệ thống chấm điểm HSNV
+# Hệ thống Chấm điểm HSNV - Hướng dẫn Setup và Sử dụng
 
-Hệ thống chấm điểm cho lực lượng cảnh sát nhân dân theo Thông tư 17 và Quyết định 7272.
+## 🚀 Tổng quan
 
-## Thông tin đăng nhập
+Hệ thống chấm điểm HSNV (Học sinh năng khiếu) với 8 loại biểu mẫu chấm điểm theo Thông tư 17/2025/TT-BCA. Tất cả forms đều được tích hợp với database PostgreSQL để lưu trữ và quản lý dữ liệu.
 
-- **Tài khoản:** admin
-- **Mật khẩu:** 1
+## 📋 Các loại Form được hỗ trợ
 
-## Luồng hoạt động của website
+### ✅ Hoạt động đúng (đã có sẵn):
+- **Chấm điểm Điều tra cơ bản** (`phieu-cham-diem-dtcb.html`)
+- **Chấm điểm Hiềm nghi** (`phieu-cham-diem-hn.html`)
 
-### 1. Trang chủ (index.html)
-- Trang khởi đầu với loading animation
-- Tự động kiểm tra trạng thái đăng nhập
-- Chuyển hướng đến trang đăng nhập hoặc trang chủ tùy theo trạng thái
+### 🔄 Đã cập nhật để hoạt động:
+- **Chấm điểm Sưu tra** (`phieu-cham-diem-sn.html`)
+- **Chấm điểm Chuyên án** (`phieu-cham-diem-chuyen-an.html`)
+- **Chấm điểm Cộng tác viên bí mật** (`phieu-cham-diem-lc.html`)
+- **Chấm điểm Hộp thư bí mật** (`phieu-cham-diem-lh.html`)
+- **Chấm điểm Vai ảo nghiệp vụ** (`phieu-cham-diem-la.html`)
+- **Chấm điểm Nhà nghiệp vụ** (`phieu-cham-diem-ln.html`)
 
-### 2. Trang đăng nhập (login.html)
-- Giao diện đăng nhập với background đẹp
-- Xác thực tài khoản admin/1
-- Lưu trữ thông tin đăng nhập vào sessionStorage
-- Chuyển hướng đến trang chủ sau khi đăng nhập thành công
+## 🗄️ Database Setup Flow
 
-### 3. Trang chủ (trangchu.html)
-- Hiển thị thông tin người dùng (admin)
-- Hai tùy chọn chấm điểm chính:
-  - **CHẤM ĐIỂM THEO TT17**: Hệ thống hoàn chỉnh với 8 loại biểu mẫu
-  - **CHẤM ĐIỂM THEO QĐ7272**: Tính năng đang phát triển
-- Nút đăng xuất để quay về trang đăng nhập
+### 1. **Chuẩn bị Database**
+```bash
+# Kiểm tra PostgreSQL đã cài đặt
+which psql
 
-### 4. Trang TT17 (tt17.html)
-- Hiển thị 8 loại biểu mẫu chấm điểm:
-  1. Chấm điểm Sưu tra
-  2. Chấm điểm Điều tra cơ bản
-  3. Chấm điểm Hiềm nghi
-  4. Chấm điểm Chuyên án
-  5. Chấm điểm Cộng tác viên bí mật
-  6. Chấm điểm Hộp thư bí mật
-  7. Chấm điểm Vai ảo nghiệp vụ
-  8. Chấm điểm Nhà nghiệp vụ
-- Mỗi biểu mẫu mở trong tab mới
-- Nút quay về trang chủ
-
-### 5. Trang QĐ7272 (qdd7272.html)
-- Thông báo tính năng đang phát triển
-- Hiển thị tiến độ phát triển (65%)
-- Danh sách các tính năng sẽ có
-- Nút quay về trang chủ
-
-### 6. Các biểu mẫu (thư mục forms/)
-- Mỗi biểu mẫu có header navigation
-- Nút quay về danh sách TT17
-- Nút quay về trang chủ
-- Chức năng lưu và in biểu mẫu
-- Tính năng tính điểm tự động
-
-## Cấu trúc thư mục (Stable)
-
-```
-BieuMauHSNV/
-├── index.html              # Trang khởi đầu
-├── login.html              # Trang đăng nhập
-├── trangchu.html           # Trang chủ
-├── tt17.html               # Danh sách biểu mẫu TT17
-├── qdd7272.html            # Trang QĐ7272 (đang phát triển)
-├── forms/                  # Thư mục chứa các biểu mẫu
-│   ├── phieu-cham-diem-chuyen-an.html
-│   ├── phieu-cham-diem-dtcb.html
-│   ├── phieu-cham-diem-hn.html
-│   ├── phieu-cham-diem-la.html
-│   ├── phieu-cham-diem-lc.html
-│   ├── phieu-cham-diem-lh.html
-│   ├── phieu-cham-diem-ln.html
-│   ├── phieu-cham-diem-sn.html
-│   ├── xep-loai-can-bo.html
-│   ├── xep-loai-don-vi.html
-│   └── xep-loai-lanh-dao-chi-huy.html
-├── styles/                  # CSS styles
-├── js/                     # JavaScript files (chamdiem.js, xuong-dong.js, form-manager.js)
-├── images/                  # Hình ảnh (print.png, save.png, reload.png, anh-nen.jpg)
-├── data/                   # Dữ liệu lưu trữ (forms-data.json)
-└── README.md               # Tài liệu hướng dẫn
+# Kiểm tra version
+psql --version
 ```
 
-## Tính năng chính
+### 2. **Cấu hình Environment Variables**
+```bash
+# Tạo file .env
+cd projects/biemau-hsnv
 
-### ✅ Đã hoàn thành
-- Hệ thống đăng nhập với xác thực
-- Giao diện người dùng hiện đại và responsive
-- Navigation giữa các trang
-- 8 loại biểu mẫu chấm điểm TT17
-- Chức năng lưu và in biểu mẫu
-- Bảo mật session
-- Tính năng tính điểm tự động
-- Giao diện biểu mẫu chuyên nghiệp
+# Set DATABASE_URL (chọn một trong các options dưới)
+```
 
-### 🔄 Đang phát triển
-- Hệ thống chấm điểm theo QĐ7272
-- Tích hợp database
-- Quản lý người dùng
-- Báo cáo thống kê
+#### **Option A: Database Local**
+```bash
+echo "DATABASE_URL=postgresql://localhost:5432/myformsdb" > .env
+```
 
-## Cách sử dụng
+#### **Option B: Database Remote (Render)**
+```bash
+echo "DATABASE_URL=postgresql://username:password@hostname.region-postgres.render.com/database_name" > .env
+```
 
-1. **Mở website**: Truy cập `index.html`
-2. **Đăng nhập**: Sử dụng tài khoản admin/1
-3. **Chọn loại chấm điểm**: TT17 hoặc QĐ7272
-4. **Chọn biểu mẫu**: Nếu chọn TT17, chọn 1 trong 8 loại biểu mẫu
-5. **Điền thông tin**: Hoàn thành biểu mẫu với các trường điểm
-6. **Lưu/In**: Sử dụng các nút lưu và in
+#### **Option C: Database Remote (Railway)**
+```bash
+echo "DATABASE_URL=postgresql://username:password@hostname.railway.app:5432/database_name" > .env
+```
 
-## Yêu cầu hệ thống
+#### **Option D: Database Remote (Supabase)**
+```bash
+echo "DATABASE_URL=postgresql://username:password@hostname.supabase.co:5432/database_name" > .env
+```
 
-- Trình duyệt web hiện đại (Chrome, Firefox, Safari, Edge)
-- Hỗ trợ JavaScript ES6+
-- Hỗ trợ CSS Grid và Flexbox
-- Hỗ trợ backdrop-filter (cho hiệu ứng đẹp)
+### 3. **Test Database Connection**
+```bash
+# Test connection với Node.js
+node -e "
+require('dotenv').config();
+const { Pool } = require('pg');
+const pool = new Pool({
+  connectionString: process.env.DATABASE_URL,
+  ssl: { rejectUnauthorized: false }
+});
+pool.query('SELECT NOW()', (err, res) => {
+  if (err) {
+    console.error('❌ Connection failed:', err.message);
+  } else {
+    console.log('✅ Connection successful! Current time:', res.rows[0].now);
+  }
+  pool.end();
+});
+"
+```
 
-## Ghi chú kỹ thuật
+### 4. **Tạo Database Schema**
+```bash
+# Chạy schema SQL để tạo bảng forms
+psql "$DATABASE_URL" -f database-schema.sql
+```
 
-- Sử dụng sessionStorage để quản lý đăng nhập
-- Giao diện responsive với CSS Grid
-- Hiệu ứng hover và transition mượt mà
-- Tương thích với các thiết bị di động
-- Đường dẫn tương đối giữa các file
-- Biểu mẫu có tính năng tính điểm tự động
+#### **Kiểm tra schema đã tạo:**
+```bash
+# Liệt kê tất cả tables
+psql "$DATABASE_URL" -c "\dt"
 
-## Liên hệ hỗ trợ
+# Kiểm tra cấu trúc bảng forms
+psql "$DATABASE_URL" -c "\d forms"
 
-Để được hỗ trợ kỹ thuật hoặc báo cáo lỗi, vui lòng liên hệ đội ngũ phát triển.
+# Kiểm tra indexes
+psql "$DATABASE_URL" -c "\di forms*"
+```
 
-## Database & Triển khai Render.com
+### 5. **Khởi động ứng dụng**
+```bash
+# Install dependencies
+npm install
 
-### 1. Cấu trúc bảng PostgreSQL (forms_dtcb)
+# Start application
+npm start
+```
 
+## 🔧 Troubleshooting Database Connection
+
+### **Lỗi ENOTFOUND (Hostname không resolve được)**
+```bash
+# Kiểm tra hostname có đúng không
+nslookup your-hostname.com
+
+# Thử với domain đầy đủ
+# Ví dụ: dpg-xxx-xxx-a.singapore-postgres.render.com
+```
+
+### **Lỗi ECONNREFUSED (Connection bị từ chối)**
+```bash
+# Kiểm tra service có đang chạy không
+# Kiểm tra port có đúng không
+# Kiểm tra firewall settings
+```
+
+### **Lỗi Authentication Failed**
+```bash
+# Kiểm tra username/password
+# Kiểm tra database name
+# Kiểm tra user permissions
+```
+
+### **Lỗi Database does not exist**
+```bash
+# Tạo database nếu chưa có
+createdb your_database_name
+
+# Hoặc connect với database khác
+```
+
+## 🚀 API Endpoints
+
+### **Tạo form mới**
+```http
+POST /api/forms/{form_type}
+Content-Type: application/json
+
+{
+  "info": {...},
+  "score_table": [...],
+  "tong_diem_cb": 85.0,
+  "tong_diem_ch": 82.0,
+  "xep_loai_cb": "Tốt",
+  "xep_loai_ch": "Tốt"
+}
+```
+
+### **Lấy form theo ID**
+```http
+GET /api/forms/{form_type}/{form_id}
+```
+
+### **Xóa form**
+```http
+DELETE /api/forms/{form_type}/{form_id}
+```
+
+### **Lấy danh sách forms**
+```http
+GET /api/forms/list?form_type={form_type}
+```
+
+### **Health Check**
+```http
+GET /health
+```
+
+## 📊 Database Schema
+
+### **Bảng `forms`**
 ```sql
-CREATE TABLE forms_dtcb (
+CREATE TABLE forms (
     id SERIAL PRIMARY KEY,
-    form_id TEXT UNIQUE,
-    form_type TEXT,
-    info JSONB,
+    form_id VARCHAR(500) UNIQUE NOT NULL,
+    form_type VARCHAR(100) NOT NULL,
+    info JSONB NOT NULL,
     score_table JSONB,
-    tong_diem_cb TEXT,
-    tong_diem_ch TEXT,
-    xep_loai_cb TEXT,
-    xep_loai_ch TEXT,
-    ngay_thang_cb TEXT,
-    ngay_thang_ch TEXT,
-    created_at TIMESTAMP DEFAULT now()
+    tong_diem_cb DECIMAL(5,2),
+    tong_diem_ch DECIMAL(5,2),
+    xep_loai_cb VARCHAR(50),
+    xep_loai_ch VARCHAR(50),
+    ngay_thang_cb VARCHAR(100),
+    ngay_thang_ch VARCHAR(100),
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
 ```
 
-### 2. Cấu hình môi trường (.env)
-Tạo file `.env` ở thư mục gốc với nội dung:
-```env
-DATABASE_URL=postgresql://<user>:<password>@<host>:<port>/<database>
-PORT=10000 # hoặc để trống để Render tự chọn
+### **Indexes**
+```sql
+CREATE INDEX idx_forms_form_type ON forms(form_type);
+CREATE INDEX idx_forms_form_id ON forms(form_id);
 ```
 
-### 3. Deploy lên Render.com
+### **Triggers**
+```sql
+-- Tự động cập nhật updated_at
+CREATE TRIGGER update_forms_updated_at 
+    BEFORE UPDATE ON forms 
+    FOR EACH ROW 
+    EXECUTE FUNCTION update_updated_at_column();
+```
 
-#### a. Tạo dịch vụ PostgreSQL trên Render
-- Vào Render.com > Databases > Create a new PostgreSQL
-- Lưu lại thông tin kết nối (host, user, password, database, port)
-- Vào tab "Shell" của database, chạy lệnh tạo bảng:
-  - Copy đoạn SQL ở trên vào và chạy (hoặc dùng Query Editor)
+## 🎯 Cách sử dụng Forms
 
-#### b. Deploy Node.js app
-- Push code lên GitHub
-- Vào Render.com > Web Services > New Web Service
-- Kết nối repo, chọn branch
-- **Build Command:**
-  ```sh
-  npm install
-  ```
-- **Start Command:**
-  ```sh
-  npm start
-  ```
-- **Environment:**
-  - Thêm biến môi trường `DATABASE_URL` (giống file .env)
-  - (Tùy chọn) Thêm `PORT` nếu muốn cố định
+### **1. Xem danh sách forms đã điền**
+- Vào trang chính `tt17.html`
+- Click vào bất kỳ form card nào
+- Modal sẽ hiển thị danh sách các form đã điền từ database
 
-#### c. Cấu hình static file
-- App đã tự động phục vụ static (HTML, CSS, JS, images) từ thư mục gốc.
-- Đảm bảo các đường dẫn trong HTML là tương đối hoặc tuyệt đối từ gốc repo.
+### **2. Tạo form mới**
+- Trong modal danh sách, click "Tạo mới"
+- Form HTML sẽ mở trong tab mới
+- Điền thông tin và click "Lưu vào cơ sở dữ liệu"
 
-#### d. Truy cập app
-- Sau khi deploy thành công, Render sẽ cung cấp URL public.
-- Truy cập URL này để sử dụng hệ thống.
+### **3. Chỉnh sửa form cũ**
+- Trong modal danh sách, click "Xem/Chỉnh sửa"
+- Form sẽ mở với dữ liệu đã có
+- Chỉnh sửa và lưu lại
 
-### 4. Ghi chú
-- Nếu cần migrate schema, chỉ cần chạy lại lệnh tạo bảng (sẽ không xóa dữ liệu cũ nếu chỉ thêm cột mới).
-- Để reset dữ liệu: dùng lệnh SQL `TRUNCATE forms_dtcb;` trong Query Editor.
-- Đảm bảo file `.env` KHÔNG commit lên GitHub (thêm vào `.gitignore`).
+### **4. Xóa form**
+- Trong modal danh sách, click "Xóa"
+- Xác nhận xóa
+
+## 🛠️ Development & Debug
+
+### **Kiểm tra logs**
+```bash
+# Xem console logs của ứng dụng
+npm start
+
+# Kiểm tra database connection
+curl http://localhost:3000/health
+```
+
+### **Test Database Operations**
+```bash
+# Test insert
+curl -X POST http://localhost:3000/api/forms/dtcb \
+  -H "Content-Type: application/json" \
+  -d '{"info":{"ho_ten":"Test"},"score_table":[]}'
+
+# Test select
+curl http://localhost:3000/api/forms/list?form_type=phieu-cham-diem-dtcb
+```
+
+### **Monitor Database**
+```bash
+# Kiểm tra số lượng connections
+psql "$DATABASE_URL" -c "SELECT count(*) FROM pg_stat_activity;"
+
+# Kiểm tra performance
+psql "$DATABASE_URL" -c "SELECT * FROM pg_stat_user_tables WHERE schemaname = 'public';"
+```
+
+## 🔒 Security & Best Practices
+
+### **Environment Variables**
+- Không commit file `.env` vào git
+- Sử dụng strong passwords cho database
+- Rotate credentials định kỳ
+
+### **Database Security**
+- Sử dụng SSL connections
+- Whitelist IP addresses nếu cần
+- Regular backups
+- Monitor access logs
+
+### **API Security**
+- Validate input data
+- Sanitize SQL queries (đã có với parameterized queries)
+- Rate limiting (có thể thêm)
+- Error handling không expose sensitive info
+
+## 📝 Changelog
+
+### **v2.0.0 - Database Integration**
+- ✅ Tích hợp tất cả forms với PostgreSQL database
+- ✅ API endpoints cho tất cả 8 loại form
+- ✅ Standardized form handler
+- ✅ Better error handling và logging
+- ✅ Database schema với indexes và triggers
+
+### **v1.0.0 - Initial Release**
+- ✅ Basic forms functionality
+- ✅ Local storage support
+- ✅ Basic UI/UX
+
+## 🆘 Support & Troubleshooting
+
+### **Common Issues & Solutions**
+
+#### **Form không lưu được**
+1. Kiểm tra database connection
+2. Kiểm tra console errors
+3. Đảm bảo đã điền ít nhất họ tên
+4. Kiểm tra database schema
+
+#### **Form không load được**
+1. Kiểm tra form_id trong URL
+2. Kiểm tra database có dữ liệu
+3. Kiểm tra console errors
+4. Kiểm tra API endpoint
+
+#### **API errors (500, 404, etc.)**
+1. Kiểm tra server đang chạy
+2. Kiểm tra database schema
+3. Kiểm tra console logs
+4. Kiểm tra environment variables
+
+### **Debug Commands**
+```bash
+# Kiểm tra database connection
+node -e "require('dotenv').config(); console.log('DATABASE_URL:', process.env.DATABASE_URL)"
+
+# Test database query
+psql "$DATABASE_URL" -c "SELECT count(*) FROM forms;"
+
+# Check application status
+curl -v http://localhost:3000/health
+
+# View application logs
+tail -f logs/app.log  # nếu có logging
+```
+
+## 📞 Liên hệ
+
+- **Developer**: Đội ngũ phát triển HSNV
+- **Version**: 2.0.0
+- **Last Updated**: 2024-12-20
+- **Database**: PostgreSQL 17.6+
 
 ---
 
-## Hướng dẫn chạy app trên LOCAL với database PostgreSQL
-
-### 1. Cài đặt PostgreSQL
-- **macOS:**
-  ```sh
-  brew install postgresql
-  brew services start postgresql
-  ```
-- **Ubuntu/Debian:**
-  ```sh
-  sudo apt update
-  sudo apt install postgresql postgresql-contrib
-  sudo service postgresql start
-  ```
-- **Windows:**
-  - Tải từ https://www.postgresql.org/download/windows/ và cài đặt theo hướng dẫn.
-
-### 2. Tạo database và user
-- Mở terminal/cmd và chạy:
-  ```sh
-  psql -U postgres
-  ```
-  (Nếu được hỏi password, nhập password bạn đã đặt khi cài PostgreSQL)
-
-- Trong psql prompt:
-  ```sql
-  CREATE DATABASE myformsdb;
-  CREATE USER myformsuser WITH PASSWORD 'mypassword';
-  GRANT ALL PRIVILEGES ON DATABASE myformsdb TO myformsuser;
-  \q
-  ```
-
-### 3. Tạo bảng trong database
-- Kết nối vào database vừa tạo:
-  ```sh
-  psql -U myformsuser -d myformsdb
-  ```
-- Dán lệnh SQL tạo bảng:
-  ```sql
-  CREATE TABLE forms_dtcb (
-      id SERIAL PRIMARY KEY,
-      form_id TEXT UNIQUE,
-      form_type TEXT,
-      info JSONB,
-      score_table JSONB,
-      tong_diem_cb TEXT,
-      tong_diem_ch TEXT,
-      xep_loai_cb TEXT,
-      xep_loai_ch TEXT,
-      ngay_thang_cb TEXT,
-      ngay_thang_ch TEXT,
-      created_at TIMESTAMP DEFAULT now()
-  );
-  \q
-  ```
-
-### 4. Tạo file .env cấu hình kết nối local
-- Tạo file `.env` ở thư mục gốc với nội dung:
-  ```env
-  DATABASE_URL=postgresql://myformsuser:mypassword@localhost:5432/myformsdb
-  PORT=3000
-  ```
-
-### 5. Cài đặt Node.js và các package
-- Nếu chưa có Node.js, tải tại https://nodejs.org/
-- Cài đặt dependencies:
-  ```sh
-  npm install
-  ```
-
-### 6. Chạy app trên local
-  ```sh
-  npm start
-  ```
-- App sẽ chạy tại http://localhost:3000 (hoặc port bạn đặt trong .env)
-
-### 7. Kiểm tra
-- Truy cập http://localhost:3000 trên trình duyệt.
-- Đăng nhập, điền form, kiểm tra lưu dữ liệu.
-
----
+**Lưu ý**: Đảm bảo database connection ổn định trước khi sử dụng các tính năng forms. Nếu gặp vấn đề, hãy kiểm tra logs và database connection trước.

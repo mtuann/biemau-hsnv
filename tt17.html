@@ -91,13 +91,13 @@
     </div>
 
     <div class="forms-grid">
-      <div class="form-card" onclick="openFormsList('SN')">
+      <div class="form-card" onclick="openFormHistoryDialog('phieu-cham-diem-sn','forms/phieu-cham-diem-sn.html')">
         <div class="form-icon">🔍</div>
         <div class="form-title">Chấm điểm Sưu tra</div>
         <div class="form-description">
           Biểu mẫu chấm điểm hoạt động sưu tra, điều tra thông tin
         </div>
-        <button class="form-btn">Xem danh sách</button>
+        <button class="form-btn">Mở biểu mẫu</button>
       </div>
 
       <div class="form-card" onclick="openFormHistoryDialog('phieu-cham-diem-dtcb','forms/phieu-cham-diem-dtcb.html')">
@@ -202,6 +202,21 @@
     }
 
     let currentFormType = null;
+    
+    function getFormPath(formType) {
+      const formPathMap = {
+        'phieu-cham-diem-sn': 'forms/phieu-cham-diem-sn.html',
+        'phieu-cham-diem-dtcb': 'forms/phieu-cham-diem-dtcb.html',
+        'phieu-cham-diem-hn': 'forms/phieu-cham-diem-hn.html',
+        'phieu-cham-diem-chuyen-an': 'forms/phieu-cham-diem-chuyen-an.html',
+        'phieu-cham-diem-lc': 'forms/phieu-cham-diem-lc.html',
+        'phieu-cham-diem-lh': 'forms/phieu-cham-diem-lh.html',
+        'phieu-cham-diem-la': 'forms/phieu-cham-diem-la.html',
+        'phieu-cham-diem-ln': 'forms/phieu-cham-diem-ln.html'
+      };
+      return formPathMap[formType] || 'forms/phieu-cham-diem-dtcb.html';
+    }
+    
     function openFormHistoryDialog(formType, formPath) {
       currentFormType = formType;
       document.getElementById('formHistoryModal').style.display = 'block';
@@ -225,10 +240,22 @@
     }
     function createNewForm() {
       closeFormHistoryModal();
-      if (currentFormType === 'phieu-cham-diem-hn') {
-        window.open('forms/phieu-cham-diem-hn.html', '_blank');
-      } else if (currentFormType === 'phieu-cham-diem-dtcb') {
-        window.open('forms/phieu-cham-diem-dtcb.html', '_blank');
+      const formPathMap = {
+        'phieu-cham-diem-sn': 'forms/phieu-cham-diem-sn.html',
+        'phieu-cham-diem-dtcb': 'forms/phieu-cham-diem-dtcb.html',
+        'phieu-cham-diem-hn': 'forms/phieu-cham-diem-hn.html',
+        'phieu-cham-diem-chuyen-an': 'forms/phieu-cham-diem-chuyen-an.html',
+        'phieu-cham-diem-lc': 'forms/phieu-cham-diem-lc.html',
+        'phieu-cham-diem-lh': 'forms/phieu-cham-diem-lh.html',
+        'phieu-cham-diem-la': 'forms/phieu-cham-diem-la.html',
+        'phieu-cham-diem-ln': 'forms/phieu-cham-diem-ln.html'
+      };
+      
+      if (formPathMap[currentFormType]) {
+        window.open(formPathMap[currentFormType], '_blank');
+      } else {
+        console.error('Unknown form type:', currentFormType);
+        alert('Loại form không được hỗ trợ!');
       }
     }
     function viewForm(formPath, formId) {
@@ -315,7 +342,7 @@
           <td>${item.tong_diem_ch||''}</td>
           <td>${item.xep_loai_cb||''}</td>
           <td>${item.xep_loai_ch||''}</td>
-          <td><button class="action-btn action-view" onclick="viewForm('${currentFormType === 'phieu-cham-diem-hn' ? 'forms/phieu-cham-diem-hn.html' : 'forms/phieu-cham-diem-dtcb.html'}','${item.form_id}')">Xem/Chỉnh sửa</button></td>
+          <td><button class="action-btn action-view" onclick="viewForm('${getFormPath(currentFormType)}','${item.form_id}')">Xem/Chỉnh sửa</button></td>
         </tr>`;
       });
       document.getElementById('formHistoryTableBody').innerHTML = html;
@@ -326,7 +353,10 @@
       if (!confirm('Bạn có chắc chắn muốn xóa form này?')) return;
       btn.disabled = true;
       console.log('Gửi yêu cầu xóa form_id:', formId);
-      fetch(`/api/forms/dtcb/${encodeURIComponent(formId)}`, { method: 'DELETE' })
+      
+      // Get the correct API endpoint based on form type
+      const apiEndpoint = currentFormType.replace('phieu-cham-diem-', '');
+      fetch(`/api/forms/${apiEndpoint}/${encodeURIComponent(formId)}`, { method: 'DELETE' })
         .then(async res => {
           let data;
           try { data = await res.json(); } catch (e) { data = {}; }
