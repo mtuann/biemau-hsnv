@@ -37,9 +37,19 @@ cd projects/biemau-hsnv
 # Set DATABASE_URL (chọn một trong các options dưới)
 ```
 
-#### **Option A: Database Local**
+#### **Option A: Database Local (Linux/macOS)**
 ```bash
 echo "DATABASE_URL=postgresql://localhost:5432/myformsdb" > .env
+```
+
+#### **Option A1: Database Local (Windows)**
+```cmd
+# Tạo file .env với nội dung:
+echo DATABASE_URL=postgresql://postgres:your_password@localhost:5432/myformsdb > .env
+
+# Hoặc tạo file .env thủ công với nội dung:
+# DATABASE_URL=postgresql://postgres:your_password@localhost:5432/myformsdb
+# PORT=3000
 ```
 
 #### **Option B: Database Remote (Render)**
@@ -136,6 +146,21 @@ nslookup your-hostname.com
 createdb your_database_name
 
 # Hoặc connect với database khác
+```
+
+### **Lỗi SSL trên Windows Local**
+```cmd
+# Lỗi: "The server does not support SSL connections"
+# Nguyên nhân: Database local không hỗ trợ SSL
+
+# Giải pháp 1: Sử dụng connection string không có SSL
+DATABASE_URL=postgresql://postgres:password@localhost:5432/myformsdb
+
+# Giải pháp 2: File db.js đã được sửa để tự động detect local/remote
+# Không cần thay đổi gì thêm
+
+# Giải pháp 3: Kiểm tra PostgreSQL service có đang chạy không
+# Mở Services (services.msc) > PostgreSQL > Start
 ```
 
 ## 🚀 API Endpoints
